@@ -1,0 +1,17 @@
+{
+  "name": "zerweb",
+  "version": "0.0.1",
+  "description": "zer web",
+  "main": "",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZERRzZ/zerweb.git"
+  },
+  "author": "chengzs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZERRzZ/zerweb/issues"
+  },
+  "homepage": "https://github.com/ZERRzZ/zerweb#readme"
+}
