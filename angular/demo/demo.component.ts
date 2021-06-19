@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { MenuTwo } from 'yz/menu-two/menu-two.model';
 
 @Component({
   selector: 'demo',
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css']
 })
-export class DemoComponent implements OnInit {
+export class DemoComponent {
 
-  constructor() { }
+  menuTwo: Array<MenuTwo> = [{ id: '1', title: '标题', list: [{ id: '1', title: '列表' }] }]
 
-  ngOnInit(): void {
+  constructor(private http: HttpClient) {
+    this.http.get('assets/menu-two.json').subscribe(data => {
+      this.menuTwo = data as Array<MenuTwo>
+    })
   }
 
 }

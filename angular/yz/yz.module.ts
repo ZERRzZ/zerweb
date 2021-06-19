@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import { MenuTwoComponent } from './menu-two/menu-two.component';
 
 @NgModule({
@@ -6,9 +8,10 @@ import { MenuTwoComponent } from './menu-two/menu-two.component';
     MenuTwoComponent
   ],
   imports: [
+    CommonModule
   ],
   exports: [
-    MenuTwoComponent  
+    MenuTwoComponent
   ]
 })
 export class YzModule { }

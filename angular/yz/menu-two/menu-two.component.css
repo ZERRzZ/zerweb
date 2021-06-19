@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.title {
+  height: 2em;
+  padding: 0 10px;
+  font-size: 1.3em;
+  background: var(--light-blue);
+  transition: all .3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title:hover {
+  color: var(--dark-blue);
+  fill: var(--dark-blue);
+  cursor: pointer;
+}
+
+.list-box {
+  margin: 1px 0;
+}
+
+.list {
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: 0 20px;
+  transition: all .3s;
+}
+.list:hover {
+  color: var(--dark-blue);
+  fill: var(--dark-blue);
+  background: var(--light-blue);
+  cursor: pointer;
+}
+
+.select {
+  color: var(--dark-blue);
+  fill: var(--dark-blue);
+}
