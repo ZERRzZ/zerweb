@@ -53,7 +53,8 @@
               "demo/assets"
             ],
             "styles": [
-              "demo/styles.css"
+              "demo/styles.css",
+              "../style/style.css"
             ],
             "scripts": []
           },

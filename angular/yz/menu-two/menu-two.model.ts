@@ -4,7 +4,7 @@
  * @param title 一级菜单标题名
  */
 export interface MenuOne {
-  id: string,
+  id: number,
   title: string
 }
 /**

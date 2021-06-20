@@ -1,6 +1,14 @@
 :host {
+  overflow: auto;
   display: flex;
   flex-flow: column nowrap;
+}
+:host::-webkit-scrollbar {
+  width:5px;
+}
+:host::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--light-blue);
 }
 
 .title {
