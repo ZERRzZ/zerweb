@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  height: 100%;
+}
+
+menu-two {
+  width: 350px;
+}
+
+single-choice {
+  width: 350px;
+}
