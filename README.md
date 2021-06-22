@@ -6,8 +6,9 @@ angular 目录: angular 的复用组件
 
 icon 目录: 所用到的图标, 提取到这里
 
-style 目录: 公共样式, 格式为 css, 包括 css reset, 自定义的变量, 可复用的类
+method 目录: 公共的方法
 
+style 目录: 公共样式, 格式为 css, 包括 css reset, 自定义的变量, 可复用的类
 
 ## use style
 
@@ -16,6 +17,10 @@ style 目录: 公共样式, 格式为 css, 包括 css reset, 自定义的变量,
 - 或在 angular.json 中的 styles 字段中写入路径 `path/to/zerweb/style/style.css`
 - 或在项目 index.html 中用 link 标签引入 `<link rel="stylesheet" href="path/to/zerweb/style/style.css">`
 - 或在项目 styles.css 中用 @import 导入 `@import 'path/to/zerweb/style/style.css'`
+
+## use method
+
+直接用吧
 
 ## use icon
 
