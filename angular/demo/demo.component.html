@@ -1,1 +1,6 @@
-<menu-two [menuTwo]='menuTwo' [open]='true' [select]='[1, 5]' (reselect)='getReselect($event)'></menu-two>
+<menu-two [menuTwo]='menuTwo' [open]='false' (reselect)='getMenu($event)'></menu-two>
+
+<div>
+  <single-choice *ngFor='let single of singleChoice' [singleChoice]='single' [select]='select' (reselect)='getSingle($event)'>
+  </single-choice>
+</div>

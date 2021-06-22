@@ -1,0 +1,8 @@
+<div class="title">{{singleChoice.title}}</div>
+
+<div class="lists">
+  <div *ngFor='let list of singleChoice.list' class="list" [class.select]='list.id == select'
+    (click)='select=list.id; reselect.emit([singleChoice.id, list.id])'>
+    {{list.title}}
+  </div>
+</div>

@@ -1,0 +1,49 @@
+:host {
+  cursor: pointer;
+  display: flex;
+  gap: 5px;
+  flex-flow: column nowrap;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.title::before {
+  content: '';
+  width: 3px;
+  height: 1em;
+  margin-right: 10px;
+  background: var(--dark-blue);
+  display: inline-block;
+  position: relative;
+  top: 2px;
+}
+
+.lists {
+  padding-left: 15px;
+  display: flex;
+  gap: 10px;
+  flex-flow: row wrap;
+}
+
+.list {
+  transition: all .5s;
+}
+.list::after {
+  content: '';
+  width: 1px;
+  height: 1em;
+  margin-left: 10px;
+  background: var(--dark-blue);
+  display: inline-block;
+  position: relative;
+  top: 2px;
+}
+.list:hover {
+  color: var(--dark-blue);
+}
+
+.select {
+  color: var(--dark-blue);
+}
