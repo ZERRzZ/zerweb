@@ -33,6 +33,6 @@ export class MenuTwoComponent {
   @Input() select: Array<number> = [NaN, 1]
 
   // 传出所选中的 select [二级菜单 id, 一级菜单 id], 当点击子项时触发
-  @Output() reselect = new EventEmitter()
+  @Output() reselect = new EventEmitter
 
 }

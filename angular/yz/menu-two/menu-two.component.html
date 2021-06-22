@@ -2,12 +2,12 @@
 
   <div class="title" (click)='menu.open=!menu.open' [class.select]='menu.id==select[0]'>
     <div>{{menu.title}}</div>
-    <svg width='1em' height='1em' [class]='{clockwise: menu.open, anticlockwise: !menu.open}'>
+    <svg viewBox="4 4 16 16" width="1em" [class]='{clockwise: menu.open, anticlockwise: !menu.open}'>
       <path d="M8.59 16.34 l4.58-4.59-4.58-4.59 L10 5.75 l6 6-6 6 Z"></path>
     </svg>
   </div>
 
-  <div class="list-box" [class]='{heightless: !menu.open, heightmore: menu.open}'>
+  <div [class]='{heightless: !menu.open, heightmore: menu.open}'>
     <div *ngFor='let list of menu.list' class="list"
       (click)='select[0]=menu.id; select[1]=list.id; reselect.emit(select)'
       [class.select]=' menu.id==select[0] && list.id==select[1]'>

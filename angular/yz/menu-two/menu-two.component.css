@@ -1,6 +1,8 @@
 :host {
   overflow: auto;
+  cursor: pointer;
   display: flex;
+  gap: 2px;
   flex-flow: column nowrap;
 }
 :host::-webkit-scrollbar {
@@ -14,7 +16,7 @@
 .title {
   height: 2em;
   padding: 0 10px;
-  font-size: 1.3em;
+  font-size: 1.2em;
   background: var(--light-blue);
   transition: all .3s;
   display: flex;
@@ -24,11 +26,6 @@
 .title:hover {
   color: var(--dark-blue);
   fill: var(--dark-blue);
-  cursor: pointer;
-}
-
-.list-box {
-  margin: 1px 0;
 }
 
 .list {
@@ -41,7 +38,6 @@
   color: var(--dark-blue);
   fill: var(--dark-blue);
   background: var(--light-blue);
-  cursor: pointer;
 }
 
 .select {
