@@ -16,7 +16,7 @@ export interface Position {
 export function autoLegend(layout: any, position?: Position): any {
   let { map, style, legend, legendInfo } = layout
   // 筛选图例
-  style = style.filter(v => v.show)
+  style = style.filter((v: any) => v.show)
   // 设置列数和行数, 默认行数已知
   legend.column = Math.ceil(style.length / legend.row)
   legend.row = style.length <= legend.row ? style.length : Math.ceil(style.length / legend.column)
@@ -29,7 +29,7 @@ export function autoLegend(layout: any, position?: Position): any {
   legend.height = rowHeight * legend.row + titleHeight
 
   // 最大图例文本字符长度, 分中英文
-  let maxLength = Math.max(...(style.map(v => {
+  let maxLength = Math.max(...(style.map((v: any) => {
     let zhArr = v.text.match(/[^\x00-\xff]/g)
     let zhLen = zhArr ? zhArr.length : 0
     let enLen = v.text.length - zhLen
@@ -48,8 +48,8 @@ export function autoLegend(layout: any, position?: Position): any {
 
   // 根据 position 值而改变位置
   if (position) {
-    !isNaN(position.left) ? legend.x = position.left + 10 : position.right ? legend.x = legend.x - position.right : ''
-    !isNaN(position.top) ? legend.y = position.top + 10 : position.bottom ? legend.y = legend.y - position.bottom : ''
+    position.left && position.left >= 0 ? legend.x = position.left + 10 : position.right ? legend.x = legend.x - position.right : ''
+    position.top && position.top >=0 ? legend.y = position.top + 10 : position.bottom ? legend.y = legend.y - position.bottom : ''
   }
 
   return layout

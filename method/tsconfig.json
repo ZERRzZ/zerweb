@@ -1,0 +1,17 @@
+// tsconfig.json 文件
+{
+  "include": ["./*"],
+  "exclude": [],
+  "compileOnSave": false, // 在保存时编译
+  "compilerOptions": { // 编译选项
+    "allowJs": true, // 接受 javascript 作为输入
+    "outDir": "./", // 生成的所有文件放在 built 目录下
+    "target": "es5", // 将 JavaScript 代码降级到低版本比如 ECMAScript 5
+    "noEmitOnError": true, // 不想在发生错误的时候 ypeScript 还会被编译成 JavaScript
+    "noImplicitAny": true, // 不想让 TypeScript 将没有明确指定的类型默默地推断为 any 类型
+    "noImplicitReturns": true, // 防止你忘记在函数末尾返回值
+    "noImplicitThis": true, // 当没有明确指定类型（或通过类型推断）的 this 被使用时 TypeScript 会产生一个错误
+    "noFallthroughCasesInSwitch": true, // 会防止在 switch 代码块里的两个 case 之间忘记添加 break 语句
+    "strictNullChecks": true, // null 和 undefined 获得了它们自己各自的类型 null 和 undefined
+  }
+}

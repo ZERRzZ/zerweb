@@ -10,7 +10,7 @@ export interface Pie {
 }
 
 /**
- * 根据传入的颜色和百分比来返回一个饼形图 svg 元素
+ * 根据传入的颜色和值来返回一个饼形图 svg 元素
  * @param pie 各个 id 对应的颜色与值
  * @param radius 圆的半径
  * @returns 返回一个 svg 饼形图
@@ -31,13 +31,14 @@ export function pieChart(pie: Array<Pie>, radius: number = 10) {
   if (total == 0) return svg
 
   // 设置 path 属性, 画弧
-  // Math.sin(), Math.cos() 当值是弧度值时才准确 弧度 = 角度 * PI / 180
+  // Math.sin(), Math.cos() 当值是弧度值时才准确
+  // 弧度 = 角度 * PI / 180, 2 * PI 即一个圆周
   pie.reduce((radian, v, i) => {
     if (i == 0) {
       svg.innerHTML += `<circle cx='${radius}' cy='${radius}' r='${radius}' fill='${v.color}'/>`
       return radian - v.value / total * Math.PI * 2
     }
-    let largeArcFlag: number = radian >= 180 ? 1 : 0 // 是否大于 180 度
+    let largeArcFlag = radian >= 180 ? 1 : 0 // 是否大于 180 度
     let endX = radius + radius * Math.sin(radian)
     let endY = radius - radius * Math.cos(radian)
     svg.innerHTML += `<path d='M${radius} ${radius} L${radius} 0 A${radius} ${radius} 0 ${largeArcFlag} 1 ${endX} ${endY} Z' fill='${v.color}'/>`
