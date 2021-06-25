@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 // 二级菜单数据格式与模拟数据
-import { MenuTwo } from './menu-two.model';
 import { menuTwo } from './menu-two'
 
 @Component({
@@ -22,15 +21,15 @@ export class MenuTwoComponent {
     menuTwo.map(v => v.open == undefined && (v.open = this.open))
     this._menuTwo = menuTwo
   }
-  private _menuTwo: Array<MenuTwo> = menuTwo
+  private _menuTwo = menuTwo
 
   // 菜单是否打开, 默认不打开
-  @Input() open: boolean = false
+  @Input() open = false
 
   // [二级菜单id, 一级菜单id] 默认不选中二级菜单但选中子菜单第一项
   // 要想选中需自己传值, 无论菜单是否展开, 都默认不选中
   // 技术有限, 无法智能到当菜单默认展开则默认选中某一项, 当菜单默认关闭则默认不选中
-  @Input() select: Array<number> = [NaN, 1]
+  @Input() select = [NaN, 1]
 
   // 传出所选中的 select [二级菜单 id, 一级菜单 id], 当点击子项时触发
   @Output() reselect = new EventEmitter

@@ -1,13 +1,11 @@
 :host {
-  cursor: pointer;
   display: flex;
-  gap: 5px;
+  gap: 10px;
   flex-flow: column nowrap;
 }
 
 .title {
-  font-size: 1.2em;
-  font-weight: 500;
+  font-size: 1.1em;
 }
 .title::before {
   content: '';
@@ -22,6 +20,7 @@
 
 .lists {
   padding-left: 15px;
+  cursor: pointer;
   display: flex;
   gap: 10px;
   flex-flow: row wrap;

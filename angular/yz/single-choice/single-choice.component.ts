@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { SingleChoice } from './single-choice.model';
 import { singleChoice } from './single-choice';
 
 @Component({
@@ -12,8 +11,8 @@ export class SingleChoiceComponent {
 
   constructor() { }
 
-  @Input() singleChoice: SingleChoice = singleChoice
-  @Input() select: number = 0
+  @Input() singleChoice = singleChoice
+  @Input() select = 0
 
   @Output() reselect = new EventEmitter
 
