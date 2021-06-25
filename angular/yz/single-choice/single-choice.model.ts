@@ -4,7 +4,7 @@
 export interface SingleChoice extends Single {
   list: Array<Single>
 }
-interface Single {
+export interface Single {
   id: number,
   title: string
 }

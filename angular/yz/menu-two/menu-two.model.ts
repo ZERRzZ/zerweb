@@ -6,7 +6,7 @@ export interface MenuTwo extends MenuOne {
   open?: boolean,
   list: Array<MenuOne>
 }
-interface MenuOne {
+export interface MenuOne {
   id: number,
   title: string
 }
