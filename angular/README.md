@@ -33,7 +33,7 @@ menu-two
 `@Input() menuTwo`: 数据, 格式为 `Array<MenuTwo>`  
 `@Input() open`: 二级菜单是否打开, `boolean` 格式  
 `@Input() select`: 选中哪一项, `number[]` 格式  
-`@Output() reselect`: 当点击子项时触发该事件, 返回一个 `Array<[T, U]>`, 元组数组, 具体为选中的父项和子项数据, 类型随具体业务而定  
+`@Output() reselect`: 当点击子项时触发该事件, 返回一个 `[T, U]`, 元组, 具体为选中的父项和子项数据, 类型随具体业务而定  
 
 ```html
 <menu-two [menuTwo]='menuTwo' [open]='false' [select]='[1, 1]' (reselect)='getMenu($event)'></menu-two>
@@ -43,8 +43,17 @@ single-choice
 
 `@Input() singleChoice`: 数据, 格式为 `SingleChoice`  
 `@Input() select`: 选中哪一项, `number` 格式  
-`@Outpur() reselect`: 当点击选项时触发该事件, 返回一个 `Array<[T, U]>`, 元组数组, 具体为选中的选项的父项和子项数据, 类型随具体业务而定  
+`@Output() reselect`: 当点击选项时触发该事件, 返回一个 `[T, U]`, 元组, 具体为选中的选项的父项和子项数据, 类型随具体业务而定  
 
 ```html
 <single-choice [singleChoice]='single' [select]='select' (reselect)='getSingle($event)'></single-choice>
+```
+
+count
+
+`@Input() count`: 数据, 格式为 `Count`  
+`@Output() resetCount`: 传出改变 count.value 后的 count  
+
+```html
+<count [count]='count (resetCount)='getCount($event)'></count>
 ```

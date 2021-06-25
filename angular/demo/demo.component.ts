@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 import { MenuTwo } from 'yz/menu-two/menu-two.model';
 import { SingleChoice } from 'yz/single-choice/single-choice.model';
+import { Count } from 'yz/count/count.model';
 
 @Component({
   selector: 'demo',
@@ -29,6 +30,10 @@ export class DemoComponent {
 
   select: number = 1
   getSingle(e: Array<number>) {
+    console.log(e)
+  }
+
+  getCount(e: Count) {
     console.log(e)
   }
 
