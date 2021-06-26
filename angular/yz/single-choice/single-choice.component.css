@@ -7,42 +7,28 @@
 .title {
   font-size: 1.1em;
 }
-.title::before {
-  content: '';
-  width: 3px;
-  height: 1em;
-  margin-right: 10px;
-  background: var(--dark-blue);
-  display: inline-block;
-  position: relative;
-  top: 2px;
-}
 
 .lists {
-  padding-left: 15px;
+  padding-left: 20px;
   cursor: pointer;
   display: flex;
-  gap: 10px;
+  gap: 14px;
   flex-flow: row wrap;
 }
 
 .list {
-  transition: all .5s;
+  transition: all .3s;
 }
-.list::after {
-  content: '';
+.list::before {
   width: 1px;
-  height: 1em;
-  margin-left: 10px;
-  background: var(--dark-blue);
-  display: inline-block;
-  position: relative;
-  top: 2px;
 }
+
+.select,
 .list:hover {
   color: var(--dark-blue);
 }
 
-.select {
-  color: var(--dark-blue);
+.list:hover::before,
+.select::before {
+  box-shadow: 0 0 0 2px var(--dark-blue);
 }

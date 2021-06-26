@@ -1,5 +1,5 @@
-<menu-two [menuTwo]='menuTwo' [open]='false' (reselect)='getMenu($event)'></menu-two>
+<!-- <menu-two [menuTwo]='menuTwo' [select]='[1,1]' [open]='false' (reselect)='getMenu($event)'></menu-two> -->
 
-<single-choice [singleChoice]='singleChoice[0]' [select]='select' (reselect)='getSingle($event)'></single-choice>
+<!-- <single-choice [singleChoice]='singleChoice' [select]='1' (reselect)='getSingle($event)'></single-choice> -->
 
-<count (resetCount)='getCount($event)'></count>
+<count *ngFor='let count of counts' [count]='count' (resetCount)='getCount($event)'></count>

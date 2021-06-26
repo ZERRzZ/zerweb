@@ -31,12 +31,12 @@ After building your library with `ng build yz`, go to the dist folder `cd dist/y
 menu-two
 
 `@Input() menuTwo`: 数据, 格式为 `Array<MenuTwo>`  
-`@Input() open`: 二级菜单是否打开, `boolean` 格式  
 `@Input() select`: 选中哪一项, `number[]` 格式  
+`@Input() open`: 二级菜单是否打开, `boolean` 格式  
 `@Output() reselect`: 当点击子项时触发该事件, 返回一个 `[T, U]`, 元组, 具体为选中的父项和子项数据, 类型随具体业务而定  
 
 ```html
-<menu-two [menuTwo]='menuTwo' [open]='false' [select]='[1, 1]' (reselect)='getMenu($event)'></menu-two>
+<menu-two [menuTwo]='menuTwo' [select]='[1, 1]' [open]='false' (reselect)='getMenu($event)'></menu-two>
 ```
 
 single-choice

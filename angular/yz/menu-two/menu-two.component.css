@@ -2,7 +2,7 @@
   overflow: auto;
   cursor: pointer;
   display: flex;
-  gap: 2px;
+  gap: 1px;
   flex-flow: column nowrap;
 }
 :host::-webkit-scrollbar {
@@ -14,18 +14,14 @@
 }
 
 .title {
-  height: 2em;
+  height: 2.2em;
   padding: 0 10px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   background: var(--light-blue);
   transition: all .3s;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.title:hover {
-  color: var(--dark-blue);
-  fill: var(--dark-blue);
 }
 
 .list {
@@ -40,7 +36,20 @@
   background: var(--light-blue);
 }
 
-.select {
+.select,
+.title:hover {
   color: var(--dark-blue);
   fill: var(--dark-blue);
+}
+
+.titleblock::before {
+  width: 0;
+  background: none;
+}
+.title:hover>.titleblock::before,
+.titleblock:hover::before,
+.select::before,
+.select>.titleblock::before {
+  width: 3px;
+  background: var(--dark-blue);
 }

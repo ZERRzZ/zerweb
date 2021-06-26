@@ -5,14 +5,14 @@
 }
 
 menu-two {
-  border: 1px var(--dark-blue) solid;
+  width: 350px;
+  height: 100%;
 }
 
 single-choice {
-  border: 1px var(--dark-blue) solid;
+  width: 350px;
 }
 
 count {
   width: 350px;
-  border: 1px var(--dark-blue) solid;
 }

@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import { MenuTwo } from 'yz/menu-two/menu-two.model';
-import { SingleChoice } from 'yz/single-choice/single-choice.model';
+import { MenuOne, MenuTwo } from 'yz/menu-two/menu-two.model';
+import { Single, SingleChoice } from 'yz/single-choice/single-choice.model';
 import { Count } from 'yz/count/count.model';
 
 @Component({
@@ -12,24 +12,21 @@ import { Count } from 'yz/count/count.model';
 })
 export class DemoComponent {
 
-  menuTwo: Array<MenuTwo> = [{ id: 1, title: '标题', list: [{ id: 1, title: '列表' }] }]
-  singleChoice: Array<SingleChoice> = [{ id: 1, title: '标题', list: [{ id: 1, title: '列表' }] }]
-
   constructor(private http: HttpClient) {
-    this.http.get('assets/menu-two.json').subscribe(data => {
-      this.menuTwo = data as Array<MenuTwo>
-    })
-    this.http.get('assets/single-choice.json').subscribe(data => {
-      this.singleChoice = data as Array<SingleChoice>
-    })
+    this.http.get('assets/menu-two.json').subscribe(data => this.menuTwo = data as Array<MenuTwo>)
+    this.http.get('assets/single-choice.json').subscribe(data => this.singleChoice = data as SingleChoice)
+    this.http.get('assets/count.json').subscribe(data => this.counts = data as Array<Count>)
   }
 
-  getMenu(e: Array<number>) {
+  menuTwo: Array<MenuTwo> = []
+  singleChoice: SingleChoice = { id: 0, title: 'sadanya', list: [] }
+  counts: Array<Count> = []
+
+  getMenu(e: [MenuTwo, MenuOne]) {
     console.log(e)
   }
 
-  select: number = 1
-  getSingle(e: Array<number>) {
+  getSingle(e: [SingleChoice, Single]) {
     console.log(e)
   }
 
