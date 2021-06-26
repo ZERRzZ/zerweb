@@ -21,7 +21,7 @@
 /* 最大高度减少 */
 .heightless {
   --maxheight: 1000px;
-  animation: heightless .5s linear forwards;
+  animation: heightless .3s linear forwards;
   overflow: hidden;
 }
 @keyframes heightless {
@@ -32,10 +32,23 @@
 /* 最大高度增大 */
 .heightmore {
   --maxheight: 1000px;
-  animation: heightmore .5s linear forwards;
+  animation: heightmore .3s linear forwards;
   overflow: hidden;
 }
 @keyframes heightmore {
   from { max-height: 1px; opacity: 0; }
   to { max-height: var(--maxheight);  opacity: 1; }
+}
+
+/* 醒目的标题识别块 */
+.titleblock::before {
+  content: '';
+  width: 3px;
+  height: 1em;
+  margin-right: 10px;
+  background: var(--dark-blue);
+  transition: all .3s;
+  display: inline-block;
+  position: relative;
+  top: 2px;
 }
