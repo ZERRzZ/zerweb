@@ -57,3 +57,12 @@ count
 ```html
 <count [count]='count (resetCount)='getCount($event)'></count>
 ```
+
+map-legend
+
+`@Input() mapLegend`: 数据, 格式为 MapLegend  
+`@Input() height`: 图例展示区的高度, 控制行数, 带单位  
+
+```html
+<map-legend [mapLegend]='mapLegend' height="'200px'"></map-legend>
+```

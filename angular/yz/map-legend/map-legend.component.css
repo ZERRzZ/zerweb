@@ -1,0 +1,40 @@
+:host {
+  display: block;
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.info {
+  --height: 200px;
+  max-height: var(--height);
+  display: flex;
+  gap: 10px;
+  flex-flow: column wrap;
+  align-content: flex-start;
+}
+
+.legend {
+  display: flex;
+  gap: 10px;
+}
+
+.image {
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  position: relative;
+  top: 3px;
+}
+
+img {
+  --color: #0f0;
+  width: 1em;
+  height: 1em;
+  background: var(--color);
+  filter: drop-shadow(50px 0 var(--color));
+  position: relative;
+  left: -50px;
+}

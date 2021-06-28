@@ -16,3 +16,7 @@ single-choice {
 count {
   width: 350px;
 }
+
+map-legend {
+  position: absolute;
+}

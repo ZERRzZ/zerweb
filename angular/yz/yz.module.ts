@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { MenuTwoComponent } from './menu-two/menu-two.component';
 import { SingleChoiceComponent } from './single-choice/single-choice.component';
 import { CountComponent } from './count/count.component';
+import { MapLegendComponent } from './map-legend/map-legend.component';
 
 @NgModule({
   declarations: [
     MenuTwoComponent,
     SingleChoiceComponent,
-    CountComponent
+    CountComponent,
+    MapLegendComponent
   ],
   imports: [
     CommonModule
@@ -17,7 +19,8 @@ import { CountComponent } from './count/count.component';
   exports: [
     MenuTwoComponent,
     SingleChoiceComponent,
-    CountComponent
+    CountComponent,
+    MapLegendComponent
   ]
 })
 export class YzModule { }

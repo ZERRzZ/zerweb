@@ -1,0 +1,10 @@
+<div class="title">图例</div>
+
+<div class="info" [style.--height]="height">
+  <div class="legend" *ngFor='let legend of mapLegend'>
+    <div class="image">
+      <img [src]="legend.image" alt="no" [style.--color]="legend.color" [style.background]="legend.image && 'none'">
+    </div>
+    <span>{{legend.text}}</span>
+  </div>
+</div>
