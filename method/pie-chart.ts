@@ -41,7 +41,7 @@ export function pieChart(pie: Array<Pie>, radius: number = 10) {
     let largeArcFlag = radian >= 180 ? 1 : 0 // 是否大于 180 度
     let endX = radius + radius * Math.sin(radian)
     let endY = radius - radius * Math.cos(radian)
-    svg.innerHTML += `<path d='M${radius} ${radius} L${radius} 0 A${radius} ${radius} 0 ${largeArcFlag} 1 ${endX} ${endY} Z' fill='${v.color}'/>`
+    svg.innerHTML += `<path d='M${radius} ${radius} V0 A${radius} ${radius} 0 ${largeArcFlag} 1 ${endX} ${endY} Z' fill='${v.color}'/>`
     return radian - v.value / total * Math.PI * 2
   }, 2 * Math.PI)
 
