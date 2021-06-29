@@ -4,12 +4,11 @@ export const mapLegend: Array<MapLegend> = [
   {
     color: '#ff0000',
     text: '图例1',
-    image: 'dd'
+    image: 'test.png'
   },
   {
     color: '#00ff00',
-    text: '图例2456789',
-    image: 'dd'
+    text: '图例2456789'
   },
   {
     color: '#0000ff',

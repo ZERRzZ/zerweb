@@ -22,11 +22,10 @@
 }
 
 .image {
-  width: 1em;
-  height: 1em;
   overflow: hidden;
-  position: relative;
-  top: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
