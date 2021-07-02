@@ -46,7 +46,7 @@
   width: 3px;
   height: 1em;
   margin-right: 10px;
-  background: var(--dark-blue);
+  background: var(--color-dark);
   transition: all .3s;
   display: inline-block;
   position: relative;

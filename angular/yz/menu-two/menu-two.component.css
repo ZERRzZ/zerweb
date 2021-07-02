@@ -10,14 +10,14 @@
 }
 :host::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: var(--light-blue);
+  background-color: var(--color-light);
 }
 
 .title {
   height: 2.2em;
   padding: 0 10px;
   font-size: 1.1em;
-  background: var(--light-blue);
+  background: var(--color-light);
   transition: all .3s;
   display: flex;
   justify-content: space-between;
@@ -31,15 +31,15 @@
   transition: all .3s;
 }
 .list:hover {
-  color: var(--dark-blue);
-  fill: var(--dark-blue);
-  background: var(--light-blue);
+  color: var(--color-dark);
+  fill: var(--color-dark);
+  background: var(--color-light);
 }
 
 .select,
 .title:hover {
-  color: var(--dark-blue);
-  fill: var(--dark-blue);
+  color: var(--color-dark);
+  fill: var(--color-dark);
 }
 
 .titleblock::before {
@@ -51,5 +51,5 @@
 .select::before,
 .select>.titleblock::before {
   width: 3px;
-  background: var(--dark-blue);
+  background: var(--color-dark);
 }

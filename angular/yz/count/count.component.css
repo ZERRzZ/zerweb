@@ -31,6 +31,6 @@
 
 [type='button']:hover,
 [type='text']:focus {
-  color: var(--dark-blue);
-  border: 1px var(--dark-blue) solid;
+  color: var(--color-dark);
+  border: 1px var(--color-dark) solid;
 }
