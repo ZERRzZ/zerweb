@@ -6,7 +6,7 @@
  */
 export function dragsort(el: HTMLElement) {
   let start: HTMLElement
-  let timer = -1
+  // let timer = -1
 
   // 事件加在父元素上实现事件委托
   el.ondragstart = e => start = e.target as HTMLElement
@@ -19,14 +19,14 @@ export function dragsort(el: HTMLElement) {
     // 筛选不必要的触发
     if (enter == start) return  // 自己进入自己
     if (enter.nodeName != start.nodeName) return // 防止层级不一样
-    if (timer != -1) return // 防鬼畜
+    // if (timer != -1) return // 防鬼畜, 去他妈的放鬼畜
 
     // 获取源元素与目标元素初始位置
     let preStartY = start.offsetTop
     let preEnterY = enter.offsetTop
 
-    // 改变两元素的顺序
-    if (_index(start) < _index(enter)) el.insertBefore(enter, start)
+    // 改变元素的顺序
+    if (_index(start) < _index(enter)) el.insertBefore(start, enter.nextElementSibling)
     else el.insertBefore(start, enter)
 
     // 获取改变之后的元素位置
@@ -38,16 +38,12 @@ export function dragsort(el: HTMLElement) {
     _transform(enter, '', `translateY(${preEnterY - curEnterY}px)`)
     // 添加动画
     setTimeout(() => {  // 触发重绘, 实现 css 的 animation 效果
-      _transform(start, 'all .2s', 'translateY(0)')
-      _transform(enter, 'all .2s', 'translateY(0)')
+      _transform(start, 'all .3s', 'translateY(0)')
+      _transform(enter, 'all .3s', 'translateY(0)')
     }, 0)
 
-    // 防鬼畜
-    timer = setTimeout(() => {
-      _transform(start, '', '')
-      _transform(enter, '', '')
-      timer = -1
-    }, 200)
+    // 节流
+    // timer = setTimeout(() => timer = -1, 70)
   }
 }
 

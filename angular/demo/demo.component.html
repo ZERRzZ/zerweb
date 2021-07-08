@@ -4,4 +4,31 @@
 
 <!-- <count *ngFor='let count of counts' [count]='count' (resetCount)='getCount($event)'></count> -->
 
-<map-legend [height]="'100px'"></map-legend>
+<!-- <map-legend [height]="'100px'"></map-legend> -->
+
+<style>
+  ul {
+    list-style: none;
+    margin: 200px;
+  }
+
+  li {
+    width: 500px;
+    height: 50px;
+    margin: 10px 0;
+    line-height: 50px;
+    padding-left: 50px;
+    background: lightblue;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+
+<ul id='ul'>
+  <li draggable="true">1</li>
+  <li draggable="true">2</li>
+  <li draggable="true">3</li>
+  <li draggable="true">4</li>
+  <li draggable="true">5</li>
+</ul>
