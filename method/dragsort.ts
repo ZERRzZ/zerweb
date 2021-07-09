@@ -6,10 +6,14 @@
  */
 export function dragsort(el: HTMLElement) {
   let start: HTMLElement
-  // let timer = -1
 
   // 事件加在父元素上实现事件委托
-  el.ondragstart = e => start = e.target as HTMLElement
+  el.ondragstart = e => {
+    start = e.target as HTMLElement
+
+    // 保证拖拽源元素层级在上边, 不会发生偶尔频繁触发的情况, 防鬼畜
+    start.style.zIndex = '10'
+  }
 
   el.ondragenter = e => {
     // 应保证 enter 与 start 元素层级一致
@@ -19,7 +23,6 @@ export function dragsort(el: HTMLElement) {
     // 筛选不必要的触发
     if (enter == start) return  // 自己进入自己
     if (enter.nodeName != start.nodeName) return // 防止层级不一样
-    // if (timer != -1) return // 防鬼畜, 去他妈的放鬼畜
 
     // 获取源元素与目标元素初始位置
     let preStartY = start.offsetTop
@@ -41,10 +44,9 @@ export function dragsort(el: HTMLElement) {
       _transform(start, 'all .3s', 'translateY(0)')
       _transform(enter, 'all .3s', 'translateY(0)')
     }, 0)
-
-    // 节流
-    // timer = setTimeout(() => timer = -1, 70)
   }
+
+  el.ondragend = e => start.style.zIndex = ''
 }
 
 /**
