@@ -1,6 +1,8 @@
 // tsconfig.json 文件
 {
-  "include": ["./*"],
+  "include": [
+    "./*"
+  ],
   "exclude": [],
   "compileOnSave": false, // 在保存时编译
   "compilerOptions": { // 编译选项
