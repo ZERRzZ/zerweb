@@ -29,7 +29,7 @@ export function dragsort(el: HTMLElement) {
     let preEnterY = enter.offsetTop
 
     // 改变元素的顺序
-    if (_index(start) < _index(enter)) el.insertBefore(start, enter.nextElementSibling)
+    if (index(start) < index(enter)) el.insertBefore(start, enter.nextElementSibling)
     else el.insertBefore(start, enter)
 
     // 获取改变之后的元素位置
@@ -37,12 +37,12 @@ export function dragsort(el: HTMLElement) {
     let curEnterY = enter.offsetTop
 
     // 让元素瞬间回到初始位置
-    _transform(start, '', `translateY(${preStartY - curStartY}px)`)
-    _transform(enter, '', `translateY(${preEnterY - curEnterY}px)`)
+    transform(start, '', `translateY(${preStartY - curStartY}px)`)
+    transform(enter, '', `translateY(${preEnterY - curEnterY}px)`)
     // 添加动画
     setTimeout(() => {  // 触发重绘, 实现 css 的 animation 效果
-      _transform(start, 'all .3s', 'translateY(0)')
-      _transform(enter, 'all .3s', 'translateY(0)')
+      transform(start, 'all .3s', 'translateY(0)')
+      transform(enter, 'all .3s', 'translateY(0)')
     }, 0)
   }
 
@@ -52,7 +52,7 @@ export function dragsort(el: HTMLElement) {
 /**
  * 获取同一层级的元素下标
  */
-export function _index(el: HTMLElement) {
+function index(el: HTMLElement) {
   let index = 0
   while (el.previousElementSibling && (el = el.previousElementSibling as HTMLElement)) index++
   return index
@@ -61,7 +61,7 @@ export function _index(el: HTMLElement) {
 /**
  * 添加动画
  */
-export function _transform(el: HTMLElement, transition: string, transform: string) {
+function transform(el: HTMLElement, transition: string, transform: string) {
   el.style.transition = transition
   el.style.transform = transform
 }
