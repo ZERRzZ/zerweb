@@ -54,35 +54,3 @@ export function autoLegend(layout: any, position?: Position): any {
 
   return layout
 }
-
-/**
- * 向地图添加图片图标
- * @param map 地图, 用公司封装了的, 主要用其中的 map 属性
- * @param source 数据源
- * @param id 图层 id
- * @param iconUrl 图片地址
- * @param size 图片大小
- * @param color 颜色, 可以是单个颜色字符串, 也可设置颜色阶梯
- * @param before 要添加到哪一个图层前
- */
-export function addCropIcon(map: YzNgxMap, source: string | AnySourceData, id: string, iconUrl: string, size = 1, color: string | StyleFunction | Expression, before?: string) {
-  // 移除掉已有的图片, 图层, 源
-  map.map.hasImage(id) && map.map.removeImage(id)
-  map.getLayer(id) && map.removeLayer(id)
-  map.getSource(id) && map.removeSource(id)
-  // 加载图片, 添加图片, 添加图层
-  map.map.loadImage(iconUrl, (err: any, img: any) => {
-    map.map.addImage(id, img, { sdf: true })
-    map.addLayer({
-      'id': id,
-      'source': source,
-      'type': 'symbol',
-      'layout': {
-        'icon-image': id,
-        'icon-size': size,
-        'icon-allow-overlap': true
-      },
-      'paint': { "icon-color": color }
-    }, before)
-  })
-}
