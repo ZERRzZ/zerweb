@@ -1,12 +1,17 @@
 /**
  * 转日期字符串如 2021-07-30
  */
-export const Y_M_D = (date: Date) => `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}日`
+export const Y_M_D = (date: Date) => `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
 
 /**
  * 转日期字符串如 20210730
  */
-export const YYYYMMDD = (date: Date) => `${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}日`
+export const YYYYMMDD = (date: Date) => `${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}`
+
+/**
+ * 转日期字符串如 2021 07 30 17
+ */
+export const YYYYMMDDHH = (date: Date) => `${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}${date.getHours()}`
 
 /**
  * 转日期字符串如 2021年07月30日
