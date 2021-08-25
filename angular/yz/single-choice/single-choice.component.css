@@ -25,10 +25,10 @@
 
 .select,
 .list:hover {
-  color: var(--color-dark);
+  color: var(--theme-dark);
 }
 
 .list:hover::before,
 .select::before {
-  box-shadow: 0 0 0 1px var(--color-dark);
+  box-shadow: 0 0 0 1px var(--theme-dark);
 }

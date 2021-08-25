@@ -1,0 +1,10 @@
+{
+  "name": "@zerweb/style",
+  "version": "1.0.0",
+  "description": "a poor common CSS",
+  "main": "index.js",
+  "scripts": { },
+  "keywords": ["CSS"],
+  "author": "chengzs",
+  "license": "ISC"
+}
