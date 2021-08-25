@@ -3,5 +3,29 @@
   "version": 1,
   "newProjectRoot": "",
   "projects": {
-  }
+    "yz": {
+      "projectType": "library",
+      "root": "yz",
+      "sourceRoot": "yz/src",
+      "prefix": "",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "yz/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "yz/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "yz/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    }
+  },
+  "defaultProject": "yz"
 }
