@@ -1,7 +1,5 @@
-<div class="title titleblock">{{count.title}}</div>
+<input class="count-btn" type="button" value="+" (click)='add()'>
 
-<div class="count">
-  <input type="button" value="+" (click)='count.value=count.value+1; resetCount.emit(count)'>
-  <input #input type="text" [value]="count.value || 0" (input)='setValue(input, count)'>
-  <input type="button" value="-" (click)='count.value>0 && count.value=count.value-1; resetCount.emit(count)'>
-</div>
+<input class="count-text" type="text" [value]="value" (input)='setValue($event)'>
+
+<input class="count-btn" type="button" value="-" (click)='sub()'>

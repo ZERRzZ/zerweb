@@ -1,0 +1,22 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.menus {
+  width: 300px;
+  background: #fff;
+  display: flex;
+  gap: 10px;
+  flex-flow: column nowrap;
+}
+
+.menu {
+  padding: 10px;
+  transition: all .3s;
+}
+
+.menu:hover {
+  background: var(--theme-light);
+}

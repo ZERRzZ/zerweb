@@ -2,10 +2,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { debounce } from '../common/method/debounce'
 
-import { Count } from '../common/model/count.model';
-
-import count from './count';
-
 @Component({
   selector: 'count',
   templateUrl: './count.component.html',
@@ -15,15 +11,26 @@ export class CountComponent {
 
   constructor() { }
 
-  @Input() count = count
-  
-  @Output() resetCount = new EventEmitter
+  @Input() value = 0 // 传入初始值
 
-  setValue(e: HTMLInputElement, count: Count) {
-    e.value = e.value.replace(/[^\d]/g, '')
+  @Output() changeValue = new EventEmitter<number>() // 传出改变后的值
+
+  add = () => {
+    this.value++
+    debounce(() => this.changeValue.emit(this.value), 1000)
+  }
+
+  setValue = (e: Event) => {
+    let target = e.target as HTMLInputElement
     debounce(() => {
-      count.value = +e.value
-      this.resetCount.emit(count)
+      this.value = Number(target.value.replace(/[^\d]/g, ''))
+      target.value = this.value.toString()
+      this.changeValue.emit(this.value)
     }, 1000)
+  }
+
+  sub = () => {
+    this.value > 0 && this.value--
+    debounce(() => this.changeValue.emit(this.value), 1000)
   }
 }

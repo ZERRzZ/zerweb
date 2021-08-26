@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "start": "ng serve -o --port=1314",
+    "build": "ng build"
   },
   "private": true,
   "dependencies": {

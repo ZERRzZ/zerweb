@@ -1,0 +1,5 @@
+<div class="menus">
+  <a class="menu" *ngFor='let m of routerMenu' [routerLink]='m.path'>{{m.title}}</a>
+</div>
+
+<router-outlet></router-outlet>
