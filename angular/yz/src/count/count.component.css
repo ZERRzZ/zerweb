@@ -1,4 +1,6 @@
 :host {
+  width: 150px;
+  height: 30px;
   display: flex;
   gap: 5px;
   justify-content: space-between;

@@ -6,19 +6,15 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitReturns": true, // 防止你忘记在函数末尾返回值
-    "noFallthroughCasesInSwitch": true, // 会防止在 switch 代码块里的两个 case 之间忘记添加 break 语句
-    "noEmitOnError": true, // 不想在发生错误的时候 ypeScript 还会被编译成 JavaScript
-    "noImplicitAny": true, // 不想让 TypeScript 将没有明确指定的类型默默地推断为 any 类型
-    "noImplicitThis": true, // 当没有明确指定类型（或通过类型推断）的 this 被使用时 TypeScript 会产生一个错误
-    "strictNullChecks": true, // null 和 undefined 获得了它们自己各自的类型 null 和 undefined
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
+    "target": "es2017",
     "module": "es2020",
     "lib": [
       "es2018",
