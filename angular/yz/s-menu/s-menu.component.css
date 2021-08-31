@@ -13,10 +13,14 @@
   background-color: var(--theme-light);
 }
 
+.menu {
+  display: flex;
+  gap: 1px;
+  flex-flow: column nowrap;
+}
+
 .title {
-  height: 2.2em;
-  padding: 0 10px;
-  font-size: 1.1em;
+  padding: 20px;
   background: var(--theme-light);
   transition: all .3s;
   display: flex;
@@ -24,12 +28,17 @@
   align-items: center;
 }
 
+.lists {
+  display: flex;
+  gap: 1px;
+  flex-flow: column nowrap;
+}
+
 .list {
-  height: 2.5em;
-  line-height: 2.5em;
-  padding: 0 20px;
+  padding: 15px 0 15px 30px;
   transition: all .3s;
 }
+
 .list:hover {
   color: var(--theme-dark);
   fill: var(--theme-dark);
@@ -46,6 +55,7 @@
   width: 0;
   background: none;
 }
+
 .title:hover>.titleblock::before,
 .titleblock:hover::before,
 .select::before,
