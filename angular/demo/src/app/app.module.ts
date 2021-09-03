@@ -5,12 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CountComponent } from 'yz/src/public-api';
+
+import { CountComponent, SMenuComponent } from 'yz/src/public-api';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CountComponent
+    CountComponent,
+    SMenuComponent
   ],
   imports: [
     AppRoutingModule,

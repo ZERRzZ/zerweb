@@ -3,3 +3,7 @@
   height: 100%;
   display: flex;
 }
+
+s-menu {
+  width: 350px;
+}

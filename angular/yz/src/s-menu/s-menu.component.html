@@ -1,0 +1,19 @@
+<div class="menu" *ngFor='let m of smenu'>
+
+  <div class="title" [class.select]='m.id == select[0]' (click)='m.open = !m.open'>
+    <div class="titleblock">{{m.title}}</div>
+    <span [class.clockwise]='m.open' [class.anticlockwise]='!m.open'>
+      <svg viewBox="4 4 16 16" width="1em" height='1em'>
+        <path d="M8.59 16.34 l4.58 -4.59 -4.58 -4.59 L10 5.75 l6 6-6 6 Z"></path>
+      </svg>
+    </span>
+  </div>
+
+  <div class="lists" [class.heightmore]='m.open' [class.heightless]='!m.open'>
+    <a class="list titleblock" [class.select]='l.id == select[1]' *ngFor='let l of m.list' (click)='selected(m, l)' [routerLink]="l.path"
+      routerLinkActive="select">
+      {{l.title}}
+    </a>
+  </div>
+
+</div>

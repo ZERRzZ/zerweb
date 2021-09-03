@@ -9,7 +9,23 @@ Run `ng build yz` to build the project. The build artifacts will be stored in th
 
 After building your library with `ng build yz`, go to the dist folder `cd dist/yz` and run `npm publish`.
 
+## use
+
+**CountComponent**
+
+`@Input() value: number` 初始值  
+`@Output() valueChange: EventEmitter<number>` 传出改变的值  
+
+**SMenuComponent**
+
+`Input() smenu: Array<SMenu>` 菜单  
+`Input() open: boolean` 是否打开  
+`Input() select: [number, number]` 初始选中的 [二级菜单 id, 子菜单 id]  
+`Output() reselect: EventEmitter<[SMenu, AMenu]>`  传出所选菜单信息  
+
 ## history
+
+添加二级菜单组件 s-menu 1.2.0
 
 添加第一个组件 count 1.1.0
 
