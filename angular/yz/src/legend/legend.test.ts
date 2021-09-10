@@ -1,14 +1,15 @@
-import { MapLegend } from "./map-legend.model";
+import { Legend } from "../common/model";
 
-export const mapLegend: Array<MapLegend> = [
+export const legend: Array<Legend> = [
   {
     color: '#ff0000',
     text: '图例1',
-    image: 'test.png'
+    url: '/assets/circle.png'
   },
   {
     color: '#00ff00',
-    text: '图例2456789'
+    text: '图例2456789',
+    url: '/assets/unknow.png'
   },
   {
     color: '#0000ff',

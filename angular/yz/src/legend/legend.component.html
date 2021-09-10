@@ -1,0 +1,13 @@
+<div>图例</div>
+
+<div class="box" [style.--height]="height">
+
+  <div class="legend" *ngFor='let l of legend'>
+    <div class="img">
+      <img [src]="l.url" alt="no" [style.--color]="l.color" [style.background]="l.url && 'none'">
+    </div>
+    
+    <span>{{l.text}}</span>
+  </div>
+
+</div>

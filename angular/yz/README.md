@@ -16,6 +16,11 @@ After building your library with `ng build yz`, go to the dist folder `cd dist/y
 `@Input() value: number` 初始值  
 `@Output() valueChange: EventEmitter<number>` 传出改变的值  
 
+**LegendComponent**
+
+`@Input() legend: Legend[]` 图例数据  
+`@Input() height: string` 图例的最大高, 做换行用, 带单位 200px  
+
 **SMenuComponent**
 
 `Input() smenu: Array<SMenu>` 菜单  
@@ -24,6 +29,8 @@ After building your library with `ng build yz`, go to the dist folder `cd dist/y
 `Output() reselect: EventEmitter<[SMenu, AMenu]>`  传出所选菜单信息  
 
 ## history
+
+添加组件 legend 1.3.0
 
 添加二级菜单组件 s-menu 1.2.0
 

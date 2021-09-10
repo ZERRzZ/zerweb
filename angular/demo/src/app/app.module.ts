@@ -6,13 +6,14 @@ import { AppService } from './app.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { CountComponent, SMenuComponent } from 'yz/src/public-api';
+import { CountComponent, LegendComponent, SMenuComponent } from 'yz/src/public-api';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountComponent,
-    SMenuComponent
+    SMenuComponent,
+    LegendComponent
   ],
   imports: [
     AppRoutingModule,
