@@ -43,7 +43,8 @@ const data2csv = (data: any[], head: string[], column: string[]) => {
 
   // 内容
   data.forEach(d => column.forEach((c, i) => {
-    d[c] || (d[c] = "")
+    if (d[c] != 0)
+      d[c] || (d[c] = "")
     csv += i >= column.length - 1 ? d[c] + '\n' : d[c] + ','
   }))
 
