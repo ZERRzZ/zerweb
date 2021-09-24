@@ -1,22 +1,25 @@
 /**
  * 实现拖拽排序
- * @param el 排序列表元素的父元素, 类似 ul > li 中的 ul 元素, 排序的则是 li 元素  
+ * @param el 
+ * 需要排序的元素序列的父元素, 类似 ul > li 中的 ul 元素, 排序的则是 li 元素  
  * dragstart 和 dragend 发生在拖拽源元素上, 源元素 draggable 需为 true  
  * dragenter 发生在目标元素上, 不需要 draggable 为 true  
  */
-export function dragsort(el: HTMLElement) {
+export const dragsort = (el: HTMLElement) => {
+
   let start: HTMLElement
 
-  // 事件加在父元素上实现事件委托
-  el.ondragstart = e => {
+  el.ondragstart = e => { // 加在父元素上实现事件委托
+
     start = e.target as HTMLElement
 
-    // 保证拖拽源元素层级在上边, 不会发生偶尔频繁触发的情况, 防鬼畜
-    start.style.zIndex = '10'
+    start.style.zIndex = '10' // 保证拖拽源元素层级在上边, 防鬼畜, 不完美
+
   }
 
   el.ondragenter = e => {
-    // 应保证 enter 与 start 元素层级一致
+
+    // 保证 enter 与 start 元素层级一致
     let enter = e.target as HTMLElement // 没有嵌套
     // let enter = (e.target as HTMLElement).parentElement // 再嵌套一级
 
@@ -28,9 +31,7 @@ export function dragsort(el: HTMLElement) {
     let preStartY = start.offsetTop
     let preEnterY = enter.offsetTop
 
-    // 改变元素的顺序
-    if (index(start) < index(enter)) el.insertBefore(start, enter.nextElementSibling)
-    else el.insertBefore(start, enter)
+    index(start) < index(enter) ? el.insertBefore(start, enter.nextElementSibling) : el.insertBefore(start, enter) // 改变元素的顺序
 
     // 获取改变之后的元素位置
     let curStartY = start.offsetTop
@@ -44,24 +45,34 @@ export function dragsort(el: HTMLElement) {
       transform(start, 'all .3s', 'translateY(0)')
       transform(enter, 'all .3s', 'translateY(0)')
     }, 0)
+
   }
 
-  el.ondragend = e => start.style.zIndex = ''
+  el.ondragend = () => start.style.zIndex = ''
+
 }
 
 /**
  * 获取同一层级的元素下标
  */
-function index(el: HTMLElement) {
+const index = (el: HTMLElement) => {
+
   let index = 0
-  while (el.previousElementSibling && (el = el.previousElementSibling as HTMLElement)) index++
+
+  while (el.previousElementSibling && (el = el.previousElementSibling as HTMLElement))
+    index++
+
   return index
+
 }
 
 /**
  * 添加动画
  */
-function transform(el: HTMLElement, transition: string, transform: string) {
+const transform = (el: HTMLElement, transition: string, transform: string) => {
+
   el.style.transition = transition
+
   el.style.transform = transform
+
 }

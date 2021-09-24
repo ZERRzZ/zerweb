@@ -4,7 +4,8 @@
  * @param m 插入源元素下标
  * @param n 插入目标元素下标
  */
- export function insertBefore<T>(arr: Array<T>, m: number, n: number) {
+export const insertBefore = <T>(arr: Array<T>, m: number, n: number) => {
+
   if (m < 0 || m >= arr.length) return
   if (n < 0 || n == m || n == m + 1) return
 
@@ -27,4 +28,5 @@
     arr.splice(n, 0, num)
     return
   }
+
 }

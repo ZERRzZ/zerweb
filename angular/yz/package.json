@@ -1,6 +1,7 @@
 {
-  "name": "@zerweb/yz",
-  "version": "1.3.0",
+  "name": "@chengzs/yz",
+  "version": "1.3.1",
+  "keywords": ["angular", "component"],
   "peerDependencies": {
     "@angular/common": "^12.2.0",
     "@angular/core": "^12.2.0"

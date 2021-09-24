@@ -1,17 +1,23 @@
 /**
- * 导出 CSV 文件
+ * 任意对象
  */
-export const exportCSV = (data: any[], head: string[], column: string[], filename: string) => {
+export interface CSVData {
+  [prop: string]: any
+}
 
-  // 借助第三方包将数据转换成 csv 格式
-  let csv = data2csv(data, head, column)
+/**
+ * 导出 CSV 文件, head 与 column 中值应该一一对应
+ */
+export const exportCSV = (data: CSVData[], head: string[], column: string[], filename: string) => {
+
+  let csv = data2csv(data, head, column) // 转换数据成 csv 格式
 
   // 可下载链接
-  var a = document.createElement('a');
+  let a = document.createElement('a');
   a.download = filename;
 
   // 转变 blob 地址
-  var blob = new Blob([csv]);
+  let blob = new Blob([csv]);
   a.href = URL.createObjectURL(blob)
 
   // 点击
@@ -24,11 +30,12 @@ export const exportCSV = (data: any[], head: string[], column: string[], filenam
 }
 
 /**
+ * 转换数据称 CSV 格式数据
  * @param data 对象数组
  * @param head 表头，顺序要一一对应
  * @param column 列名
  */
-const data2csv = (data: any[], head: string[], column: string[]) => {
+const data2csv = (data: CSVData[], head: string[], column: string[]) => {
 
   //验证并处理参数
   if (head.length != column.length) {
@@ -38,10 +45,8 @@ const data2csv = (data: any[], head: string[], column: string[]) => {
 
   let csv = ""
 
-  // 表头
-  head.forEach((h, i) => csv += i >= head.length - 1 ? h + '\n' : h + ',')
+  head.forEach((h, i) => csv += i >= head.length - 1 ? h + '\n' : h + ',') // 表头
 
-  // 内容
   data.forEach(d => column.forEach((c, i) => {
     if (d[c] != 0)
       d[c] || (d[c] = "")

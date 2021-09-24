@@ -7,7 +7,7 @@ import { smenu } from './s-menu.test';
 @Component({
   selector: 's-menu',
   templateUrl: './s-menu.component.html',
-  styleUrls: ['./s-menu.component.css']
+  styleUrls: ['./s-menu.component.css'],
 })
 export class SMenuComponent implements OnChanges {
 
