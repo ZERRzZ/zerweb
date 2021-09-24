@@ -1,0 +1,47 @@
+:host {
+  width: 600px;
+  height: 300px;
+  display: flex;
+  gap: 10px;
+  flex-flow: column;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr:nth-child(2n + 1) {
+  background: var(--theme-light);
+}
+
+th {
+  padding: 0 0 0 10px;
+  height: 30px;
+  color: var(--theme-dark);
+  text-align: start;
+  border: 1px solid var(--gray-middle);
+  border-bottom: none;
+  box-sizing: border-box;
+}
+
+td {
+  padding: 0 0 0 10px;
+  height: 30px;
+  border: 1px solid var(--gray-middle);
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.table {
+  height: calc(100% - 30px);
+}
+
+.body {
+  height: calc(100% - 30px);
+  overflow: auto;
+}
+
+page {
+  align-self: flex-end;
+}

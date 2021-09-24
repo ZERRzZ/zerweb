@@ -2,9 +2,6 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
 
-Run `ng generate component component-name --project yz` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project yz`.
-> Note: Don't forget to add `--project yz` or else it will be added to the default project in your `angular.json` file. 
-
 Run `ng build yz` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 After building your library with `ng build yz`, go to the dist folder `cd dist/yz` and run `npm publish`.
@@ -28,7 +25,15 @@ After building your library with `ng build yz`, go to the dist folder `cd dist/y
 `Input() select: [number, number]` 初始选中的 [二级菜单 id, 子菜单 id]  
 `Output() reselect: EventEmitter<[SMenu, AMenu]>`  传出所选菜单信息  
 
+**ReadonlyTableComponent**
+
+`@Input() head: RTHead[]` 表头  
+`@Input() body: RTBody[]` 表体  
+`@Input() line: number` 一页显示的行数
+
 ## history
+
+添加组件 readonly-table 1.4.0
 
 添加组件 legend 1.3.0
 

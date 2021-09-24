@@ -1,4 +1,4 @@
-import { SMenu } from "../common/model";
+import { SMenu } from "../../common/model";
 
 export const smenu: Array<SMenu> = [
   {

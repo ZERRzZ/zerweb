@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
 
-import { debounce } from '../common/method';
+import { debounce } from '../../common/method';
 
 @Component({
   selector: 'count',

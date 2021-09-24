@@ -1,0 +1,21 @@
+<div class="table">
+
+  <table>
+    <tr>
+      <th *ngFor='let h of head' [style.width]='h.width ? h.width : "auto"'>{{h.name}}</th>
+    </tr>
+  </table>
+
+  <div class="body">
+
+    <table>
+      <tr *ngFor='let b of trueBody'>
+        <td *ngFor='let h of head' [style.width]='h.width ? h.width : "auto"'>{{b[h.field]}}</td>
+      </tr>
+    </table>
+
+  </div>
+
+</div>
+
+<page [(page)]='page' [min]='min' [max]='max' (pageChange)='pageChange($event)'></page>

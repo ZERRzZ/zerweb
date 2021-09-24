@@ -1,4 +1,4 @@
-import { Legend } from "../common/model";
+import { Legend } from "../../common/model";
 
 export const legend: Array<Legend> = [
   {

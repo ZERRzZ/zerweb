@@ -4,13 +4,17 @@ import { RouterModule } from "@angular/router";
 
 import { CountComponent } from "./count/count.component";
 import { LegendComponent } from "./legend/legend.component";
+import { PageComponent } from "./readonly-table/page/page.component";
+import { ReadonlyTableComponent } from "./readonly-table/readonly-table.component";
 import { SMenuComponent } from "./s-menu/s-menu.component";
 
 @NgModule({
   declarations: [
     CountComponent,
     LegendComponent,
-    SMenuComponent
+    SMenuComponent,
+    PageComponent,
+    ReadonlyTableComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +23,9 @@ import { SMenuComponent } from "./s-menu/s-menu.component";
   exports: [
     CountComponent,
     LegendComponent,
-    SMenuComponent
+    SMenuComponent,
+    PageComponent,
+    ReadonlyTableComponent
   ]
 })
 export class YZModule { }

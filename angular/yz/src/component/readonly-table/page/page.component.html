@@ -1,0 +1,9 @@
+<input class="count-btn" type="button" value="<<" (click)='first()'>
+
+<input class="count-btn" type="button" value="<" (click)='sub()'>
+
+<input class="count-text" type="text" [value]="page" (input)='setValue($event)'>
+
+<input class="count-btn" type="button" value=">" (click)='add()'>
+
+<input class="count-btn" type="button" value=">>" (click)='last()'>

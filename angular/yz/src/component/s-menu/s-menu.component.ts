@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 
-import { AMenu, SMenu } from '../common/model';
+import { AMenu, SMenu } from '../../common/model';
 
 import { smenu } from './s-menu.test';
 
