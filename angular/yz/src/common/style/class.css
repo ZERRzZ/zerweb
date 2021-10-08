@@ -55,19 +55,14 @@
 
 /* 背景遮罩 */
 .cloak {
-  z-index: 1000;
-}
-.cloak::after {
-  content: '';
   width: 100%;
   height: 100%;
-  background: var(--gray-dark);
-  opacity: .8;
+  background: rgba(100, 100, 100, .8);
   display: block;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 1000;
 }
 
 /* 弹出 */
