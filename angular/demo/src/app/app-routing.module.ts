@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CountComponent } from 'yz/src/public-api';
 
 const routes: Routes = [
-  { path: 'count', component: CountComponent }
+
 ]
 
 @NgModule({

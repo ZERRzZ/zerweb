@@ -11,41 +11,46 @@ export class PageComponent {
 
   constructor() { }
 
-  @Input() page = 0 // 传入初始值
+  @Input() page = 0 // 初始页数
 
-  @Output() pageChange = new EventEmitter<number>() // 传出改变后的值
+  @Output() pageChange = new EventEmitter<number>()
 
-  @Input() min = 0 // 最小值
+  @Input() min = 0 // 最小页数
 
-  @Input() max = 10000 // 最大值
+  @Input() max = 10000 // 最大页数
 
-  add = () => {
-    this.page < this.max && this.page++
-    debounce(() => this.pageChange.emit(this.page), 1000)
+  // 第一页
+  first = () => {
+    this.page = this.min
+    debounce(() => this.pageChange.emit(this.page), 500)
   }
 
-  setValue = (e: Event) => {
+  // 上一页
+  pre = () => {
+    this.page > this.min && this.page--
+    debounce(() => this.pageChange.emit(this.page), 500)
+  }
+
+  // 任意页数
+  any = (e: Event) => {
     let target = e.target as HTMLInputElement
     debounce(() => {
       this.page = Math.min(Math.max(Number(target.value.replace(/[^\d]/g, '')), this.min), this.max)
       target.value = this.page.toString()
       this.pageChange.emit(this.page)
-    }, 1000)
+    }, 500)
   }
 
-  sub = () => {
-    this.page > this.min && this.page--
-    debounce(() => this.pageChange.emit(this.page), 1000)
+  // 下一页
+  next = () => {
+    this.page < this.max && this.page++
+    debounce(() => this.pageChange.emit(this.page), 500)
   }
 
+  // 最后一页
   last = () => {
     this.page = this.max
-    debounce(() => this.pageChange.emit(this.page), 1000)
-  }
-
-  first = () => {
-    this.page = this.min
-    debounce(() => this.pageChange.emit(this.page), 1000)
+    debounce(() => this.pageChange.emit(this.page), 500)
   }
 
 }

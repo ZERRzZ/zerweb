@@ -1,9 +1,9 @@
-<input class="count-btn" type="button" value="<<" (click)='first()'>
+<input class="page-btn" type="button" title="第一页" value="<<" (click)='first()'>
 
-<input class="count-btn" type="button" value="<" (click)='sub()'>
+<input class="page-btn" type="button" title="上一页" value="<" (click)='pre()'>
 
-<input class="count-text" type="text" [value]="page" (input)='setValue($event)'>
+<input class="page-text" type="text" [value]="page" (input)='any($event)'>
 
-<input class="count-btn" type="button" value=">" (click)='add()'>
+<input class="page-btn" type="button" title="下一页" value=">" (click)='next()'>
 
-<input class="count-btn" type="button" value=">>" (click)='last()'>
+<input class="page-btn" type="button" title="最后一页" value=">>" (click)='last()'>

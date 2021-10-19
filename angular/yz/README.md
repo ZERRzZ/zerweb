@@ -33,14 +33,16 @@ After building your library with `ng build yz`, go to the dist folder `cd dist/y
 
 ## history
 
-添加组件 readonly-table 1.4.0
+完善组件 readonly-table, 增加分页与搜索功能 @1.4.1
 
-添加组件 legend 1.3.0
+添加组件 readonly-table @1.4.0
 
-添加二级菜单组件 s-menu 1.2.0
+添加组件 legend @1.3.0
 
-添加第一个组件 count 1.1.0
+添加二级菜单组件 s-menu @1.2.0
 
-添加公共方法 debounce 1.1.0
+添加第一个组件 count @1.1.0
 
-添加样式 style, 主要有 class, variable, reset 1.1.0
+添加公共方法 debounce @1.1.0
+
+添加样式 style, 主要有 class, variable, reset @1.1.0

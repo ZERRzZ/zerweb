@@ -8,12 +8,6 @@
   align-items: center;
 }
 
-count,
-legend,
-s-menu {
-  border: 1px solid var(--theme-dark);
-}
-
 s-menu {
   width: 350px;
 }

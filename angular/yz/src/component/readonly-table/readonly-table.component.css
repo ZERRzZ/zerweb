@@ -1,6 +1,4 @@
 :host {
-  width: 600px;
-  height: 300px;
   display: flex;
   flex-flow: column;
   gap: 20px;
@@ -10,41 +8,39 @@ table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  white-space: nowrap;
 }
 
 tr:nth-child(2n + 1) {
   background: var(--gray-light);
 }
 
-th {
+th, td {
+  height: 30px;
+  text-indent: 10px;
   text-align: start;
   border: 1px solid var(--gray-middle);
-  border-bottom: none;
-}
-
-td {
-  height: 30px;
-  border: 1px solid var(--gray-middle);
-}
-
-th, td {
-  text-indent: 10px;
-  box-sizing: border-box;
   overflow-x: auto;
 }
 
-.table {
-  height: calc(100% - 50px);
-  overflow: hidden;
+th::-webkit-scrollbar, 
+td::-webkit-scrollbar {
+  height: 0;
 }
 
-.headt {
-  height: 30px;
+th {
+  border-bottom: none;
+}
+
+.tables {
+  width: 100%;
+  flex: 1 1 auto;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
 }
 
 .body {
-  height: calc(100% - 30px);
+  flex: 1 1 auto;
   overflow: auto;
 }
 
@@ -52,7 +48,20 @@ th, td {
   width: 0;
 }
 
-page {
+.tools {
+  width: 100%;
   flex: 0 0 30px;
-  align-self: flex-end;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+search {
+  flex: 0 0 150px;
+  height: 100%;
+}
+
+page {
+  flex: 0 0 200px;
+  height: 100%;
 }

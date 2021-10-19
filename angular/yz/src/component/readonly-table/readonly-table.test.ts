@@ -2,7 +2,7 @@ import { RTBody, RTHead } from "../../common/model";
 
 export const head: RTHead[] = [
   { name: 'ID', field: 'id', width: '50px' },
-  { name: 'NAME', field: 'name', width: '200px' },
+  { name: 'NAME', field: 'name', width: '100px' },
   { name: 'TYPE', field: 'type' }
 ]
 

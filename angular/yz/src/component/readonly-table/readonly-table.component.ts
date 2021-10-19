@@ -15,7 +15,7 @@ export class ReadonlyTableComponent implements OnChanges {
 
   @Input() head = head
 
-  @Input() body = body
+  @Input() body = body // 源
 
   @Input() line = 10 // 行数
 
@@ -25,29 +25,36 @@ export class ReadonlyTableComponent implements OnChanges {
 
   min = 1 //最小页数
 
-  trueBody: RTBody[] = []
+  pbody: RTBody[] = [] // 分页的依据
+
+  sbody: RTBody[] = [] // 搜索的依据
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.body) {
-      this.max = Math.ceil(this.body.length / this.line)
-      this.trueBody = this.bodySlice(this.body, this.line, this.page)
-    }
+    if (changes.body && !changes.body.isFirstChange())
+      this.bodySearch(this.body)
   }
 
-  pageChange = (e: number) => this.trueBody = this.bodySlice(this.body, this.line, e)
+  pageChange = (e: number) => this.pbody = this.bodySlice(this.sbody, this.line, e)
 
   // 根据页数来分割表格体
   bodySlice = <T>(body: T[], line: number, page: number) => {
 
     let arr: T[] = []
     let start = line * (page - 1)
-    let end = Math.min(line * page, this.body.length)
+    let end = Math.min(line * page, body.length)
 
     for (let i = start; i < end; i++)
       arr.push(body[i])
 
     return arr
 
+  }
+
+  // 搜索特定内容
+  bodySearch = (e: RTBody[]) => {
+    this.sbody = e
+    this.max = Math.ceil(this.sbody.length / this.line)
+    this.pbody = this.bodySlice(this.sbody, this.line, this.page)
   }
 
 }

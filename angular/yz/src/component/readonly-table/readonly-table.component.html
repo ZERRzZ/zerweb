@@ -1,4 +1,4 @@
-<div class="table">
+<div class="tables">
 
   <table class="headt">
     <tr>
@@ -7,13 +7,21 @@
   </table>
 
   <div class="body">
+
     <table class="bodyt">
-      <tr *ngFor='let b of trueBody'>
-        <td *ngFor='let h of head' [style.width]='h.width ? h.width : "auto"'>{{b[h.field]}}</td>
+      <tr *ngFor='let p of pbody'>
+        <td *ngFor='let h of head' [style.width]='h.width ? h.width : "auto"'>{{p[h.field]}}</td>
       </tr>
     </table>
+
   </div>
 
 </div>
 
-<page [(page)]='page' [min]='min' [max]='max' (pageChange)='pageChange($event)'></page>
+<div class="tools">
+
+  <search [body]='body' (bodyChange)='bodySearch($event)'></search>
+
+  <page [(page)]='page' [min]='min' [max]='max' (pageChange)='pageChange($event)'></page>
+
+</div>
