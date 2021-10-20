@@ -25,16 +25,18 @@ export class ReadonlyTableComponent implements OnChanges {
 
   min = 1 //最小页数
 
-  pbody: RTBody[] = [] // 分页的依据
+  // body 是源, 首先根据搜索内容截取成 sbody, 在依此来排序成 obody, 最后分页成 pbody 应用
 
-  sbody: RTBody[] = [] // 搜索的依据
+  pbody: RTBody[] = [] // 分页
+
+  sbody: RTBody[] = [] // 搜索
+
+  obody: RTBody[] = [] // 排序
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.body && !changes.body.isFirstChange())
       this.bodySearch(this.body)
   }
-
-  pageChange = (e: number) => this.pbody = this.bodySlice(this.sbody, this.line, e)
 
   // 根据页数来分割表格体
   bodySlice = <T>(body: T[], line: number, page: number) => {
@@ -50,11 +52,26 @@ export class ReadonlyTableComponent implements OnChanges {
 
   }
 
+  // 翻页
+  pageChange = (e: number) => this.pbody = this.bodySlice(this.obody, this.line, e)
+
   // 搜索特定内容
   bodySearch = (e: RTBody[]) => {
+
     this.sbody = e
-    this.max = Math.ceil(this.sbody.length / this.line)
-    this.pbody = this.bodySlice(this.sbody, this.line, this.page)
+    this.max = Math.ceil(this.sbody.length / this.line) // 最大页数由搜索后的内容决定
+
+    this.bodySort(e)
+
+  }
+
+  // 排序
+  bodySort = (e: RTBody[]) => {
+
+    this.obody = e
+
+    this.pageChange(this.page)
+
   }
 
 }

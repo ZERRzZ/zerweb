@@ -84,3 +84,21 @@
   85% { transform: scale(1.2); }
   100% { transform: scale(0); }
 }
+
+/* 上升 */
+.upup {
+  animation: upup .3s forwards;
+}
+@keyframes upup {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+/* 下降 */
+.downdown {
+  animation: downdown .3s forwards;
+}
+@keyframes downdown {
+  0% { opacity: 1; transform: translateY(0px); }
+  100% { opacity: 0; transform: translateY(10px); }
+}

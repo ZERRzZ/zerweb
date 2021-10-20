@@ -22,7 +22,7 @@ th, td {
   overflow-x: auto;
 }
 
-th::-webkit-scrollbar, 
+th::-webkit-scrollbar,
 td::-webkit-scrollbar {
   height: 0;
 }
@@ -53,7 +53,11 @@ th {
   flex: 0 0 30px;
   display: flex;
   gap: 20px;
-  justify-content: flex-end;
+}
+
+sort {
+  flex: 1;
+  height: 100%;
 }
 
 search {

@@ -20,6 +20,8 @@
 
 <div class="tools">
 
+  <sort [head]='head' [body]='sbody' (bodyChange)='bodySort($event)'></sort>
+
   <search [body]='body' (bodyChange)='bodySearch($event)'></search>
 
   <page [(page)]='page' [min]='min' [max]='max' (pageChange)='pageChange($event)'></page>
