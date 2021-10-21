@@ -18,6 +18,7 @@ th, td {
   height: 30px;
   text-indent: 10px;
   text-align: start;
+  white-space: nowrap;
   border: 1px solid var(--gray-middle);
   overflow-x: auto;
 }
@@ -51,21 +52,22 @@ th {
 .tools {
   width: 100%;
   flex: 0 0 30px;
+  overflow-x: auto;
   display: flex;
   gap: 20px;
 }
 
 sort {
-  flex: 1;
+  width: calc(100% - 390px);
   height: 100%;
 }
 
 search {
-  flex: 0 0 150px;
+  width: 150px;
   height: 100%;
 }
 
 page {
-  flex: 0 0 200px;
+  width: 200px;
   height: 100%;
 }

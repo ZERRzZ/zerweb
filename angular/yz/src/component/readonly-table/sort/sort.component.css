@@ -34,15 +34,20 @@
 
 .sortbox {
   width: calc(100% - 35px);
+  height: 100%;
   overflow: auto;
   display: flex;
   gap: 5px;
 }
 
+.sortbox::-webkit-scrollbar {
+  height: 0;
+}
+
 .sort {
   height: 30px;
-  min-width: 30px;
   padding: 0 5px;
+  white-space: nowrap;
   border: 1px solid var(--gray-middle);
   border-radius: 5px;
   box-sizing: border-box;
