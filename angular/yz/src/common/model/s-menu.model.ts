@@ -13,5 +13,5 @@ export interface SMenu {
 export interface AMenu {
   id: number
   title: string
-  path: string
+  path?: string
 }

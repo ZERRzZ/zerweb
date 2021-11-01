@@ -12,13 +12,12 @@ import { AMenu, RTBody, SMenu } from 'yz/src/public-api';
 export class AppComponent {
 
   constructor(private app: AppService) {
-    this.app.getSMenu().subscribe(smenu => this.smenu = smenu)
-    this.app.getRTBody().subscribe(rtbody => this.rtbody = rtbody)
+
+    this.app.getSMenu().subscribe(smenu => this.smenu = smenu) // 路由菜单
+
   }
 
   smenu: Array<SMenu> = []
-
-  rtbody: Array<RTBody> = []
 
   getCount = (e: number) => console.log(e)
 

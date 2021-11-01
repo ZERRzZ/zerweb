@@ -11,7 +11,7 @@ export class CountComponent {
 
   constructor() { }
 
-  @Input() value = 0 // 传入初始值
+  @Input() value = 9999 // 传入初始值
 
   @Output() valueChange = new EventEmitter<number>() // 传出改变后的值
 

@@ -14,20 +14,32 @@ export class AppService {
 
   getRTBody = () => this.http.get<Array<RTBody>>('assets/readonly-table.json')
 
-  // private handleError(error: HttpErrorResponse) {
-  //   if (error.status === 0) {
-  //     // A client-side or network error occurred. Handle it accordingly.
-  //     console.error('An error occurred:', error.error);
-  //   } else {
-  //     // The backend returned an unsuccessful response code.
-  //     // The response body may contain clues as to what went wrong.
-  //     alert(error.error)
-  //     console.error(
-  //       `Backend returned code ${error.status}, ` +
-  //       `body was: ${error.error}`);
+  // handleErr = (err: HttpErrorResponse) => {
+
+  //   switch (err.status) {
+
+  //     case 0:
+  //       this.modal.error({ nzTitle: '错误', nzContent: '未知错误!' })
+  //       console.error(err); break
+
+  //     case 401:
+  //       this.modal.error({ nzTitle: '错误', nzContent: '未授权!' })
+  //       console.error(err); break
+
+  //     case 404:
+  //       this.modal.warning({ nzTitle: '提示', nzContent: '找不到路径!' })
+  //       console.error(err); break
+
+  //     default:
+  //       if (err.error && err.error.message)
+  //         this.modal.error({ nzTitle: '错误', nzContent: `${err.error.message}` })
+  //       console.error(err)
+
   //   }
+
   //   // Return an observable with a user-facing error message.
-  //   return throwError('Something bad happened; please try again later.');
+  //   return throwError('Something bad happened; please try again later.')
+
   // }
 
 }

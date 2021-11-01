@@ -1,21 +1,29 @@
 :host {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   flex-flow: column;
+  background: var(--theme-light);
 }
 
-.box {
-  --height: 200px;
+.title {
+  font-size: 1.2em;
+  line-height: 20px;
+  display: flex;
+}
+
+.main {
   max-height: var(--height);
   display: flex;
-  gap: 10px;
+  gap: 5px 10px;
   flex-flow: column wrap;
   align-content: flex-start;
 }
 
 .legend {
+  height: 20px;
   display: flex;
   gap: 5px;
+  align-items: center;
 }
 
 .img {
@@ -26,10 +34,8 @@
 }
 
 img {
-  --color: #000;
   width: 1em;
   height: 1em;
-  background: var(--color);
   filter: drop-shadow(50px 0 var(--color));
   position: relative;
   left: -50px;

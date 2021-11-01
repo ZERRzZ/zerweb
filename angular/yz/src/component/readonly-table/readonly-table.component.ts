@@ -34,8 +34,7 @@ export class ReadonlyTableComponent implements OnChanges {
   obody: RTBody[] = [] // 排序
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.body && !changes.body.isFirstChange())
-      this.bodySearch(this.body)
+    if (changes.body && !changes.body.isFirstChange()) this.bodySearch(this.body)
   }
 
   // 根据页数来分割表格体

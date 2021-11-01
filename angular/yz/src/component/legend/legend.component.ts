@@ -13,6 +13,6 @@ export class LegendComponent {
 
   @Input() legend = legend
 
-  @Input() height = '200px'
+  @Input() height = '20px'
 
 }

@@ -3,44 +3,43 @@ import { Legend } from "../../common/model";
 export const legend: Array<Legend> = [
   {
     color: '#ff0000',
-    text: '图例1',
+    text: 'one',
     url: '/assets/circle.png'
   },
   {
     color: '#00ff00',
-    text: '图例2456789',
-    url: '/assets/unknow.png'
+    text: 'two',
   },
   {
     color: '#0000ff',
-    text: '图例3-别称'
+    text: 'three'
   },
   {
     color: '#ffff00',
-    text: '图例4'
+    text: 'four'
   },
   {
     color: '#ff00ff',
-    text: '图例5'
+    text: 'five'
   },
   {
     color: '#00ffff',
-    text: '图例6'
+    text: 'sixsixsixsix'
   },
   {
     color: '#f0f0f0',
-    text: '图例7'
+    text: 'seven'
   },
   {
     color: '#0f0f0f',
-    text: '图例8-哈哈哈啊哈'
+    text: 'eight'
   },
   {
     color: '#fff000',
-    text: '图例9'
+    text: 'nine'
   },
   {
     color: '#000fff',
-    text: '图例10'
+    text: 'ten'
   }
 ]
