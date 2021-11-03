@@ -20,10 +20,10 @@
 
 <div class="tools">
 
-  <sort [head]='head' [body]='sbody' (bodyChange)='bodySort($event)'></sort>
+  <sort [head]='head' [body]='sbody' (bodyChange)='tsort($event)'></sort>
 
-  <search [body]='body' (bodyChange)='bodySearch($event)'></search>
+  <search [body]='body' (bodyChange)='tsearch($event)'></search>
 
-  <page [(page)]='page' [min]='min' [max]='max' (pageChange)='pageChange($event)'></page>
+  <page [(page)]='page' [min]='min' [max]='max' (pageChange)='tpage($event)'></page>
 
 </div>
