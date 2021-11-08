@@ -57,14 +57,16 @@
 }
 
 .sort:hover {
-  color: var(--theme-dark);
+  background: var(--gray-light);
   cursor: pointer;
 }
 
 .shengxu {
+  color: var(--theme-dark);
   border-color: var(--theme-dark);
 }
 
 .jiangxu {
+  color: var(--theme-light);
   border-color: var(--theme-light);
 }

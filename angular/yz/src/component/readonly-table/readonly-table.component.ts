@@ -57,6 +57,6 @@ export class ReadonlyTableComponent implements OnChanges, OnInit {
   }
 
   // 翻页
-  tpage = (e: number) => this.pbody = this.obody.slice(this.line * (e - 1), Math.min(this.line * e, body.length))
+  tpage = (e: number) => this.pbody = this.obody.slice(this.line * (e - 1), Math.min(this.line * e, this.obody.length))
 
 }
