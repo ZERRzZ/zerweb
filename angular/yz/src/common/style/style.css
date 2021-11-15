@@ -46,8 +46,12 @@ input[type='text'] {
   color: inherit;
   background: inherit;
   border: 1px solid var(--gray-middle);
-  box-sizing: border-box;
   outline: none;
+}
+
+[type='button'],
+[type='checkbox'] {
+  cursor: pointer;
 }
 
 /* css animation */
