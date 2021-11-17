@@ -24,6 +24,10 @@
 //         this.modal.warning({ nzTitle: '提示', nzContent: '找不到路径!' })
 //         console.error(err); break
 
+//       case 405:
+//         this.modal.error({ nzTitle: '错误', nzContent: '请求方法错误!' })
+//         console.error(err); break
+
 //       default:
 //         if (err.error && err.error.message)
 //           this.modal.error({ nzTitle: '错误', nzContent: `${err.error.message}` })
