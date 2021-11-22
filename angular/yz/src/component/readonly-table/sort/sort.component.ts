@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
-import { RTBody, RTHead } from "../../../common/model";
+import { RTBody, RTHead } from "../readonly-table.model";
 
 @Component({
   selector: 'sort',

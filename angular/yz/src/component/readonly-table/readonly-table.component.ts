@@ -1,7 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
 
-import { RTBody } from "../../common/model";
-
+import { RTBody } from "./readonly-table.model";
 import { body, head } from "./readonly-table.test";
 
 @Component({

@@ -1,4 +1,4 @@
-import { RTBody, RTHead } from "../../common/model";
+import { RTBody, RTHead } from "./readonly-table.model"
 
 export const head: RTHead[] = [
   { name: 'ID', field: 'id', width: '50px' },

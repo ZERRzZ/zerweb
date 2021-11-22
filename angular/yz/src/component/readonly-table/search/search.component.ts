@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { debounce } from "../../../common/method";
-
-import { RTBody } from "../../../common/model";
+import { RTBody } from "../readonly-table.model";
 
 @Component({
   selector: 'search',
