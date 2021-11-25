@@ -24,6 +24,8 @@
 
   <search [body]='body' (bodyChange)='tsearch($event)'></search>
 
+  <div class="maxp">共 {{max}} 页</div>
+
   <page [(page)]='page' [min]='min' [max]='max' (pageChange)='tpage($event)'></page>
 
 </div>

@@ -54,18 +54,29 @@ th {
   width: 100%;
   flex: 0 0 30px;
   overflow-x: auto;
+  overflow-y: hidden;
   display: flex;
   gap: 20px;
 }
 
 sort {
-  width: calc(100% - 390px);
+  width: calc(100% - 510px);
   height: 30px;
 }
 
 search {
   width: 150px;
   height: 30px;
+}
+
+.maxp {
+  width: 100px;
+  height: 30px;
+  border: 1px solid var(--gray-middle);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 page {
