@@ -31,4 +31,4 @@ export const dailyYMDH = (date: Date) => `${date.getFullYear()}年${MM(date.getM
 /**
  * 格式化 M to MM
  */
-const MM = (number: number) => number > 9 ? number : `0${number}`
+export const MM = (number: number) => number > 9 ? number : `0${number}`

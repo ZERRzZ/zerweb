@@ -4,10 +4,10 @@ import { RouterModule } from "@angular/router";
 
 import { CountComponent } from "./count/count.component";
 import { LegendComponent } from "./legend/legend.component";
-import { ReadonlyTableComponent } from "./readonly-table/readonly-table.component";
-import { PageComponent } from "./readonly-table/page/page.component";
-import { SearchComponent } from "./readonly-table/search/search.component";
-import { SortComponent } from "./readonly-table/sort/sort.component";
+import { BetterTableComponent } from "./better-table/better-table.component";
+import { PageComponent } from "./better-table/page/page.component";
+import { SearchComponent } from "./better-table/search/search.component";
+import { SortComponent } from "./better-table/sort/sort.component";
 import { SMenuComponent } from "./s-menu/s-menu.component";
 
 @NgModule({
@@ -15,7 +15,7 @@ import { SMenuComponent } from "./s-menu/s-menu.component";
     CountComponent,
     LegendComponent,
     SMenuComponent,
-    SearchComponent, PageComponent, SortComponent, ReadonlyTableComponent
+    SearchComponent, PageComponent, SortComponent, BetterTableComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +25,7 @@ import { SMenuComponent } from "./s-menu/s-menu.component";
     CountComponent,
     LegendComponent,
     SMenuComponent,
-    SearchComponent, PageComponent, SortComponent, ReadonlyTableComponent
+    SearchComponent, PageComponent, SortComponent, BetterTableComponent
   ]
 })
 export class YZModule { }

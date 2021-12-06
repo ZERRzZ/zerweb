@@ -4,7 +4,7 @@
  * @param field 对应的对象的属性
  * @param width 表格宽, 没有则自动
  */
-export interface RTHead {
+export interface BTHead {
   name: string
   field: string
   width?: string
@@ -13,6 +13,6 @@ export interface RTHead {
 /**
  * 表体数据
  */
-export interface RTBody {
+export interface BTBody {
   [prop: string]: any
 }

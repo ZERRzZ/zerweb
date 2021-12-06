@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { AppService } from './app.service';
 
-import { AMenu, RTBody, SMenu } from 'yz/src/public-api';
+import { AMenu, BTBody, SMenu } from 'yz/src/public-api';
 
 @Component({
   selector: 'app',
@@ -22,5 +22,7 @@ export class AppComponent {
   getCount = (e: number) => console.log(e)
 
   getSMenu = (e: [SMenu, AMenu]) => console.log(e)
+
+  clickTr = (e: BTBody) => console.log(e)
 
 }

@@ -1,12 +1,12 @@
-import { RTBody, RTHead } from "./readonly-table.model"
+import { BTBody, BTHead } from "./better-table.model"
 
-export const head: RTHead[] = [
+export const head: BTHead[] = [
   { name: 'ID', field: 'id', width: '50px' },
   { name: 'NAME', field: 'name', width: '100px' },
   { name: 'TYPE', field: 'type' }
 ]
 
-export const body: RTBody[] = [
+export const body: BTBody[] = [
   { id: 1, name: 'chengzs', type: 'human' },
   { id: 2, name: 'sadanya', type: 'human' },
   { id: 3, name: 'satania', type: 'animation' },

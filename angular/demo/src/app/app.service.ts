@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators'
 
-import { RTBody, SMenu } from 'yz/src/public-api';
+import { BTBody, SMenu } from 'yz/src/public-api';
 
 @Injectable()
 export class AppService {
@@ -12,7 +12,7 @@ export class AppService {
 
   getSMenu = () => this.http.get<Array<SMenu>>('/assets/s-menu.json')
 
-  getRTBody = () => this.http.get<Array<RTBody>>('assets/readonly-table.json')
+  getRTBody = () => this.http.get<Array<BTBody>>('assets/readonly-table.json')
 
   // handleErr = (err: HttpErrorResponse) => {
 

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
-import { RTBody, RTHead } from "../readonly-table.model";
+import { BTBody, BTHead } from "../better-table.model";
 
 @Component({
   selector: 'sort',
@@ -11,11 +11,11 @@ export class SortComponent {
 
   constructor() { }
 
-  @Input() head: RTHead[] = []
+  @Input() head: BTHead[] = []
 
-  @Input() body: RTBody[] = []
+  @Input() body: BTBody[] = []
 
-  @Output() bodyChange = new EventEmitter<RTBody[]>()
+  @Output() bodyChange = new EventEmitter<BTBody[]>()
 
   shows = false
 

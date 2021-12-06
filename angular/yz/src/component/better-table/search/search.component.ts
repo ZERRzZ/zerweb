@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { debounce } from "../../../common/method";
-import { RTBody } from "../readonly-table.model";
+import { BTBody } from "../better-table.model";
 
 @Component({
   selector: 'search',
@@ -12,9 +12,9 @@ export class SearchComponent {
 
   constructor() { }
 
-  @Input() body: RTBody[] = []
+  @Input() body: BTBody[] = []
 
-  @Output() bodyChange = new EventEmitter<RTBody[]>()
+  @Output() bodyChange = new EventEmitter<BTBody[]>()
 
   search = (e: Event) => {
 

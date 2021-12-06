@@ -9,7 +9,7 @@
   <div class="body">
 
     <table>
-      <tr *ngFor='let p of pbody'>
+      <tr *ngFor='let p of pbody' [class.tr]='click' [class.select]='click && p.id == id' (click)='onclick(p)'>
         <td *ngFor='let h of head' [style.width]='h.width ? h.width : "auto"'>{{p[h.field]}}</td>
       </tr>
     </table>

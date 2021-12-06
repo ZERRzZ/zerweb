@@ -11,9 +11,7 @@ table {
   table-layout: fixed;
 }
 
-tr:nth-child(2n + 1) {
-  background: var(--gray-light);
-}
+tr:nth-child(2n + 1) { background: var(--gray-light); }
 
 th, td {
   height: 30px;
@@ -29,9 +27,7 @@ td::-webkit-scrollbar {
   height: 0;
 }
 
-th {
-  border-bottom: none;
-}
+th { border-bottom: none; }
 
 .tables {
   width: 100%;
@@ -46,8 +42,13 @@ th {
   overflow: auto;
 }
 
-.body::-webkit-scrollbar {
-  width: 0;
+.body::-webkit-scrollbar { width: 0; }
+
+.tr:hover,
+.select {
+  background: var(--theme-light) !important;
+  cursor: pointer;
+  transition: all .3s;
 }
 
 .tools {
