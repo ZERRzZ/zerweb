@@ -17,7 +17,7 @@ export const exportCSV = (data: CSVData[], head: string[], column: string[], fil
   a.download = filename;
 
   // 转变 blob 地址
-  let blob = new Blob([csv]);
+  let blob = new Blob(['\uFEFF' + csv]); // 解决 excel 乱码
   a.href = URL.createObjectURL(blob)
 
   // 点击
