@@ -11,9 +11,7 @@
 
 /* css reset */
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   width: 100%;
@@ -50,9 +48,7 @@ input[type='text'] {
 }
 
 [type='button'],
-[type='checkbox'] {
-  cursor: pointer;
-}
+[type='checkbox'] { cursor: pointer; }
 
 /* css animation */
 

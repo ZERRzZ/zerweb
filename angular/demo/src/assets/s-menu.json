@@ -5,23 +5,28 @@
     "list": [
       {
         "id": 1,
+        "title": "better-table",
+        "path": "./better-table"
+      },
+      {
+        "id": 2,
         "title": "count",
         "path": "./count"
       },
       {
-        "id": 2,
+        "id": 3,
         "title": "legend",
         "path": "./legend"
-      },
-      {
-        "id": 3,
-        "title": "better-table",
-        "path": "./better-table"
       },
       {
         "id": 4,
         "title": "s-menu",
         "path": "./s-menu"
+      },
+      {
+        "id": 5,
+        "title": "super-menu",
+        "path": "./super-menu"
       }
     ]
   }

@@ -1,0 +1,21 @@
+<ng-container *ngFor='let s of smenu'>
+
+  <a *ngIf='!s.children' class="menuitem titleblock" [class.select]='s.select' [routerLink]="s.path" (click)='select(s)'>{{s.name}}</a>
+
+  <div *ngIf='s.children' class="menubox">
+
+    <div class="menuitem titleblock" [class.select]='s.select' (click)='s.open = !s.open'>
+
+      <span>{{s.name}}</span>
+
+      <svg class="menuicon" viewBox="4 4 16 16" width="1em" height='1em' [class]="{ clockwise: s.open, anticlockwise: !s.open }">
+        <path d="M8.59 16.34 l4.58 -4.59 -4.58 -4.59 L10 5.75 l6 6-6 6 Z"></path>
+      </svg>
+
+    </div>
+
+    <super-menu class="menuchild" [class]="{ heightmore: s.open, heightless: !s.open }" [smenu]='s.children'></super-menu>
+
+  </div>
+
+</ng-container>

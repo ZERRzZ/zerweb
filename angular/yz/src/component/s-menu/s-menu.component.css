@@ -2,10 +2,7 @@
   width: 350px;
   border-right: 2px solid var(--theme-light);
   overflow: auto;
-  cursor: pointer;
-  display: flex;
-  gap: 1px;
-  flex-flow: column nowrap;
+  display: block;
 }
 
 :host::-webkit-scrollbar {
@@ -18,9 +15,10 @@
 }
 
 .menu {
+  cursor: pointer;
   display: flex;
   gap: 1px;
-  flex-flow: column nowrap;
+  flex-flow: column;
 }
 
 .title {
@@ -35,7 +33,7 @@
 .lists {
   display: flex;
   gap: 1px;
-  flex-flow: column nowrap;
+  flex-flow: column;
 }
 
 .list {
@@ -45,7 +43,6 @@
 
 .list:hover {
   color: var(--theme-dark);
-  fill: var(--theme-dark);
   background: var(--theme-light);
 }
 
