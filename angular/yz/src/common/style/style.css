@@ -48,7 +48,9 @@ input[type='text'] {
 }
 
 [type='button'],
-[type='checkbox'] { cursor: pointer; }
+[type='checkbox'],
+[type='radio'],
+label { cursor: pointer; }
 
 /* css animation */
 
