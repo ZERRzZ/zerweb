@@ -25,6 +25,11 @@
       },
       {
         "id": 5,
+        "title": "single-list",
+        "path": "./single-list"
+      },
+      {
+        "id": 6,
         "title": "super-menu",
         "path": "./super-menu"
       }

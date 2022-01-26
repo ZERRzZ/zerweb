@@ -44,7 +44,15 @@ After building your library with `ng build yz`, go to the dist folder `cd dist/y
 
 `@Output() clickTr: EventEmitter<BTBody>` 传出行的点击事件
 
+**SingleListComponent**
+
+`@Input() list: SList[]` 列表
+
+`@Output() listSelect: EventEmitter<SList>` 传出选中的项
+
 ## history
+
+添加组件 single-list @1.4.6
 
 修改 readonly-table 为 better-table, 添加点击选中行的功能 @1.4.5
 

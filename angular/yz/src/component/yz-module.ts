@@ -13,6 +13,8 @@ import { LegendComponent } from "./legend/legend.component";
 
 import { SMenuComponent } from "./s-menu/s-menu.component";
 
+import { SingleListComponent } from "./single-list/single-list.component";
+
 import { SuperMenuComponent } from "./super-menu/super-menu.component";
 
 @NgModule({
@@ -21,6 +23,7 @@ import { SuperMenuComponent } from "./super-menu/super-menu.component";
     CountComponent,
     LegendComponent,
     SMenuComponent,
+    SingleListComponent,
     SuperMenuComponent
   ],
   imports: [
@@ -32,6 +35,7 @@ import { SuperMenuComponent } from "./super-menu/super-menu.component";
     CountComponent,
     LegendComponent,
     SMenuComponent,
+    SingleListComponent,
     SuperMenuComponent
   ]
 })
