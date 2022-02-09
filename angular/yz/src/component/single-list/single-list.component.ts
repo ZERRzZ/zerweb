@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnChanges, Output } from "@angular/core";
 
 import { list, SList } from "./single-list.model"
 
@@ -7,9 +7,11 @@ import { list, SList } from "./single-list.model"
   templateUrl: './single-list.component.html',
   styleUrls: ['./single-list.component.css']
 })
-export class SingleListComponent {
+export class SingleListComponent implements OnChanges {
 
   constructor() { }
+
+  ngOnChanges(): void { this.slist = this.list[0] }
 
   @Input() list: SList[] = list
 

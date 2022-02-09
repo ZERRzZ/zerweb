@@ -31,6 +31,8 @@
 //       default:
 //         if (err.error && err.error.message)
 //           this.modal.error({ nzTitle: '错误', nzContent: `${err.error.message}` })
+//         else
+//           this.modal.error({ nzTitle: '错误', nzContent: '错误信息未知!' })
 //         console.error(err)
 
 //     }
