@@ -4,7 +4,7 @@
 
 github -> https://github.com/ZERRzZ/zerweb/tree/main/angular/yz
 
-style -> @chengzs/yz/src/common/style/style.css
+style -> @chengzs/yz/common/style/style.css
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
 

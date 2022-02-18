@@ -31,7 +31,7 @@ import { SuperMenuComponent } from "./super-menu/super-menu.component";
     RouterModule
   ],
   exports: [
-    SearchComponent, PageComponent, SortComponent, BetterTableComponent,
+    BetterTableComponent,
     CounterComponent,
     DropDownComponent,
     LegendComponent,
