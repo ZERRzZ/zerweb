@@ -6,7 +6,7 @@
     "yz": {
       "projectType": "library",
       "root": "yz",
-      "sourceRoot": "yz/src",
+      "sourceRoot": "yz",
       "prefix": "",
       "architect": {
         "build": {
@@ -57,23 +57,23 @@
         }
       },
       "root": "demo",
-      "sourceRoot": "demo/src",
+      "sourceRoot": "demo",
       "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/demo",
-            "index": "demo/src/index.html",
-            "main": "demo/src/main.ts",
-            "polyfills": "demo/src/polyfills.ts",
+            "index": "demo/index.html",
+            "main": "demo/main.ts",
+            "polyfills": "demo/polyfills.ts",
             "tsConfig": "demo/tsconfig.app.json",
             "assets": [
-              "demo/src/favicon.ico",
-              "demo/src/assets"
+              "demo/favicon.ico",
+              "demo/assets"
             ],
             "styles": [
-              "demo/src/styles.css"
+              "demo/styles.css"
             ],
             "scripts": []
           },
@@ -93,8 +93,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "demo/src/environments/environment.ts",
-                  "with": "demo/src/environments/environment.prod.ts"
+                  "replace": "demo/environments/environment.ts",
+                  "with": "demo/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"

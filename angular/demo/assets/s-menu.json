@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "yz",
+    "list": [
+      {
+        "id": 1,
+        "title": "better-table",
+        "path": "./better-table"
+      },
+      {
+        "id": 2,
+        "title": "counter",
+        "path": "./counter"
+      },
+      {
+        "id": 3,
+        "title": "drop-down",
+        "path": "./drop-down"
+      },
+      {
+        "id": 4,
+        "title": "s-menu",
+        "path": "./s-menu"
+      },
+      {
+        "id": 5,
+        "title": "legend",
+        "path": "./legend"
+      },
+      {
+        "id": 6,
+        "title": "super-menu",
+        "path": "./super-menu"
+      }
+    ]
+  }
+]

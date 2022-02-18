@@ -1,0 +1,187 @@
+/* css variable */
+
+:root {
+  --theme-dark: #1b8fff;
+  --theme-light: #eff8ff;
+
+  --gray-dark: #666;
+  --gray-middle: #d9d9d9;
+  --gray-light: #f9f9f9;
+}
+
+/* css reset */
+
+* { box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%;
+  font: 14px/16px "sans-serif";
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: var(--gray-dark);
+  background: var(--gray-light);
+  cursor: default;
+}
+
+a {
+  color: var(--gray-dark);
+  text-decoration: none;
+}
+
+input[type='button'] {
+  color: inherit;
+  background: inherit;
+  border: 1px solid var(--gray-middle);
+  cursor: pointer;
+}
+
+input[type='text'] {
+  color: inherit;
+  background: inherit;
+  border: 1px solid var(--gray-middle);
+  outline: none;
+}
+
+[type='button'],
+[type='checkbox'],
+[type='radio'],
+label { cursor: pointer; }
+
+/* css animation */
+
+/* 顺时针旋转 */
+
+.clockwise {
+  --angle: 90deg;
+  animation: clockwise .3s ease-out forwards;
+}
+
+@keyframes clockwise {
+  form { transform: rotate(0) }
+  to { transform: rotate(var(--angle)) }
+}
+
+/* 逆时针旋转 */
+
+.anticlockwise {
+  --angle: 90deg;
+  animation: anticlockwise .3s ease-in forwards;
+}
+
+@keyframes anticlockwise {
+  from { transform: rotate(var(--angle)) }
+  to { transform: rotate(0) }
+}
+
+/* 最大高度减少 */
+
+.heightless {
+  --maxheight: 1000px;
+  animation: heightless .3s linear forwards;
+  overflow: hidden;
+}
+
+@keyframes heightless {
+  from { max-height: var(--maxheight); opacity: 1; }
+  to { max-height: 1px; opacity: 0; }
+}
+
+/* 最大高度增大 */
+
+.heightmore {
+  --maxheight: 1000px;
+  animation: heightmore .3s linear forwards;
+  overflow: hidden;
+}
+
+@keyframes heightmore {
+  from { max-height: 1px; opacity: 0; }
+  to { max-height: var(--maxheight);  opacity: 1; }
+}
+
+/* 醒目的标题识别块 */
+
+.titleblock::before {
+  content: '';
+  width: 3px;
+  height: 0.8em;
+  margin-right: 10px;
+  background: var(--theme-dark);
+  transition: all .3s;
+  display: inline-block;
+  position: relative;
+  top: 20%;
+}
+
+/* 背景遮罩 */
+.cloak {
+  width: 100%;
+  height: 100%;
+  background: #666666cc;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* 弹出 */
+
+.popup { animation: popup .3s forwards; }
+
+@keyframes popup {
+  0% { transform: scale(0); }
+  85% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* 缩回 */
+
+.shrink { animation: shrink .3s forwards; }
+
+@keyframes shrink {
+  0% { transform: scale(1); }
+  85% { transform: scale(1.2); }
+  100% { transform: scale(0); }
+}
+
+/* 上升显示 */
+
+.updisplay { animation: updisplay .3s forwards; }
+
+@keyframes updisplay {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+/* 下降隐藏 */
+
+.downhide { animation: downhide .3s forwards; }
+
+@keyframes downhide {
+  0% { opacity: 1; transform: translateY(0px); }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* 上升隐藏 */
+
+.uphide { animation: uphide .3s forwards; }
+
+@keyframes uphide {
+  0% { opacity: 1; transform: translateY(20px); }
+  100% { opacity: 0; transform: translateY(0px); }
+}
+
+/* 下降显示 */
+
+.downdisplay { animation: downdisplay .3s forwards; }
+
+@keyframes downdisplay {
+  0% { opacity: 0; transform: translateY(0px); }
+  100% { opacity: 1; transform: translateY(20px); }
+}

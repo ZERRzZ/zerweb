@@ -1,5 +1,11 @@
 ## yz
 
+**for you**
+
+github -> https://github.com/ZERRzZ/zerweb/tree/main/angular/yz
+
+style -> @chengzs/yz/src/common/style/style.css
+
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
 
 Run `ng build yz` to build the project. The build artifacts will be stored in the `dist/` directory.
@@ -8,33 +14,35 @@ After building your library with `ng build yz`, go to the dist folder `cd dist/y
 
 ## use
 
-**CountComponent**
+**CounterComponent**
 
-`@Input() value: number` 初始值  
+`@Input() value: number` 初始值
 
-`@Output() valueChange: EventEmitter<number>` 传出改变的值  
+`@Output() valueChange: EventEmitter<number>` 传出改变的值
 
 **LegendComponent**
 
-`@Input() legend: Legend[]` 图例数据  
+`@Input() legend: Legend[]` 图例数据
 
-`@Input() height: string` 图例的最大高, 做换行用, 带单位 200px  
+`@Input() height: string` 图例的最大高, 做换行用, 带单位 200px
 
 **SMenuComponent**
 
-`Input() smenu: Array<SMenu>` 菜单  
+`Input() smenu: Array<SMenu>` 菜单
 
-`Input() open: boolean` 是否打开  
+`Input() open: boolean` 是否打开
 
-`Input() select: [number, number]` 初始选中的 [二级菜单 id, 子菜单 id]  
+`Input() select: [number, number]` 初始选中的 [二级菜单 id, 子菜单 id]
 
-`Output() reselect: EventEmitter<[SMenu, AMenu]>` 传出所选菜单信息  
+`Output() reselect: EventEmitter<[SMenu, AMenu]>` 传出所选菜单信息
+
+*(the super-menu component is not completed, please dont use it. Its hard for me now!)*
 
 **BetterTableComponent**
 
-`@Input() head: BTHead[]` 表头  
+`@Input() head: BTHead[]` 表头
 
-`@Input() body: BTBody[]` 表体  
+`@Input() body: BTBody[]` 表体
 
 `@Input() line: number` 一页显示的行数
 
@@ -44,13 +52,15 @@ After building your library with `ng build yz`, go to the dist folder `cd dist/y
 
 `@Output() clickTr: EventEmitter<BTBody>` 传出行的点击事件
 
-**SingleListComponent**
+**DropDownComponent**
 
-`@Input() list: SList[]` 列表
+`@Input() list: DDList[]` 列表
 
-`@Output() listSelect: EventEmitter<SList>` 传出选中的项
+`@Output() listSelect: EventEmitter<DDList>` 传出选中的项
 
 ## history
+
+修改 single-list 为 drop-down, 修改 count 为 counter @1.4.7
 
 添加组件 single-list @1.4.6
 
