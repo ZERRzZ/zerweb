@@ -1,0 +1,45 @@
+<div class="tag">
+
+  <span>类型设置</span>
+
+  <div class="children">
+
+    <label [class.on]="timetype == 'SCOP'"><input type="radio" [(ngModel)]="timetype" value="SCOP">任意</label>
+
+    <label [class.on]="timetype == 'WEEK'"><input type="radio" [(ngModel)]="timetype" value="WEEK">周</label>
+
+    <label [class.on]="timetype == 'TEND'"><input type="radio" [(ngModel)]="timetype" value="TEND">旬</label>
+
+    <label [class.on]="timetype == 'MONT'"><input type="radio" [(ngModel)]="timetype" value="MONT">月</label>
+
+  </div>
+
+</div>
+
+<div class="tag">
+
+  <span>起始日期</span>
+
+  <div class="children">
+
+    <nz-date-picker [(ngModel)]="sdate" (ngModelChange)="changeSdate($event)" [nzDisabledDate]="disabledDate"></nz-date-picker>
+
+    <input type="button" [value]="'上一' + buttoname[timetype]" (click)="last()">
+
+  </div>
+
+</div>
+
+<div class="tag">
+
+  <span>结束日期</span>
+
+  <div class="children">
+
+    <nz-date-picker [(ngModel)]="edate" (ngModelChange)="changeEdate($event)" [nzDisabledDate]="disabledDate" [disabled]="timetype != 'day'"></nz-date-picker>
+
+    <input type="button" [value]="'下一' + buttoname[timetype]" (click)="next()" [disabled]="overDate()">
+
+  </div>
+
+</div>
