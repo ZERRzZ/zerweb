@@ -1,0 +1,21 @@
+<div class="maintag">
+
+  <svg class="cbox on" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" (click)="back()">
+    <path d="M483.669333 96.128a42.666667 42.666667 0 0 1 56.661334 0l384 341.333333a42.666667 42.666667 0 0 1-56.661334 63.744L853.333333 488.533333V810.666667a85.333333 85.333333 0 0 1-85.333333 85.333333H256a85.333333 85.333333 0 0 1-85.333333-85.333333v-322.133334l-14.336 12.672a42.666667 42.666667 0 0 1-56.661334-63.744l384-341.333333zM256 412.586667V810.666667h128v-213.333334a42.666667 42.666667 0 0 1 42.666667-42.666666h170.666666a42.666667 42.666667 0 0 1 42.666667 42.666666v213.333334h128V412.629333l-256-227.541333-256 227.541333zM554.666667 810.666667v-170.666667h-85.333334v170.666667h85.333334z"></path>
+  </svg>
+
+  <div class="cbox topbox" [class.on]="onSelect[0]==f.id" *ngFor="let f of floatMenu" (click)="changeFirst(f)">{{f.title}}</div>
+
+</div>
+
+<div class="maintag" *ngFor="let c of floatMenu[onSelect[0]-1].content">
+
+  <div class="cbox leftbox" [class.on]="onSelect[1]==c.id">{{c.title}}</div>
+
+  <div class="rightag">
+
+    <div class="cbox rightbox" [class.on]="onSelect[2]==cc.id && onSelect[1]==c.id" *ngFor="let cc of c.content" (click)="changeLast(c, cc)">{{cc.title}}</div>
+
+  </div>
+
+</div>

@@ -1,64 +1,106 @@
-## yz
-
-**for you**
-
-github -> https://github.com/ZERRzZ/zerweb/tree/main/angular/yz
-
-style -> @chengzs/yz/common/style/style.css
+# yz
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
 
-Run `ng build yz` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build yz` to build the project. After building your library with `ng build yz`, go to the dist folder `cd dist/yz` and run `npm publish`.
 
-After building your library with `ng build yz`, go to the dist folder `cd dist/yz` and run `npm publish`.
+* github -> https://github.com/ZERRzZ/zerweb/tree/main/angular/yz
 
-## use
+* style -> @chengzs/yz/common/style/style.css (在本地的 node_modules 里，组件的样式)
 
-**CounterComponent**
+# use
 
-`@Input() value: number` 初始值
+***简单说明组件传入传出的属性，具体数据类型，逻辑请打开相关代码文件查看***
 
-`@Output() valueChange: EventEmitter<number>` 传出改变的值
+## BetterTableComponent
 
-**LegendComponent**
+表格组件，可支持选择某行的操作
 
-`@Input() legend: Legend[]` 图例数据
+**@Input**
 
-`@Input() height: string` 图例的最大高, 做换行用, 带单位 200px
+head: `BTHead[]` 表头
 
-**SMenuComponent**
+body: `BTBody[]` 表体
 
-`Input() smenu: Array<SMenu>` 菜单
+line: `number` 一页显示的行数
 
-`Input() open: boolean` 是否打开
+click: `boolean` 行是否可以点击（在需要点击某一行来处理业务时使用，默认为 false）
 
-`Input() select: [number, number]` 初始选中的 [二级菜单 id, 子菜单 id]
+id: `number` 默认选中行的 id（默认为 0，即不选中）
 
-`Output() reselect: EventEmitter<[SMenu, AMenu]>` 传出所选菜单信息
+**@Output**
 
-*(the super-menu component is not completed, please dont use it. Its hard for me now!)*
+clickTr: `EventEmitter<BTBody>` 传出点击的行（不需要时可不用）
 
-**BetterTableComponent**
+## CounterComponent
 
-`@Input() head: BTHead[]` 表头
+计数器组件，点击按钮来 +1 或 -1，或者直接输入值
 
-`@Input() body: BTBody[]` 表体
+**@Input**
 
-`@Input() line: number` 一页显示的行数
+value: `number` 初始值
 
-`@Input() click: boolean` 行是否可以点击
+**@Output**
 
-`@Input() id: number` 选中行的 id
+valueChange: `EventEmitter<number>` 传出改变后的值
 
-`@Output() clickTr: EventEmitter<BTBody>` 传出行的点击事件
+## DropDownComponent
 
-**DropDownComponent**
+下拉列表菜单
 
-`@Input() list: DDList[]` 列表
+**@Input**
 
-`@Output() listSelect: EventEmitter<DDList>` 传出选中的项
+list: `DDList[]` 列表
 
-## history
+**@Output**
+
+listSelect: `EventEmitter<DDList>` 传出选中的项
+
+## FloatMenuComponent
+
+浮动菜单组件，特殊样子的菜单，是三级菜单
+
+**@Input**
+
+floatMenu: `FloatMenu[]` 菜单
+
+onSelect: `number[]` 选中的菜单id [一级 id，二级 id，三级 id]
+
+**@Output**
+
+onSelectChange: `EventEmitter<number[]>` 传出选中的**菜单id**
+
+## LegendComponent
+
+图例组件，可以读取本地图片来作为图例，只用来规定形状，而不是图片展示
+
+**@Input**
+
+legend: `Legend[]` 图例数据
+
+**@Input**
+
+height: `string` 图例的最大高，做换行用，带单位，如 200px
+
+## SMenuComponent
+
+二级菜单组件，带路由
+
+**@Input**
+
+smenu: `SMenu[]` 菜单
+
+open: `boolean` 是否全打开
+
+select: `[number, number]` 选中的 [二级菜单 id, 子菜单 id]
+
+**@Output**
+
+reselect: `EventEmitter<[SMenu, AMenu]>` 传出所选菜单信息
+
+# history
+
+添加组件 float-menu @1.6.0
 
 修改 single-list 为 drop-down, 修改 count 为 counter @1.4.7
 

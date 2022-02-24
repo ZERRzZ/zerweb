@@ -6,6 +6,9 @@ export * from './counter/counter.component'
 export * from './drop-down/drop-down.component'
 export * from './drop-down/drop-down.model'
 
+export * from './float-menu/float-menu.component'
+export * from './float-menu/float-menu.model'
+
 export * from './legend/legend.component'
 export * from './legend/legend.model'
 

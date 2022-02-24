@@ -20,16 +20,21 @@
       },
       {
         "id": 4,
+        "title": "float-menu",
+        "path": "./float-menu"
+      },
+      {
+        "id": 5,
         "title": "s-menu",
         "path": "./s-menu"
       },
       {
-        "id": 5,
+        "id": 6,
         "title": "legend",
         "path": "./legend"
       },
       {
-        "id": 6,
+        "id": 7,
         "title": "super-menu",
         "path": "./super-menu"
       }

@@ -11,6 +11,8 @@ import { CounterComponent } from "./counter/counter.component";
 
 import { DropDownComponent } from "./drop-down/drop-down.component";
 
+import { FloatMenuComponent } from "./float-menu/float-menu.component";
+
 import { LegendComponent } from "./legend/legend.component";
 
 import { SMenuComponent } from "./s-menu/s-menu.component";
@@ -22,6 +24,7 @@ import { SuperMenuComponent } from "./super-menu/super-menu.component";
     SearchComponent, PageComponent, SortComponent, BetterTableComponent,
     CounterComponent,
     DropDownComponent,
+    FloatMenuComponent,
     LegendComponent,
     SMenuComponent,
     SuperMenuComponent
@@ -34,6 +37,7 @@ import { SuperMenuComponent } from "./super-menu/super-menu.component";
     BetterTableComponent,
     CounterComponent,
     DropDownComponent,
+    FloatMenuComponent,
     LegendComponent,
     SMenuComponent,
     SuperMenuComponent
