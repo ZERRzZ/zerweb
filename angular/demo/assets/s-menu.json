@@ -25,16 +25,21 @@
       },
       {
         "id": 5,
-        "title": "s-menu",
-        "path": "./s-menu"
-      },
-      {
-        "id": 6,
         "title": "legend",
         "path": "./legend"
       },
       {
+        "id": 6,
+        "title": "play-bar",
+        "path": "./play-bar"
+      },
+      {
         "id": 7,
+        "title": "s-menu",
+        "path": "./s-menu"
+      },
+      {
+        "id": 8,
         "title": "super-menu",
         "path": "./super-menu"
       }

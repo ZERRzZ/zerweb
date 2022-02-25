@@ -12,6 +12,9 @@ export * from './float-menu/float-menu.model'
 export * from './legend/legend.component'
 export * from './legend/legend.model'
 
+export * from './play-bar/play-bar.component'
+export * from './play-bar/play-bar.model'
+
 export * from './s-menu/s-menu.component'
 export * from './s-menu/s-menu.model'
 

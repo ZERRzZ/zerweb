@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { AppService } from './app.service';
 
-import { AMenu, BTBody, SMenu } from 'yz/public-api';
+import { AMenu, BTBody, PlayBar, SMenu } from 'yz/public-api';
 
 @Component({
   selector: 'app',
@@ -24,5 +24,7 @@ export class AppComponent {
   getSMenu = (e: [SMenu, AMenu]) => console.log(e)
 
   clickTr = (e: BTBody) => console.log(e)
+
+  onplaybar = (e: PlayBar) => console.log(e)
 
 }

@@ -1,0 +1,76 @@
+:host {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  background: var(--theme-dark);
+  border-radius: 5px;
+  opacity: .4;
+  position: absolute;
+  z-index: -1;
+}
+
+svg {
+  width: 30px;
+  height: 30px;
+  margin: 0 20px;
+  border-radius: 50%;
+  background: #fff;
+  fill: var(--theme-dark);
+  transition: all .3s;
+  cursor: pointer;
+}
+
+svg:hover {
+  background: var(--theme-dark);
+  fill: #fff;
+}
+
+.timebar {
+  flex: auto;
+  height: 26px;
+  margin: 0 20px;
+  border-radius: 13px;
+  background: var(--gray-middle);
+  cursor: pointer;
+  display: flex;
+  gap: 1px;
+}
+
+.part {
+  flex: auto;
+  height: 100%;
+  background: #fff;
+  transition: all .3s;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.part:nth-child(1) { border-radius: 13px 0 0 13px; }
+.part:nth-last-child(1) { border-radius: 0 13px 13px 0; }
+
+.part:hover {
+  background: var(--theme-dark);
+  transform: translateY(-5px);
+  box-shadow: 3px 3px 3px var(--theme-dark);
+}
+
+.partext {
+  color: #fff;
+  opacity: 0;
+  transition: all 2s;
+  position: absolute;
+  top: 35px;
+}
+
+.part:hover .partext { opacity: 1; }
+
+.on { background: var(--theme-dark); }

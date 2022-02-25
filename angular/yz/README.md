@@ -82,6 +82,18 @@ legend: `Legend[]` 图例数据
 
 height: `string` 图例的最大高，做换行用，带单位，如 200px
 
+## PlayBarComponent
+
+播放条组件，类似进度条
+
+**@Input**
+
+playbar: `PlayBar[]` 刻度数据，总共分多少个刻度
+
+**@Output**
+
+onplaybar: `EventEmitter<PlayBar>` 将选中的刻度传出
+
 ## SMenuComponent
 
 二级菜单组件，带路由
@@ -99,6 +111,8 @@ select: `[number, number]` 选中的 [二级菜单 id, 子菜单 id]
 reselect: `EventEmitter<[SMenu, AMenu]>` 传出所选菜单信息
 
 # history
+
+添加组件 play-bar @1.7.0
 
 添加组件 float-menu @1.6.0
 

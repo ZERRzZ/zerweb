@@ -15,6 +15,8 @@ import { FloatMenuComponent } from "./float-menu/float-menu.component";
 
 import { LegendComponent } from "./legend/legend.component";
 
+import { PlayBarComponent } from "./play-bar/play-bar.component";
+
 import { SMenuComponent } from "./s-menu/s-menu.component";
 
 import { SuperMenuComponent } from "./super-menu/super-menu.component";
@@ -26,6 +28,7 @@ import { SuperMenuComponent } from "./super-menu/super-menu.component";
     DropDownComponent,
     FloatMenuComponent,
     LegendComponent,
+    PlayBarComponent,
     SMenuComponent,
     SuperMenuComponent
   ],
@@ -39,6 +42,7 @@ import { SuperMenuComponent } from "./super-menu/super-menu.component";
     DropDownComponent,
     FloatMenuComponent,
     LegendComponent,
+    PlayBarComponent,
     SMenuComponent,
     SuperMenuComponent
   ]
