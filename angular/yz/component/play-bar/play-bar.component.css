@@ -64,11 +64,14 @@ svg:hover {
 }
 
 .partext {
+  width: 200px;
   color: #fff;
+  text-align: center;
   opacity: 0;
-  transition: all 2s;
+  transition: all 1s;
   position: absolute;
   top: 35px;
+  z-index: -11;
 }
 
 .part:hover .partext { opacity: 1; }
