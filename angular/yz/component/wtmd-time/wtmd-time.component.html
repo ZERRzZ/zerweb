@@ -36,7 +36,7 @@
 
   <div class="children">
 
-    <nz-date-picker [(ngModel)]="edate" (ngModelChange)="changeEdate($event)" [nzDisabledDate]="disabledDate" [disabled]="timetype != 'day'"></nz-date-picker>
+    <nz-date-picker [(ngModel)]="edate" (ngModelChange)="changeEdate($event)" [nzDisabledDate]="disabledDate" [disabled]="timetype != 'SCOP'"></nz-date-picker>
 
     <input type="button" [value]="'下一' + buttoname[timetype]" (click)="next()" [disabled]="overDate()">
 

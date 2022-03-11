@@ -134,7 +134,11 @@ export class WTMDTimeComponent {
     switch (this.timetype) {
       case 'SCOP': this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth(), this.sdate.getDate() - 1); break;
       case 'WEEK': this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth(), this.sdate.getDate() - 6); break;
-      case 'TEND': this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth(), this.sdate.getDate() - 10); break;
+      case 'TEND':
+        if (this.sdate.getDate() > 20) this.sdate = new Date(new Date(this.sdate.getFullYear(), this.sdate.getMonth(), 11))
+        else if (this.sdate.getDate() > 10) this.sdate = new Date(new Date(this.sdate.getFullYear(), this.sdate.getMonth(), 1))
+        else this.sdate = new Date(new Date(this.sdate.getFullYear(), this.sdate.getMonth() - 1, 21))
+        break;
       case 'MONT': this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth() - 1, this.sdate.getDate()); break;
     }
     this.changeSdate()
@@ -144,7 +148,11 @@ export class WTMDTimeComponent {
     switch (this.timetype) {
       case 'SCOP': this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth(), this.sdate.getDate() + 1); break;
       case 'WEEK': this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth(), this.sdate.getDate() + 6); break;
-      case 'TEND': this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth(), this.sdate.getDate() + 10); break;
+      case 'TEND':
+        if (this.sdate.getDate() > 20) this.sdate = new Date(new Date(this.sdate.getFullYear(), this.sdate.getMonth() + 1, 1))
+        else if (this.sdate.getDate() > 10) this.sdate = new Date(new Date(this.sdate.getFullYear(), this.sdate.getMonth(), 21))
+        else this.sdate = new Date(new Date(this.sdate.getFullYear(), this.sdate.getMonth(), 11))
+        break;
       case 'MONT': this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth() + 1, this.sdate.getDate()); break;
     }
     this.changeSdate()
