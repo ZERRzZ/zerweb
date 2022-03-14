@@ -54,8 +54,15 @@ svg:hover {
   position: relative;
 }
 
-.part:nth-child(1) { border-radius: 13px 0 0 13px; }
-.part:nth-last-child(1) { border-radius: 0 13px 13px 0; }
+.part:nth-child(1) {
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+
+.part:nth-last-child(1) {
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+}
 
 .part:hover {
   background: var(--theme-dark);
