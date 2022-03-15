@@ -46,7 +46,7 @@
 //   legend.width = colWidth * legend.column // 图例宽度
 
 //   // 默认位置在右下角
-//   legend.y = templ.height - legend.height - 25
+//   legend.y = templ.height - legend.height - 21
 //   legend.x = templ.width - legend.width
 
 //   // 根据 position 值而改变位置

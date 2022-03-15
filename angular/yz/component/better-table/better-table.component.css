@@ -15,16 +15,11 @@ tr:nth-child(2n + 1) { background: var(--gray-light); }
 
 th, td {
   height: 30px;
-  text-indent: 10px;
+  padding: 5px;
   text-align: start;
-  white-space: nowrap;
+  word-wrap: break-word;
   border: 1px solid var(--gray-middle);
-  overflow-x: auto;
-}
-
-th::-webkit-scrollbar,
-td::-webkit-scrollbar {
-  height: 0;
+  overflow: auto;
 }
 
 th { border-bottom: none; }
