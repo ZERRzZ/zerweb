@@ -166,8 +166,8 @@ label { cursor: pointer; }
 .downhide { animation: downhide .3s forwards; }
 
 @keyframes downhide {
-  0% { opacity: 1; transform: translateY(0px); }
-  100% { opacity: 0; transform: translateY(20px); }
+  0% { opacity: 1; transform: translateY(-20px); }
+  100% { opacity: 0; transform: translateY(0px); }
 }
 
 /* 上升隐藏 */
@@ -184,6 +184,15 @@ label { cursor: pointer; }
 .downdisplay { animation: downdisplay .3s forwards; }
 
 @keyframes downdisplay {
-  0% { opacity: 0; transform: translateY(0px); }
-  100% { opacity: 1; transform: translateY(20px); }
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+/* 向左显示 */
+
+.leftdisplay { animation: leftdisplay .3s forwards; }
+
+@keyframes leftdisplay {
+  0% { opacity: 0; transform: translateX(20px); }
+  100% { opacity: 1; transform: translateX(0px); }
 }
