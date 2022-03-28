@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CounterComponent, LegendComponent, BetterTableComponent, SMenuComponent, SuperMenuComponent, DropDownComponent, FloatMenuComponent, PlayBarComponent } from 'yz/public-api';
+import { CounterComponent, LegendComponent, BetterTableComponent, SMenuComponent, SuperMenuComponent, DropDownComponent, FloatMenuComponent, PlayBarComponent, TagsChooseComponent } from 'yz/public-api';
 
 const routes: Routes = [
   { path: 'better-table', component: BetterTableComponent },
@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'legend', component: LegendComponent },
   { path: 'play-bar', component: PlayBarComponent },
   { path: 's-menu', component: SMenuComponent },
-  { path: 'super-menu', component: SuperMenuComponent }
+  { path: 'super-menu', component: SuperMenuComponent },
+  { path: 'tags-choose', component: TagsChooseComponent }
 ]
 
 @NgModule({

@@ -21,4 +21,7 @@ export * from './s-menu/s-menu.model'
 export * from './super-menu/super-menu.component'
 export * from './super-menu/super-menu.model'
 
+export * from './tags-choose/tags-choose.component'
+export * from './tags-choose/tags-choose.model'
+
 export * from './yz-module'

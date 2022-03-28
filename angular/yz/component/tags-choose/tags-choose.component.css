@@ -1,0 +1,84 @@
+:host {
+  width: 150px;
+  min-width: 150px;
+  height: 30px;
+  overflow: auto;
+  display: flex;
+  position: relative;
+}
+
+.tagsbox {
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
+  border: 1px solid var(--gray-middle);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tagsbox:hover { border-color: var(--theme-dark); }
+
+.tags {
+  padding: 2px;
+  font-size: .8em;
+  background: var(--gray-middle);
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+.listbox {
+  background: #fff;
+  border: 1px solid var(--gray-middle);
+  border-radius: 5px;
+  position: absolute;
+  top: 40px;
+  left: 75px;
+  z-index: 10;
+}
+
+.lsit {
+  flex: 1;
+  padding: 5px 20px;
+  cursor: pointer;
+  transition: all .3s;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.lsit0 { padding: 5px 0px; }
+
+.lists {
+  display: flex;
+  flex-flow: column;
+}
+
+.lists0 {
+  padding: 0 0 0 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.lists0:hover,
+.lsit:hover {
+  color: var(--theme-dark);
+  background: var(--theme-light);
+}
+
+.mark {
+  font-size: 1.2em;
+  font-weight: 800;
+  cursor: pointer;
+}

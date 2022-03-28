@@ -21,6 +21,8 @@ import { SMenuComponent } from "./s-menu/s-menu.component";
 
 import { SuperMenuComponent } from "./super-menu/super-menu.component";
 
+import { TagsChooseComponent } from "./tags-choose/tags-choose.component";
+
 @NgModule({
   declarations: [
     SearchComponent, PageComponent, SortComponent, BetterTableComponent,
@@ -30,7 +32,8 @@ import { SuperMenuComponent } from "./super-menu/super-menu.component";
     LegendComponent,
     PlayBarComponent,
     SMenuComponent,
-    SuperMenuComponent
+    SuperMenuComponent,
+    TagsChooseComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +47,8 @@ import { SuperMenuComponent } from "./super-menu/super-menu.component";
     LegendComponent,
     PlayBarComponent,
     SMenuComponent,
-    SuperMenuComponent
+    SuperMenuComponent,
+    TagsChooseComponent
   ]
 })
 export class YZModule { }

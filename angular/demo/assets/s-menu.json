@@ -42,6 +42,11 @@
         "id": 8,
         "title": "super-menu",
         "path": "./super-menu"
+      },
+      {
+        "id": 9,
+        "title": "tags-choose",
+        "path": "./tags-choose"
       }
     ]
   }
