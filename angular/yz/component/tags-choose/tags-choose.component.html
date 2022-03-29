@@ -1,27 +1,27 @@
-<div class="tagsbox">
+<div class="tagsbox" (click)="show()">
 
   <span *ngFor="let t of tagsChoose" class="tags">{{t}}</span>
 
 </div>
 
-<!-- <div class="listbox" [class.heightmore]='showlist' [class.heightless]='!showlist'>
+<div class="listbox downdisplay" *ngIf="listShow">
 
-  <div *ngFor='let l of lists'>
+  <div *ngFor='let t of tags'>
 
-    <div class="lists0">
+    <div class="listone">
 
-      <span class="mark" (click)='changebox(l)' [class.clockwise]='l.open' [class.anticlockwise]='!l.open'>&#8250;</span>
+      <span class="arrow" [class.clockwise]='t.open' [class.anticlockwise]='!t.open' (click)="open(t)">&#8250;</span>
 
-      <label class="lsit lsit0">{{l.category}}<input type="checkbox" (click)='chooseAll(l)' [checked]='l.select'></label>
+      <label class="list">{{t.text}}<input type="checkbox" [checked]='t.choose' (click)="chooseAll(t)"></label>
 
     </div>
 
-    <div class="lists" [class.heightmore]='l.open' [class.heightless]='!l.open'>
+    <div class="listtwobox" [class.heightmore]='t.open' [class.heightless]='!t.open'>
 
-      <label class="lsit" *ngFor='let e of l.ele'>{{e.desc}}<input type="checkbox" (click)='chooseOne(e, l)' [checked]='e.select'></label>
+      <label *ngFor='let tt of t.children' class="listtwo">{{tt.text}}<input type="checkbox" [checked]='tt.choose' (click)="chooseOne(t, tt)"></label>
 
     </div>
 
   </div>
 
-</div> -->
+</div>

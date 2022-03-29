@@ -1,83 +1,85 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
+import { Component, EventEmitter, Input, OnChanges, Output } from "@angular/core";
 
-import { tagsChoose } from "./tags-choose.model";
+import { tags, TagsOne, TagsTwo } from "./tags-choose.model";
 
 @Component({
   selector: 'tags-choose',
   templateUrl: './tags-choose.component.html',
   styleUrls: ['./tags-choose.component.css']
 })
-export class TagsChooseComponent {
+export class TagsChooseComponent implements OnChanges {
 
   constructor() { }
 
-  @Input() tagsChoose: string[] = tagsChoose
+  @Input() tags: TagsTwo[] = tags // 数据源
 
-  @Input() max: number = 5
+  @Input() max: number = 3 // 最大显示条数
 
-  // ngOnInit() {
-  //   window.onclick = () => {
-  //     if (this.showlist) {
-  //       this.showlist = false
-  //       this.setstr()
-  //     }
-  //   }
-  // }
+  @Output() chooseTags = new EventEmitter<string[]>()
 
-  // ngOnChanges() { if (this.lists) this.setstr() }
+  ngOnChanges() {
 
-  // @Input() title: string
+    if (!this.tags || this.tags.length === 0) return
 
-  // @Input() lists: TMS[]
+    // 父级 choose 为 true 时将子级所有项 choose 赋为 true
+    this.tags.forEach(t => t.choose && t.children.forEach(tt => tt.choose = true))
 
-  // @Output() listsChange = new EventEmitter<TMS[]>()
+    // 子级所有的项 choose 为 true 则将父级 choose 设为 true
+    this.tags.forEach(t => t.children.every(tt => tt.choose) && (t.choose = true))
 
-  // showlist = false
+    this.setTagsChoose()
 
-  // str: string = '全部'
+  }
 
-  // choose = (e: Event) => {
+  // choose 为 true 的 tag 的文本
+  tagsChoose: string[] = []
 
-  //   e.cancelBubble = true
+  // 是否显示选择窗口
+  listShow = false
 
-  //   if (this.showlist) {
-  //     this.showlist = false
-  //     this.setstr()
-  //   } else {
-  //     this.showlist = true
-  //   }
-  // }
+  // 打开选择窗口
+  show = () => this.listShow = !this.listShow
 
-  // setstr = () => {
-  //   this.str = ''
-  //   this.lists.forEach(l => {
-  //     l.ele.forEach(e => {
-  //       if (e.select) this.str += `${e.desc};`
-  //     })
-  //   })
-  //   this.listsChange.emit(this.lists)
-  // }
+  // 打开当前父级菜单
+  open = (t: TagsTwo) => t.open = !t.open
 
-  // chooseAll = (l: TMS) => {
-  //   if (l.select) {
-  //     l.select = false
-  //     l.ele.forEach(e => e.select = false)
-  //   } else {
-  //     l.select = true
-  //     l.ele.forEach(e => e.select = true)
-  //   }
-  // }
+  chooseAll = (t: TagsTwo) => {
 
-  // chooseOne = (e: TypeMenu, l: TMS) => {
-  //   if (e.select) {
-  //     e.select = false
-  //     l.select = false
-  //   } else {
-  //     e.select = true
-  //     if (!l.ele.find(e => !e.select)) l.select = true
-  //   }
-  // }
+    // 父级影响子级
+    t.choose = !t.choose
+    t.children.forEach(tt => tt.choose = t.choose)
 
-  // changebox = (l: TMS) => l.open = !l.open
+    this.setTagsChoose()
+
+  }
+
+  chooseOne = (t: TagsTwo, tt: TagsOne) => {
+
+    // 子级影响父级
+    tt.choose = !tt.choose
+    t.choose = t.children.every(tt => tt.choose)
+
+    this.setTagsChoose()
+
+  }
+
+  // 公用设置显示文本方法
+  setTagsChoose = () => {
+
+    this.tagsChoose = []
+
+    // 将子级所有 choose 为 true 的值添加到 tagsChoose 里
+    this.tags.forEach(t => this.tagsChoose.push(...t.children.filter(tt => tt.choose).map(tt => tt.text)))
+
+    // 传出
+    this.chooseTags.emit(this.tagsChoose)
+
+    // 当长度超出 max 后，只显示 max 规定的条数
+    if (this.tagsChoose.length > this.max) {
+      let trueArr = this.tagsChoose.filter((t, i) => i < this.max)
+      this.tagsChoose = [...trueArr, `+${this.tagsChoose.length - this.max}`]
+    }
+
+  }
 
 }

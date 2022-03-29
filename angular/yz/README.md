@@ -110,7 +110,23 @@ select: `[number, number]` 选中的 [二级菜单 id, 子菜单 id]
 
 reselect: `EventEmitter<[SMenu, AMenu]>` 传出所选菜单信息
 
+## TagsChooseComponent
+
+标签选择组件，可多选
+
+**@Input**
+
+tags: `TagsTwo[]` 数据
+
+max: `number` 最大显示几条，多余的省略
+
+**@Output**
+
+chooseTags: `string[]` 传出所选择的标签的名字
+
 # history
+
+添加组件 tags-choose @1.8.0
 
 添加组件 play-bar @1.7.0
 

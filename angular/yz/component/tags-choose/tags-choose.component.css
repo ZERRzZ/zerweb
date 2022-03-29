@@ -1,9 +1,7 @@
 :host {
   width: 150px;
-  min-width: 150px;
   height: 30px;
-  overflow: auto;
-  display: flex;
+  display: block;
   position: relative;
 }
 
@@ -23,62 +21,73 @@
 .tagsbox:hover { border-color: var(--theme-dark); }
 
 .tags {
-  padding: 2px;
+  padding: 2px 4px;
   font-size: .8em;
   background: var(--gray-middle);
   border-radius: 5px;
 }
 
-
-
-
-
-
-
-
-
 .listbox {
+  width: 100%;
+  margin-top: 5px;
   background: #fff;
   border: 1px solid var(--gray-middle);
   border-radius: 5px;
+  cursor: pointer;
   position: absolute;
-  top: 40px;
-  left: 75px;
   z-index: 10;
 }
 
-.lsit {
-  flex: 1;
-  padding: 5px 20px;
-  cursor: pointer;
+.listone {
+  width: 100%;
+  height: 30px;
+  transition: all .3s;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  width: 30px;
+  height: 100%;
+  font-size: .8em;
+  font-weight: 800;
+  transition: all .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  width: calc(100% - 30px);
+  height: 100%;
   transition: all .3s;
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-.lsit0 { padding: 5px 0px; }
+.arrow:hover,
+.list:hover {
+  color: var(--theme-dark)
+}
 
-.lists {
+.listtwobox { 
+  width: 100%; 
   display: flex;
   flex-flow: column;
 }
 
-.lists0 {
-  padding: 0 0 0 10px;
+.listtwo {
+  width: 100%;
+  height: 30px;
+  padding-left: 20px;
+  transition: all .3s;
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-.lists0:hover,
-.lsit:hover {
-  color: var(--theme-dark);
-  background: var(--theme-light);
-}
-
-.mark {
-  font-size: 1.2em;
-  font-weight: 800;
-  cursor: pointer;
+.listone:hover,
+.listtwo:hover {
+  background: var(--theme-light); 
 }
