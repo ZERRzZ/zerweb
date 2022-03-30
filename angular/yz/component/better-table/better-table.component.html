@@ -6,7 +6,7 @@
     </tr>
   </table>
 
-  <div class="body">
+  <div id="betterTableBody" class="body">
 
     <table>
       <tr *ngFor='let p of pbody' [class.tr]='click' [class.select]='click && p.id == id' (click)='onclick(p)'>

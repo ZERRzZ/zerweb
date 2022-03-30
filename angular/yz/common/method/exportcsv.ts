@@ -43,14 +43,21 @@ const data2csv = (data: CSVData[], head: string[], column: string[]) => {
     return ''
   }
 
-  let csv = ""
+  let csv = ''
 
-  head.forEach((h, i) => csv += i >= head.length - 1 ? h + '\n' : h + ',') // 表头
+  // 表头，引号包起来为了识别换行
+  head.forEach((h, i) => csv += (i === head.length - 1) ? (h + '\n') : (h + ', '))
 
   data.forEach(d => column.forEach((c, i) => {
-    if (d[c] != 0)
-      d[c] || (d[c] = "")
-    csv += i >= column.length - 1 ? d[c] + '\n' : d[c] + ','
+
+    let body = d[c] // 用变量接收，防止影响源数据
+
+    if (body != 0) body || (body = "") // 除零之外的假值都为空
+
+    if (/\n/g.test(body)) body = `${body.toString().replace(/\n/g, ';')}` // 将换行符替换掉（没法做到单元格内换行）
+
+    csv += (i === column.length - 1) ? (body + '\n') : (body + ', ')
+
   }))
 
   return csv

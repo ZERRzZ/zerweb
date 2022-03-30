@@ -47,15 +47,23 @@ export class BetterTableComponent implements OnChanges, OnInit {
   tsearch = (e: BTBody[]) => { // 搜索
     this.sbody = e
     this.max = Math.ceil(this.sbody.length / this.line) // 最大页数由搜索后的内容决定
-    this.tsort(e)
+    this.tsort(e) // 排序、返回第一页、回到头部
   }
 
   tsort = (e: BTBody[]) => { // 排序
     this.obody = e
-    this.tpage(this.page)
+    this.tpage(this.page = 1) // 返回第一页、回到头部
   }
 
-  tpage = (e: number) => this.pbody = this.obody.slice(this.line * (e - 1), Math.min(this.line * e, this.obody.length)) // 翻页
+  tpage = (e: number) => {
+
+    this.pbody = this.obody.slice(this.line * (e - 1), Math.min(this.line * e, this.obody.length)) // 翻页
+
+    // 返回表格头部
+    let betterTableBody = document.getElementById('betterTableBody')
+    betterTableBody!.scrollTop = 0
+
+  }
 
   /* 行点击 */
 

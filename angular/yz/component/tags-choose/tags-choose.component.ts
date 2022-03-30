@@ -29,6 +29,9 @@ export class TagsChooseComponent implements OnChanges {
 
     this.setTagsChoose()
 
+    // 全局监听
+    window.onclick = () => this.listShow && (this.listShow = false)
+
   }
 
   // choose 为 true 的 tag 的文本
