@@ -24,7 +24,7 @@
 //   let legendInfo = printmodel.legend as LegendInner
 //   let legend = (printmodel.templ as LayoutObj).legend
 
-//   style = style.filter(v => v.visble) // 筛选图例
+//   style = style.filter(v => v.visble === 'true') // 筛选图例
 
 //   legend.column = Math.ceil(style.length / legend.row) // 行数
 //   legend.row = style.length <= legend.row ? style.length : Math.ceil(style.length / legend.column) // 列数

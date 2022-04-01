@@ -5,15 +5,20 @@
   gap: 20px;
 }
 
+/* table 设计 */
+
 table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
 }
 
-tr:nth-child(2n + 1) { background: var(--gray-light); }
+tr:nth-child(2n + 1) {
+  background: var(--gray-light);
+}
 
-th, td {
+th,
+td {
   height: 30px;
   padding: 5px;
   text-align: start;
@@ -22,7 +27,7 @@ th, td {
   overflow: auto;
 }
 
-th { border-bottom: none; }
+/* 盒子 */
 
 .tables {
   width: 100%;
@@ -37,7 +42,9 @@ th { border-bottom: none; }
   overflow: auto;
 }
 
-.body::-webkit-scrollbar { width: 0; }
+.body::-webkit-scrollbar {
+  width: 0;
+}
 
 .tr:hover,
 .select {
