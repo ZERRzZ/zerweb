@@ -1,4 +1,4 @@
-# yz
+# 简介
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
 
@@ -8,7 +8,17 @@ Run `ng build yz` to build the project. After building your library with `ng bui
 
 * style -> @chengzs/yz/common/style/style.css (在本地的 node_modules 里，组件的样式)
 
-# use
+# 公共
+
+*icon* - 一些精简常用的小图标，主要是 svg 的
+
+*method* - 公用的方法，也有没有在包里使用的方法在里面
+
+*service* - 暂不暴露，主要是用于接口的错误提示
+
+*style* - 全局样式，主要包括颜色变量，css reset，动画等
+
+# 组件
 
 ***简单说明组件传入传出的属性，具体数据类型，逻辑请打开相关代码文件查看***
 
@@ -124,7 +134,7 @@ max: `number` 最大显示几条，多余的省略
 
 chooseTags: `string[]` 传出所选择的标签的名字
 
-# history
+# 历史
 
 添加组件 tags-choose @1.8.0
 

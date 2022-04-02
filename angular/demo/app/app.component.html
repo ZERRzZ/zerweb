@@ -1,6 +1,6 @@
 <div class="main">
 
-  <s-menu [smenu]='smenu' [open]='true' (reselect)='getSMenu($event)'></s-menu>
+  <s-menu [smenu]='smenu' [open]='true' [select]="[0, 0]" (reselect)='getSMenu($event)'></s-menu>
 
   <div class="router">
 
@@ -10,10 +10,14 @@
 
 </div>
 
-<!-- <count [value]='3' (valueChange)='getCount($event)'></count> -->
+<div class="others">
 
-<!-- <legend [height]="'300px'"></legend> -->
+  <better-table [head]="bthead" [body]="btbody" [line]="10" [click]='true' [id]='1' (clickTr)='clickTr($event)'></better-table>
 
-<!-- <better-table [click]='true' [id]='1' (clickTr)='clickTr($event)'></better-table> -->
+  <!-- <count [value]='3' (valueChange)='getCount($event)'></count> -->
 
-<!-- <play-bar (onplaybar)="onplaybar($event)"></play-bar> -->
+  <!-- <legend [height]="'300px'"></legend> -->
+
+  <!-- <play-bar (onplaybar)="onplaybar($event)"></play-bar> -->
+
+</div>

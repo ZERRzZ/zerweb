@@ -2,15 +2,15 @@
 
   <table>
     <tr>
-      <th *ngFor='let h of head' [style.width]='h.width ? h.width : "auto"'>{{h.name}}</th>
+      <th *ngFor='let h of head' [style.width]='h.width'>{{h.name}}</th>
     </tr>
   </table>
 
   <div id="betterTableBody" class="body">
 
     <table>
-      <tr *ngFor='let p of pbody' [class.tr]='click' [class.select]='click && p.id == id' (click)='onclick(p)'>
-        <td *ngFor='let h of head' [style.width]='h.width ? h.width : "auto"'>{{p[h.field]}}</td>
+      <tr *ngFor='let p of pbody' [class.tr]='click' [class.select]='click && p.id == id' (click)='trClick(p)'>
+        <td *ngFor='let h of head' [style.width]='h.width'>{{p[h.field]}}</td>
       </tr>
     </table>
 
@@ -20,7 +20,7 @@
 
 <div class="tools">
 
-  <sort [head]='head' [body]='sbody' (bodyChange)='tsort($event)'></sort>
+  <sort [head]='head' [sbody]='sbody' (sbodyChange)='tsort($event)'></sort>
 
   <search [body]='body' (bodyChange)='tsearch($event)'></search>
 

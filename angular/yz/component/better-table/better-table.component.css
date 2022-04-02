@@ -1,5 +1,6 @@
 :host {
   height: 300px;
+  background: #fff;
   display: flex;
   flex-flow: column;
   gap: 20px;
@@ -10,6 +11,7 @@
 table {
   width: 100%;
   border-collapse: collapse;
+  border-spacing: 0px;
   table-layout: fixed;
 }
 
@@ -20,7 +22,7 @@ tr:nth-child(2n + 1) {
 th,
 td {
   height: 30px;
-  padding: 5px;
+  padding: 0 10px;
   text-align: start;
   word-wrap: break-word;
   border: 1px solid var(--gray-middle);
@@ -42,39 +44,26 @@ td {
   overflow: auto;
 }
 
-.body::-webkit-scrollbar {
-  width: 0;
-}
-
-.tr:hover,
-.select {
-  background: var(--theme-light) !important;
-  cursor: pointer;
-  transition: all .3s;
-}
-
 .tools {
   width: 100%;
   flex: 0 0 30px;
-  overflow-x: auto;
-  overflow-y: hidden;
   display: flex;
   gap: 20px;
 }
 
 sort {
   width: calc(100% - 510px);
-  height: 30px;
+  height: 100%;
 }
 
 search {
-  width: 150px;
-  height: 30px;
+  flex: 150px;
+  height: 100%;
 }
 
 .maxp {
-  width: 100px;
-  height: 30px;
+  flex: 100px;
+  height: 100%;
   border: 1px solid var(--gray-middle);
   border-radius: 5px;
   display: flex;
@@ -83,6 +72,15 @@ search {
 }
 
 page {
-  width: 200px;
-  height: 30px;
+  flex: 200px;
+  height: 100%;
+}
+
+/* 点击行样式 */
+
+.tr:hover,
+.select {
+  background: var(--theme-light) !important;
+  cursor: pointer;
+  transition: all .3s;
 }

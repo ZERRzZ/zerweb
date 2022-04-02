@@ -1,7 +1,6 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from "@angular/core";
 
-import { BTBody } from "./better-table.model";
-import { body, head } from "./better-table.test";
+import { btbody, BTBody, BTHead, bthead } from "./better-table.model";
 
 @Component({
   selector: 'better-table',
@@ -12,21 +11,24 @@ export class BetterTableComponent implements OnChanges, OnInit {
 
   constructor() { }
 
+  // 保证每次 body 传入时实时刷新
+  // 初始化时加上 oninit 最大运行 3 次
+  ngOnChanges() { this.tsearch(this.body) }
+
+  // 保证初始化时不乱
   ngOnInit() { this.tsearch(this.body) }
 
-  ngOnChanges(changes: SimpleChanges) { if (changes.body && !changes.body.isFirstChange()) this.tsearch(this.body) }
+  @Input() head: BTHead[] = bthead // 表头数据
 
-  @Input() head = head
+  @Input() body: BTBody[] = btbody // 表体数据
 
-  @Input() body = body // 源
-
-  @Input() line = 10 // 行数
+  @Input() line = 10 // 最大行数
 
   @Input() click = false // 是否可点击
 
   @Input() id = 0 // 选中 id
 
-  @Output() clickTr = new EventEmitter<BTBody>()
+  @Output() clickTr = new EventEmitter<BTBody>() // 传出选中的行数据
 
   /* 搜索, 排序, 分页 */
 
@@ -44,30 +46,25 @@ export class BetterTableComponent implements OnChanges, OnInit {
 
   pbody: BTBody[] = [] // 分页
 
-  tsearch = (e: BTBody[]) => { // 搜索
+  tsearch = (e: BTBody[]) => {
     this.sbody = e
     this.max = Math.ceil(this.sbody.length / this.line) // 最大页数由搜索后的内容决定
-    this.tsort(e) // 排序、返回第一页、回到头部
+    this.tsort(e) // 搜索完排序、返回第一页、回到头部
   }
 
-  tsort = (e: BTBody[]) => { // 排序
+  tsort = (e: BTBody[]) => {
     this.obody = e
     this.tpage(this.page = 1) // 返回第一页、回到头部
   }
 
   tpage = (e: number) => {
-
     this.pbody = this.obody.slice(this.line * (e - 1), Math.min(this.line * e, this.obody.length)) // 翻页
-
-    // 返回表格头部
-    let betterTableBody = document.getElementById('betterTableBody')
-    betterTableBody!.scrollTop = 0
-
+    document.getElementById('betterTableBody')!.scrollTop = 0 // 返回表格头部
   }
 
   /* 行点击 */
 
-  onclick = (p: BTBody) => {
+  trClick = (p: BTBody) => {
     this.id = p.id
     this.clickTr.emit(p)
   }

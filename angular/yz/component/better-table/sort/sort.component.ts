@@ -13,60 +13,55 @@ export class SortComponent {
 
   @Input() head: BTHead[] = []
 
-  @Input() body: BTBody[] = []
+  @Input() sbody: BTBody[] = []
 
-  @Output() bodyChange = new EventEmitter<BTBody[]>()
+  @Output() sbodyChange = new EventEmitter<BTBody[]>()
 
-  shows = false
+  showorder = false // 控制排序列表显示
 
-  type = "init" // 升序还是降序
+  order: 'init' | 'up' | 'down' = "init" // 排序状态
 
-  clickIndex = -1 // 点击的 id
+  sid = 0 // 选中的标题 id
+
+  lastsid = 0 // 上一次选中的标题 id
 
   // 显示与隐藏
   show = () => {
-    if (this.shows) {
-      let sortbox1 = document.getElementById('sortbox1')
-      sortbox1?.classList.remove('updisplay')
-      sortbox1?.classList.add('downhide')
-      setTimeout(() => this.shows = false, 400)
+    if (this.showorder) {
+      document.getElementById('betterTableSort')!.classList.add('downhide')
+      setTimeout(() => this.showorder = false, 400)
     } else {
-      this.shows = true
+      this.showorder = true
     }
   }
 
   // 排序
-  sort = (field: string, index: number) => {
+  sort = (h: BTHead) => {
 
-    this.clickIndex = index // 控制样式变化
+    // 先将此次 id 赋给当前选中 id
+    this.sid = h.id 
+    // 当点击不同项时防止混乱
+    this.lastsid !== this.sid && (this.order = 'init')
+    // 再将此次 id 赋给上次选中 id
+    this.lastsid = h.id
 
-    let body = [...this.body] // 防引用
+    let sbody = [...this.sbody] // 防引用
 
-    if (this.type == 'init') {
+    if (this.order == 'init') {
 
-      this.type = 'shengxu'
+      this.order = 'up'
 
-      body.sort((a, b) => {
-        if (a[field] < b[field]) return -1
-        else return 1
-      })
+      sbody.sort((a, b) => a[h.field] < b[h.field] ? -1 : 1)
 
-    } else if (this.type == 'shengxu') {
+    } else if (this.order == 'up') {
 
-      this.type = 'jiangxu'
+      this.order = 'down'
 
-      body.sort((a, b) => {
-        if (a[field] < b[field]) return 1
-        else return -1
-      })
+      sbody.sort((a, b) => a[h.field] < b[h.field] ? 1 : -1)
 
-    } else {
+    } else { this.order = 'init' }
 
-      this.type = 'init'
-
-    }
-
-    this.bodyChange.emit(body)
+    this.sbodyChange.emit(sbody)
 
   }
 
