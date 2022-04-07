@@ -8,13 +8,13 @@
 
       <span>{{s.name}}</span>
 
-      <svg class="menuicon" viewBox="4 4 16 16" width="1em" height='1em' [class]="{ clockwise: s.open, anticlockwise: !s.open }">
+      <svg class="menuicon" viewBox="4 4 16 16" width="1em" height='1em' [class.clockwise]="s.open" [class.anticlockwise]="!s.open">
         <path d="M8.59 16.34 l4.58 -4.59 -4.58 -4.59 L10 5.75 l6 6-6 6 Z"></path>
       </svg>
 
     </div>
 
-    <super-menu class="menuchild" [class]="{ heightmore: s.open, heightless: !s.open }" [smenu]='s.children'></super-menu>
+    <super-menu class="menuchild" [class.heightmore]="s.open" [class.heightless]="!s.open" [smenu]='s.children'></super-menu>
 
   </div>
 

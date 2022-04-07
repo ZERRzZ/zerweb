@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from "@angular/core";
 
 import { BTBody, BTHead } from "../better-table.model";
 
@@ -10,6 +10,8 @@ import { BTBody, BTHead } from "../better-table.model";
 export class SortComponent {
 
   constructor() { }
+
+  @ViewChild('betterTableSort', { static: false }) btsort: ElementRef
 
   @Input() head: BTHead[] = []
 
@@ -28,7 +30,7 @@ export class SortComponent {
   // 显示与隐藏
   show = () => {
     if (this.showorder) {
-      document.getElementById('betterTableSort')!.classList.add('downhide')
+      this.btsort.nativeElement.classList.add('downhide')
       setTimeout(() => this.showorder = false, 400)
     } else {
       this.showorder = true

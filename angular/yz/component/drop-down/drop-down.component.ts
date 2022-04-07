@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from "@angular/core";
+import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, ViewChild } from "@angular/core";
 
 import { list, DDList } from "./drop-down.model"
 
@@ -11,7 +11,9 @@ export class DropDownComponent implements OnChanges {
 
   constructor() { }
 
-  ngOnChanges(): void { this.slist = this.list[0] }
+  @ViewChild('dropdownbox', { static: false }) ddbox: ElementRef
+
+  ngOnChanges() { this.slist = this.list[0] }
 
   @Input() list: DDList[] = list
 
@@ -21,12 +23,20 @@ export class DropDownComponent implements OnChanges {
 
   slist: DDList = this.list[0] // 选中的数据
 
-  showlist = () => this.show = !this.show
+  showlist = () => {
+    if (this.show) this.closebox()
+    else this.show = true
+  }
 
   select = (l: DDList) => {
     this.slist = l
     this.listSelect.emit(l)
-    this.show = false
+    this.closebox()
+  }
+
+  closebox = () => {
+    this.ddbox.nativeElement.classList.add('downhide')
+    setTimeout(() => this.show = false, 300)
   }
 
 }

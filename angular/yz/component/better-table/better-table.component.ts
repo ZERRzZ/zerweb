@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from "@angular/core";
+import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from "@angular/core";
 
 import { btbody, BTBody, BTHead, bthead } from "./better-table.model";
 
@@ -10,6 +10,8 @@ import { btbody, BTBody, BTHead, bthead } from "./better-table.model";
 export class BetterTableComponent implements OnChanges, OnInit {
 
   constructor() { }
+
+  @ViewChild('betterTableBody', { static: true }) btbody: ElementRef
 
   // 保证每次 body 传入时实时刷新
   // 初始化时加上 oninit 最大运行 3 次
@@ -58,8 +60,10 @@ export class BetterTableComponent implements OnChanges, OnInit {
   }
 
   tpage = (e: number) => {
+    this.btbody.nativeElement.scrollTop = 0 // 返回表格头部
+    this.btbody.nativeElement.classList.add('slowshow') // 添加切换动画
     this.pbody = this.obody.slice(this.line * (e - 1), Math.min(this.line * e, this.obody.length)) // 翻页
-    document.getElementById('betterTableBody')!.scrollTop = 0 // 返回表格头部
+    setTimeout(() => this.btbody.nativeElement.classList.remove('slowshow'), 400) // 重置动画
   }
 
   /* 行点击 */

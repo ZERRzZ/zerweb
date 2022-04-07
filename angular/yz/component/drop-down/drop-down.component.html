@@ -2,11 +2,13 @@
 
   <input class="show" type="text" [value]='slist.name' readonly (click)='showlist()'>
 
-  <span class="showicon" (click)=showlist()>&#9662;</span>
+  <svg viewBox="4 4 16 16" class="showicon" [class.clockwise]="show" [class.anticlockwise]='!show' (click)=showlist()>
+    <path d="M8.59 16.34 l4.58 -4.59 -4.58 -4.59 L10 5.75 l6 6-6 6 Z"></path>
+  </svg>
 
 </div>
 
-<div class="lsitsbox downdisplay" *ngIf='show'>
+<div #dropdownbox *ngIf='show' class="lsitsbox updisplay">
 
   <div class="list" *ngFor='let l of list' (click)='select(l)'>{{l.name}}</div>
 

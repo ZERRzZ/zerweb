@@ -14,13 +14,6 @@
   transition: all .3s;
 }
 
-.order:hover,
-.ordersvg:hover {
-  color: var(--theme-dark);
-  fill: var(--theme-dark);
-  border-color: var(--theme-dark);
-}
-
 .orderbox {
   flex: auto;
   height: 100%;
@@ -40,14 +33,21 @@
   align-items: center;
 }
 
+.order:hover,
+.ordersvg:hover,
+.up,
+.down {
+  color: var(--theme-dark);
+  fill: var(--theme-dark);
+  border-color: var(--theme-dark);
+}
+
 .up::after { 
-  content: '\21A7';
-  position: relative;
-  top: -1px;
+  content: '\2191';
+  font-size: .6em;
 }
 
 .down::after { 
-  content: '\21A5';
-  position: relative;
-  top: -1px;
+  content: '\2193';
+  font-size: .6em;
 }
