@@ -1,12 +1,12 @@
 <div class="title">图例</div>
 
-<div class="main" [style.--height]="height">
+<div class="main" [style.maxHeight]="height">
 
-  <div class="legend" *ngFor='let l of legend'>
+  <div class="llegend" *ngFor='let l of legend'>
 
     <div class="img">
 
-      <img [src]="l.url" [style.--color]="l.color" [style.background]="l.url ? l.url : l.color">
+      <img [src]="l.url" [ngStyle]="{filter: l.color}" [style.background]="l.url || l.color">
 
     </div>
 

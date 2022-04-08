@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { legend } from './legend.test';
+import { Legend, legend } from './legend.model';
 
 @Component({
   selector: 'legend',
@@ -11,8 +11,8 @@ export class LegendComponent {
 
   constructor() { }
 
-  @Input() legend = legend
+  @Input() legend: Legend[] = legend
 
-  @Input() height = '20px'
+  @Input() height: string = '20px'
 
 }
