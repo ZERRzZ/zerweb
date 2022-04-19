@@ -11,7 +11,7 @@ export class SortComponent {
 
   constructor() { }
 
-  @ViewChild('betterTableSort', { static: false }) btsort: ElementRef
+  @ViewChild('betterTableSort', { static: false }) btsort: ElementRef<HTMLElement>
 
   @Input() head: BTHead[] = []
 

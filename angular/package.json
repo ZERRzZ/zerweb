@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --port=1314",
-    "build-yz": "ng build yz --prod",
+    "build-yz": "ng build yz",
     "publish-yz": "cd dist/yz && npm publish"
   },
   "private": true,

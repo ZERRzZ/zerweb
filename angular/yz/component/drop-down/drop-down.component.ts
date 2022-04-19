@@ -11,7 +11,7 @@ export class DropDownComponent implements OnChanges {
 
   constructor() { }
 
-  @ViewChild('dropdownbox', { static: false }) ddbox: ElementRef
+  @ViewChild('dropdownbox', { static: false }) ddbox: ElementRef<HTMLElement>
 
   ngOnChanges() { this.slist = this.list[0] }
 

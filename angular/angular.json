@@ -93,6 +93,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "demo"
 }

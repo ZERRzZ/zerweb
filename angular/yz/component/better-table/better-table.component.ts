@@ -11,7 +11,7 @@ export class BetterTableComponent implements OnChanges, OnInit {
 
   constructor() { }
 
-  @ViewChild('betterTableBody', { static: true }) btbody: ElementRef
+  @ViewChild('betterTableBody', { static: true }) btbody: ElementRef<HTMLElement>
 
   // 保证每次 body 传入时实时刷新
   // 初始化时加上 oninit 最大运行 3 次
