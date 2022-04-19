@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { supermenu, SuperMenu } from "./super-menu.model";
 
@@ -11,35 +11,42 @@ export class SuperMenuComponent {
 
   constructor() { }
 
-  @Input() origin: SuperMenu[] = supermenu // 原始数据
+  @Input() origin: SuperMenu[] = supermenu
 
   @Input() smenu: SuperMenu[] = supermenu
 
+  @Output() selectmenu = new EventEmitter<SuperMenu>()
+
+  @Output() selectMenu = new EventEmitter<SuperMenu>()
+
   select = (s: SuperMenu) => {
 
-    let idArr = s.id.split('.') // 拆解 id
-    let ids: string[] = []
+    this.clearAll(this.origin)
 
-    while (idArr.length) { // 将一个 id 分成多个选中的 id
-      ids.push(idArr.reduce((p, v) => p + `.${v}`))
-      idArr.pop()
-    }
+    s.select = true
 
-    // this.superforEach(this.smenu, ids)
+    this.setSelect(this.origin)
 
-    this.smenu.find(v => v.id == s.id)!.select = true
-
-    console.log(this.smenu)
-    console.log(s)
-    console.log(ids)
+    this.selectmenu.emit(s)
 
   }
 
-  // 循环为 SuperMenu 类型的 select 赋值, 实现选中效果
-  superforEach = (smenu: SuperMenu[], ids: string[]) => {
-    smenu.forEach(s => {
-      s.select = ids.every(i => i == s.id)
-      s.children && this.superforEach(s.children, ids)
+  // 清除所有选中状态
+  clearAll = (menu: SuperMenu[]) => {
+    menu.forEach(v => {
+      v.select = false
+      if (v.children) this.clearAll(v.children)
+    })
+  }
+
+  // 给一个树上的菜单项 select 属性赋值
+  // 先递归到最底层, 再逐层往上, 如果子项有一项 select 为真, 则给父项也设为真
+  setSelect = (menu: SuperMenu[]) => {
+    menu.forEach(v => {
+      if (v.children) {
+        this.setSelect(v.children)
+        v.select = !v.children.every(vv => vv.select == false)
+      }
     })
   }
 

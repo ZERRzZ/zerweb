@@ -1,6 +1,6 @@
 <div class="main">
 
-  <s-menu [smenu]='smenu' [open]='true' [select]="[0, 0]" (reselect)='getSMenu($event)'></s-menu>
+  <super-menu [origin]="smenu" [smenu]='smenu' (selectmenu)="selectmenu($event)" (selectMenu)="selectmenu($event)"></super-menu>
 
   <div class="router">
 
@@ -19,5 +19,7 @@
   <!-- <legend [height]="'300px'"></legend> -->
 
   <!-- <play-bar (onplaybar)="onplaybar($event)"></play-bar> -->
+
+  <tags-choose [tags]="tags" [max]="5" (chooseTags)="chooseTags($event)"></tags-choose>
 
 </div>

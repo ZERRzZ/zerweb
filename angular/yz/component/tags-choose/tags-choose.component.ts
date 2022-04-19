@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from "@angular/core";
 
-import { tags, TagsOne, TagsTwo } from "./tags-choose.model";
+import { tags, TagsChild, TagsParent } from "./tags-choose.model";
 
 @Component({
   selector: 'tags-choose',
@@ -11,9 +11,9 @@ export class TagsChooseComponent implements OnChanges {
 
   constructor() { }
 
-  @Input() tags: TagsTwo[] = tags // 数据源
+  @Input() tags: TagsParent[] = tags // 数据源
 
-  @Input() max: number = 3 // 最大显示条数
+  @Input() max: number = 5 // 最大显示条数
 
   @Output() chooseTags = new EventEmitter<string[]>()
 
@@ -44,9 +44,9 @@ export class TagsChooseComponent implements OnChanges {
   show = () => this.listShow = !this.listShow
 
   // 打开当前父级菜单
-  open = (t: TagsTwo) => t.open = !t.open
+  open = (t: TagsParent) => t.open = !t.open
 
-  chooseAll = (t: TagsTwo) => {
+  chooseAll = (t: TagsParent) => {
 
     // 父级影响子级
     t.choose = !t.choose
@@ -56,7 +56,7 @@ export class TagsChooseComponent implements OnChanges {
 
   }
 
-  chooseOne = (t: TagsTwo, tt: TagsOne) => {
+  chooseOne = (t: TagsParent, tt: TagsChild) => {
 
     // 子级影响父级
     tt.choose = !tt.choose

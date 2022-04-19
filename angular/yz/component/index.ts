@@ -15,9 +15,6 @@ export * from './legend/legend.model'
 export * from './play-bar/play-bar.component'
 export * from './play-bar/play-bar.model'
 
-export * from './s-menu/s-menu.component'
-export * from './s-menu/s-menu.model'
-
 export * from './super-menu/super-menu.component'
 export * from './super-menu/super-menu.model'
 

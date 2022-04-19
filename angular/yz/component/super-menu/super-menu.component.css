@@ -2,12 +2,15 @@
   width: 350px;
   height: 100%;
   overflow: auto;
+  cursor: pointer;
   display: flex;
   gap: 1px;
   flex-flow: column;
 }
 
-:host::-webkit-scrollbar { width:5px; }
+:host::-webkit-scrollbar {
+  width: 5px;
+}
 
 :host::-webkit-scrollbar-thumb {
   border-radius: 10px;
@@ -17,41 +20,54 @@
 .titleblock::before {
   width: 0;
   opacity: 0;
-  top: 1px;
+}
+
+.menuitem {
+  width: 100%;
+  height: 50px;
+  transition: all .3s;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .menubox {
-  cursor: pointer;
+  width: 100%;
   display: flex;
   gap: 1px;
   flex-flow: column;
 }
 
-.menuitem {
-  padding: 15px 0 15px 10px;
-  transition: all .3s;
-  display: flex;
-  position: relative;
+.menuicon {
+  width: .8em;
+  height: .8em;
+  position: absolute;
+  right: 10px;
 }
 
-.menuitem:hover,
-.select {
+super-menu {
+  width: 100%;
+  height: auto;
+}
+
+.menuitem:hover {
   color: var(--theme-dark);
   fill: var(--theme-dark);
   background: var(--theme-light);
 }
 
+.select {
+  color: var(--theme-dark);
+  fill: var(--theme-dark);
+}
+
 .menuitem:hover::before,
 .select::before {
-  width: 3px; 
-  opacity: 1  
+  width: 3px;
+  opacity: 1
 }
 
-.menuicon {
-  position: absolute;
-  right: 10px;
+.headitem {
+  font-weight: 800;
+  background: var(--theme-light);
 }
-
-.menuchild { padding-left: 10px; }
-
-super-menu { width: 100%; }

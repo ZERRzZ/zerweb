@@ -17,8 +17,6 @@ import { LegendComponent } from "./legend/legend.component";
 
 import { PlayBarComponent } from "./play-bar/play-bar.component";
 
-import { SMenuComponent } from "./s-menu/s-menu.component";
-
 import { SuperMenuComponent } from "./super-menu/super-menu.component";
 
 import { TagsChooseComponent } from "./tags-choose/tags-choose.component";
@@ -31,7 +29,6 @@ import { TagsChooseComponent } from "./tags-choose/tags-choose.component";
     FloatMenuComponent,
     LegendComponent,
     PlayBarComponent,
-    SMenuComponent,
     SuperMenuComponent,
     TagsChooseComponent
   ],
@@ -46,7 +43,6 @@ import { TagsChooseComponent } from "./tags-choose/tags-choose.component";
     FloatMenuComponent,
     LegendComponent,
     PlayBarComponent,
-    SMenuComponent,
     SuperMenuComponent,
     TagsChooseComponent
   ]

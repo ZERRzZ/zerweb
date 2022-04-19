@@ -12,7 +12,7 @@
   display: flex;
 }
 
-s-menu {
+super-menu {
   width: 350px;
   height: 100%;
   overflow: auto;
@@ -32,4 +32,9 @@ s-menu {
   display: flex;
   flex-flow: column;
   gap: 20px;
+  position: relative;
+}
+
+tags-choose {
+  top: 400px;
 }

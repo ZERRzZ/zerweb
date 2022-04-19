@@ -1,18 +1,17 @@
 :host {
-  min-width: 150px;
+  min-width: 200px;
   height: 30px;
-  display: flex;
-  flex-flow: column;
-  position: relative;
+  font-size: .8em;
+  cursor: pointer;
+  position: absolute;
 }
 
 .tagsbox {
-  flex: auto;
+  width: 100%;
   height: 100%;
   padding: 0 5px;
   border: 1px solid var(--gray-middle);
   border-radius: 5px;
-  cursor: pointer;
   transition: all .3s;
   display: flex;
   align-items: center;
@@ -20,40 +19,37 @@
 }
 
 .tagsbox:hover {
+  background: var(--theme-light);
   border-color: var(--theme-dark);
 }
 
 .tags {
   padding: 2px 4px;
-  font-size: .8em;
   background: var(--gray-middle);
   border-radius: 5px;
 }
 
 .listbox {
   width: 100%;
-  margin-top: 30px;
-  background: #fff;
+  margin-top: 5px;
   border: 1px solid var(--gray-middle);
   border-radius: 5px;
-  cursor: pointer;
   position: absolute;
-  z-index: 10;
 }
 
 .listone {
   width: 100%;
   height: 30px;
+  padding: 0 10px;
   transition: all .3s;
   display: flex;
+  gap: 10px;
   align-items: center;
 }
 
 .arrow {
-  width: 30px;
-  height: 100%;
-  font-size: .8em;
-  font-weight: 800;
+  width: .8em;
+  height: .8em;
   transition: all .3s;
   display: flex;
   align-items: center;
@@ -61,36 +57,36 @@
 }
 
 .list {
-  width: calc(100% - 30px);
+  flex: auto;
   height: 100%;
   transition: all .3s;
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
   align-items: center;
 }
 
 .arrow:hover,
 .list:hover {
-  color: var(--theme-dark)
+  color: var(--theme-dark);
+  fill: var(--theme-dark);
 }
 
 .listtwobox {
   width: 100%;
-  display: flex;
-  flex-flow: column;
 }
 
 .listtwo {
   width: 100%;
   height: 30px;
-  padding-left: 20px;
+  padding: 0 10px 0 20px;
   transition: all .3s;
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
   align-items: center;
 }
 
 .listone:hover,
 .listtwo:hover {
+  color: var(--theme-dark);
   background: var(--theme-light);
 }

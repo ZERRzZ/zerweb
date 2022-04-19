@@ -1,6 +1,6 @@
 # 简介
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29.
 
 Run `ng build yz` to build the project. After building your library with `ng build yz`, go to the dist folder `cd dist/yz` and run `npm publish`.
 
@@ -104,21 +104,21 @@ playbar: `PlayBar[]` 刻度数据，总共分多少个刻度
 
 onplaybar: `EventEmitter<PlayBar>` 将选中的刻度传出
 
-## SMenuComponent
+## SuperMenuComponent
 
-二级菜单组件，带路由
+超级菜单组件，递归生成菜单，支持任意层级
 
 **@Input**
 
-smenu: `SMenu[]` 菜单
+origin: `SuperMenu[]` 源数据，使用时只需保证和菜单数据一样即可
 
-open: `boolean` 是否全打开
-
-select: `[number, number]` 选中的 [二级菜单 id, 子菜单 id]
+smenu: `SuperMenu[]` 菜单数据
 
 **@Output**
 
-reselect: `EventEmitter<[SMenu, AMenu]>` 传出所选菜单信息
+selectmenu: `EventEmitter<PlayBar>` 传出菜单项，等同于下面
+
+selectMenu: `EventEmitter<PlayBar>` 传出菜单项，等同于上面，可讲两个当作一个来使用
 
 ## TagsChooseComponent
 
@@ -135,6 +135,10 @@ max: `number` 最大显示几条，多余的省略
 chooseTags: `string[]` 传出所选择的标签的名字
 
 # 历史
+
+添加组件 super-menu, 删除组件 s-menu @2.1.0
+
+降低 angular 版本为 8 @2.0.0
 
 添加组件 tags-choose @1.8.0
 

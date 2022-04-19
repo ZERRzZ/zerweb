@@ -1,0 +1,49 @@
+[
+  {
+    "name": "yz",
+    "level": 1,
+    "open": true,
+    "children": [
+      {
+        "name": "better-table",
+        "level": 2,
+        "path": "./better-table"
+      },
+      {
+        "name": "counter",
+        "level": 2,
+        "path": "./counter"
+      },
+      {
+        "name": "drop-down",
+        "level": 2,
+        "path": "./drop-down"
+      },
+      {
+        "name": "float-menu",
+        "level": 2,
+        "path": "./float-menu"
+      },
+      {
+        "name": "legend",
+        "level": 2,
+        "path": "./legend"
+      },
+      {
+        "name": "play-bar",
+        "level": 2,
+        "path": "./play-bar"
+      },
+      {
+        "name": "super-menu",
+        "level": 2,
+        "path": "./super-menu"
+      },
+      {
+        "name": "tags-choose",
+        "level": 2,
+        "path": "./tags-choose"
+      }
+    ]
+  }
+]

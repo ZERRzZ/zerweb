@@ -4,23 +4,23 @@
  * @param open 父级展开或叠起
  * @param children 子集
  */
-export interface TagsTwo {
+export interface TagsParent {
   text: string
   choose?: boolean
   open?: boolean
-  children: TagsOne[]
+  children: TagsChild[]
 }
 
 /**标签选择（可多选）数据类型
  * @param text 文本
  * @param choose 是否选择
  */
-export interface TagsOne {
+export interface TagsChild {
   text: string
   choose?: boolean
 }
 
-export const tags: TagsTwo[] = [
+export const tags: TagsParent[] = [
   {
     text: '全部一',
     children: [

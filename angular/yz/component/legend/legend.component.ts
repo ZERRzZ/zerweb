@@ -13,6 +13,6 @@ export class LegendComponent {
 
   @Input() legend: Legend[] = legend
 
-  @Input() height: string = '20px'
+  @Input() height: string = '200px'
 
 }

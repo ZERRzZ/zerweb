@@ -4,13 +4,15 @@
 
 </div>
 
-<div class="listbox" [class.heightmore]='listShow' [class.heightless]='!listShow' (click)="$event.cancelBubble = true">
+<div class="listbox" [class.updisplay]='listShow' [class.downhide]='!listShow' (click)="$event.cancelBubble = true">
 
   <div *ngFor='let t of tags'>
 
     <div class="listone">
 
-      <span class="arrow" [class.clockwise]='t.open' [class.anticlockwise]='!t.open' (click)="open(t)">&#8250;</span>
+      <svg viewBox="4 4 16 16" class="arrow" [class.clockwise]='t.open' [class.anticlockwise]='!t.open' (click)="open(t)">
+        <path d="M8.59 16.34 l4.58 -4.59 -4.58 -4.59 L10 5.75 l6 6-6 6 Z"></path>
+      </svg>
 
       <label class="list">{{t.text}}<input type="checkbox" [checked]='t.choose' (click)="chooseAll(t)"></label>
 
