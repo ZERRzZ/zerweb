@@ -30,21 +30,21 @@ import { TagsChooseComponent } from "./tags-choose/tags-choose.component";
     LegendComponent,
     PlayBarComponent,
     SuperMenuComponent,
-    TagsChooseComponent
+    TagsChooseComponent,
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
-    BetterTableComponent,
+    SearchComponent, PageComponent, SortComponent, BetterTableComponent,
     CounterComponent,
     DropDownComponent,
     FloatMenuComponent,
     LegendComponent,
     PlayBarComponent,
     SuperMenuComponent,
-    TagsChooseComponent
+    TagsChooseComponent,
   ]
 })
 export class YZModule { }

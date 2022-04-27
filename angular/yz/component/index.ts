@@ -1,5 +1,8 @@
 export * from './better-table/better-table.component'
 export * from './better-table/better-table.model'
+export * from './better-table/page/page.component'
+export * from './better-table/search/search.component'
+export * from './better-table/sort/sort.component'
 
 export * from './counter/counter.component'
 
