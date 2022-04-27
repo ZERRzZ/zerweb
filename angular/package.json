@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve -o --port=1314",
     "build-yz": "ng build yz",
-    "publish-yz": "cd dist/yz && npm publish"
+    "publish-yz": "cd dist/yz && npm pack && npm publish"
   },
   "private": true,
   "dependencies": {
