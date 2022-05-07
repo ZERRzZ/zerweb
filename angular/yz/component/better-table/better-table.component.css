@@ -44,6 +44,10 @@ td {
   overflow: auto;
 }
 
+.body::-webkit-scrollbar {
+  width: 0;
+}
+
 .tools {
   width: 100%;
   flex: 0 0 30px;
