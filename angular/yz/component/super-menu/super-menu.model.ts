@@ -6,14 +6,16 @@
  * @param open 是否展开
  * @param select 是否选中
  * @param children 子项, 拥有子项则说明存在子级菜单
+ * @any [prop: string]: any 任意其他数据供使用者使用
  */
-export interface SuperMenu {
+ export interface SuperMenu {
   name: string
   level: number
   path?: string
   open?: boolean
   select?: boolean
   children?: SuperMenu[]
+  [prop: string]: any
 }
 
 export const supermenu: SuperMenu[] = [
