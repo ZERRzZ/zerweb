@@ -20,15 +20,10 @@ export class SuperMenuComponent {
   @Output() selectMenu = new EventEmitter<SuperMenu>()
 
   select = (s: SuperMenu) => {
-
     this.clearAll(this.origin)
-
     s.select = true
-
     this.setSelect(this.origin)
-
     this.selectmenu.emit(s)
-
   }
 
   // 清除所有选中状态

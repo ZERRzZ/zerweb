@@ -39,32 +39,24 @@ export class SortComponent {
 
   // 排序
   sort = (h: BTHead) => {
-
     // 先将此次 id 赋给当前选中 id
-    this.sid = h.id 
+    this.sid = h.id
     // 当点击不同项时防止混乱
     this.lastsid !== this.sid && (this.order = 'init')
     // 再将此次 id 赋给上次选中 id
     this.lastsid = h.id
-
-    let sbody = [...this.sbody] // 防引用
-
+    // 防引用
+    let sbody = [...this.sbody]
     if (this.order == 'init') {
-
       this.order = 'up'
-
       sbody.sort((a, b) => a[h.field] < b[h.field] ? -1 : 1)
-
     } else if (this.order == 'up') {
-
       this.order = 'down'
-
       sbody.sort((a, b) => a[h.field] < b[h.field] ? 1 : -1)
-
-    } else { this.order = 'init' }
-
+    } else {
+      this.order = 'init'
+    }
     this.sbodyChange.emit(sbody)
-
   }
 
 }

@@ -16,7 +16,7 @@ export class PageComponent {
   @Output() pageChange = new EventEmitter<number>()
 
   @Input() min = 0 // 最小页数
-
+  
   @Input() max = 10000 // 最大页数
 
   // 第一页
