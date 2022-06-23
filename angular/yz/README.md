@@ -136,6 +136,8 @@ chooseTags: `string[]` 传出所选择的标签的名字
 
 # 历史
 
+添加 handle-cookie 方法 @2.2.0 
+
 添加组件 super-menu, 删除组件 s-menu @2.1.0
 
 降低 angular 版本为 8 @2.0.0
