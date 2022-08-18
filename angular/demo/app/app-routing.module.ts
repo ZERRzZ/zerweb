@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CounterComponent, LegendComponent, BetterTableComponent, SuperMenuComponent, DropDownComponent, FloatMenuComponent, PlayBarComponent, TagsChooseComponent } from 'yz/public-api';
+import { CounterComponent, LegendComponent, BetterTableComponent, SuperMenuComponent, DropDownComponent, FloatMenuComponent, PlayBarComponent, TagsChooseComponent } from '../../yz/public-api';
 
 const routes: Routes = [
   { path: 'better-table', component: BetterTableComponent },

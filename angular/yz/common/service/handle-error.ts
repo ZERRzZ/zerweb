@@ -3,7 +3,7 @@
 // import { NzModalService } from "ng-zorro-antd";
 // import { throwError } from "rxjs";
 
-// @Injectable()
+// @Injectable({ providedIn: 'root'})
 // export class HandleErrService {
 
 //   constructor(private modal: NzModalService) { }

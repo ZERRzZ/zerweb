@@ -14,7 +14,7 @@
 
     </div>
 
-    <super-menu [class.heightmore]="s.open" [class.heightless]="!s.open" [origin]="origin" [smenu]='s.children' (selectmenu)="selectMenu.emit($event)"></super-menu>
+    <super-menu [class.heightmore]="s.open" [class.heightless]="!s.open" [origin]="origin" [smenu]='s.children' (selectmenu)="select($event)"></super-menu>
 
   </div>
 

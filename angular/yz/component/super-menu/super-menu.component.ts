@@ -17,8 +17,6 @@ export class SuperMenuComponent {
 
   @Output() selectmenu = new EventEmitter<SuperMenu>()
 
-  @Output() selectMenu = new EventEmitter<SuperMenu>()
-
   select = (s: SuperMenu) => {
     this.clearAll(this.origin)
     s.select = true

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { AppService } from './app.service';
 
-import { btbody, BTBody, bthead, BTHead, PlayBar, SuperMenu, tags, TagsParent } from 'yz/public-api';
+import { btbody, BTBody, bthead, BTHead, PlayBar, SuperMenu, tags, TagsParent } from '../../yz/public-api';
 
 @Component({
   selector: 'app',

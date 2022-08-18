@@ -7,7 +7,7 @@ import { AppService } from './app.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { YZModule } from 'yz/public-api';
+import { YZModule } from '../../yz/public-api';
 
 @NgModule({
   declarations: [
