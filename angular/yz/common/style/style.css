@@ -11,7 +11,9 @@
 
 /* css reset */
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html {
   width: 100%;
@@ -33,7 +35,9 @@ a {
   transition: all .3s;
 }
 
-a:hover { color: var(--theme-dark); }
+a:hover {
+  color: var(--theme-dark);
+}
 
 input[type='button'] {
   color: inherit;
@@ -53,7 +57,9 @@ input[type='password'] {
 [type='button'],
 [type='checkbox'],
 [type='radio'],
-label { cursor: pointer; }
+label {
+  cursor: pointer;
+}
 
 /* common class */
 
@@ -75,7 +81,9 @@ label { cursor: pointer; }
   width: 100%;
   height: 100%;
   background: #666666cc;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -92,8 +100,13 @@ label { cursor: pointer; }
 }
 
 @keyframes clockwise {
-  form { transform: rotate(0) }
-  to { transform: rotate(var(--angle)) }
+  form {
+    transform: rotate(0)
+  }
+
+  to {
+    transform: rotate(var(--angle))
+  }
 }
 
 /* 逆时针旋转 */
@@ -104,8 +117,13 @@ label { cursor: pointer; }
 }
 
 @keyframes anticlockwise {
-  from { transform: rotate(var(--angle)) }
-  to { transform: rotate(0) }
+  from {
+    transform: rotate(var(--angle))
+  }
+
+  to {
+    transform: rotate(0)
+  }
 }
 
 /* 最大高度减少 */
@@ -117,8 +135,15 @@ label { cursor: pointer; }
 }
 
 @keyframes heightless {
-  from { max-height: var(--maxheight); opacity: 1; }
-  to { max-height: 0; opacity: 0; }
+  from {
+    max-height: var(--maxheight);
+    opacity: 1;
+  }
+
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
 }
 
 /* 最大高度增大 */
@@ -130,89 +155,175 @@ label { cursor: pointer; }
 }
 
 @keyframes heightmore {
-  from { max-height: 0; opacity: 0; }
-  to { max-height: var(--maxheight);  opacity: 1; }
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  to {
+    max-height: var(--maxheight);
+    opacity: 1;
+  }
 }
 
 /* 弹出 */
 
-.popup { animation: popup .3s forwards; }
+.popup {
+  animation: popup .3s forwards;
+}
 
 @keyframes popup {
-  0% { transform: scale(0); }
-  85% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(0);
+  }
+
+  85% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* 缩回 */
 
-.shrink { animation: shrink .3s forwards; }
+.shrink {
+  animation: shrink .3s forwards;
+}
 
 @keyframes shrink {
-  0% { transform: scale(1); }
-  85% { transform: scale(1.1); }
-  100% { transform: scale(0); }
+  0% {
+    transform: scale(1);
+  }
+
+  85% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
 }
 
 /* 淡入 */
 
-.slowshow { animation: slowshow .3s forwards; }
+.slowshow {
+  animation: slowshow .3s forwards;
+}
 
 @keyframes slowshow {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* 淡出 */
 
-.slowopacity { animation: slowopacity .3s forwards; }
+.slowopacity {
+  animation: slowopacity .3s forwards;
+}
 
 @keyframes slowopacity {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 /* 上升显示 */
 
-.updisplay { animation: updisplay .3s forwards; }
+.updisplay {
+  animation: updisplay .3s forwards;
+}
 
 @keyframes updisplay {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0px); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 /* 下降隐藏 */
 
-.downhide { animation: downhide .3s forwards; }
+.downhide {
+  animation: downhide .3s forwards;
+}
 
 @keyframes downhide {
-  0% { opacity: 1; transform: translateY(0px); }
-  100% { opacity: 0; transform: translateY(20px); }
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 /* 上升隐藏 */
 
-.uphide { animation: uphide .3s forwards; }
+.uphide {
+  animation: uphide .3s forwards;
+}
 
 @keyframes uphide {
-  0% { opacity: 1; transform: translateY(0px); }
-  100% { opacity: 0; transform: translateY(-20px); }
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 }
 
 /* 下降显示 */
 
-.downdisplay { animation: downdisplay .3s forwards; }
+.downdisplay {
+  animation: downdisplay .3s forwards;
+}
 
 @keyframes downdisplay {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0px); }
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 /* 向左显示 */
 
-.leftdisplay { animation: leftdisplay .3s forwards; }
+.leftdisplay {
+  animation: leftdisplay .3s forwards;
+}
 
 @keyframes leftdisplay {
-  0% { opacity: 0; transform: translateX(20px); }
-  100% { opacity: 1; transform: translateX(0px); }
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
