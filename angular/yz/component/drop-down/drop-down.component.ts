@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, ViewChild } from "@angular/core";
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnChanges, Output, ViewChild } from "@angular/core";
 
 import { list, DDList } from "./drop-down.model"
 
@@ -13,7 +13,15 @@ export class DropDownComponent implements OnChanges {
 
   @ViewChild('dropdownbox', { static: false }) ddbox: ElementRef<HTMLElement>
 
-  ngOnChanges() { this.slist = this.list[0] }
+  ngOnChanges() {
+    this.slist = this.list[0]
+    window.onclick = () => this.ddbox && this.closebox() // 点击任意区域自动关闭
+  }
+
+  // 给元素本身加上禁止冒泡
+  @HostListener('click', ['$event']) onClick(e: Event) {
+    e.cancelBubble = true
+  }
 
   @Input() list: DDList[] = list
 
