@@ -15,7 +15,7 @@ export class DropDownComponent implements OnChanges {
 
   ngOnChanges() {
     this.slist = this.list[0]
-    window.onclick = () => this.ddbox && this.closebox() // 点击任意区域自动关闭
+    window.addEventListener('click', () => this.ddbox && this.closebox()) // 点击任意区域自动关闭
   }
 
   // 给元素本身加上禁止冒泡
