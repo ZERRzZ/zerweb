@@ -41,12 +41,12 @@ td {
 
 .body {
   flex: 1 1 auto;
-  overflow: auto;
+  overflow: overlay;
 }
 
-.body::-webkit-scrollbar {
+/* .body::-webkit-scrollbar {
   width: 0;
-}
+} */
 
 .tools {
   width: 100%;
