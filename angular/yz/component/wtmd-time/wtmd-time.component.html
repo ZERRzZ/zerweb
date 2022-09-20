@@ -6,6 +6,8 @@
 
     <label [class.on]="timetype == 'SCOP'"><input type="radio" [(ngModel)]="timetype" value="SCOP">任意</label>
 
+    <label [class.on]="timetype == 'ONED'"><input type="radio" [(ngModel)]="timetype" value="ONED">天</label>
+
     <label [class.on]="timetype == 'WEEK'"><input type="radio" [(ngModel)]="timetype" value="WEEK">周</label>
 
     <label [class.on]="timetype == 'TEND'"><input type="radio" [(ngModel)]="timetype" value="TEND">旬</label>
@@ -22,9 +24,9 @@
 
   <div class="children">
 
-    <nz-date-picker [(ngModel)]="sdate" (ngModelChange)="changeSdate($event)" [nzDisabledDate]="disabledDate"></nz-date-picker>
+    <nz-date-picker [class.scopDatePicker]="timetype=='SCOP'" [(ngModel)]="sdate" (ngModelChange)="changeSdate($event)" [nzDisabledDate]="disabledDate"></nz-date-picker>
 
-    <input type="button" [value]="'上一' + buttoname[timetype]" (click)="last()">
+    <input type="button" [value]="'上一' + buttoname[timetype]" *ngIf="timetype!='SCOP'" (click)="last()">
 
   </div>
 
@@ -36,9 +38,9 @@
 
   <div class="children">
 
-    <nz-date-picker [(ngModel)]="edate" (ngModelChange)="changeEdate($event)" [nzDisabledDate]="disabledDate" [disabled]="timetype != 'SCOP'"></nz-date-picker>
+    <nz-date-picker [class.scopDatePicker]="timetype=='SCOP'" [(ngModel)]="edate" (ngModelChange)="changeEdate($event)" [nzDisabledDate]="disabledDate" [disabled]="timetype!='SCOP'"></nz-date-picker>
 
-    <input type="button" [value]="'下一' + buttoname[timetype]" (click)="next()" [disabled]="overDate()">
+    <input type="button" [value]="'下一' + buttoname[timetype]" *ngIf="timetype!='SCOP'" (click)="next()" [disabled]="overDate()">
 
   </div>
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnChanges, Output } from "@angular/core";
 
 import { WTMD } from "./wtmd-time.model";
 
@@ -7,7 +7,7 @@ import { WTMD } from "./wtmd-time.model";
   templateUrl: './wtmd-time.component.html',
   styleUrls: ['./wtmd-time.component.css']
 })
-export class WTMDTimeComponent {
+export class WTMDTimeComponent implements OnChanges {
 
   constructor() { }
 
@@ -15,22 +15,21 @@ export class WTMDTimeComponent {
 
   @Input() edate = new Date()
 
+  @Input() timetype: WTMD = 'SCOP'
+
   @Output() dateChange = new EventEmitter<Date[]>()
 
   @Output() timetypeChange = new EventEmitter<WTMD>()
 
-  private _timetype: WTMD = 'SCOP'
-
-  @Input() get timetype() { return this._timetype }
-
-  set timetype(type: WTMD) {
-    this._timetype = type
-    this.changeSdate() // 监听 type 变化实时改变时间
-    this.timetypeChange.emit(this.timetype)
+  ngOnChanges() {
+    if (this.timetype) {
+      this.changeSdate() // 监听 type 变化实时改变时间
+      this.timetypeChange.emit(this.timetype)
+    }
   }
 
   buttoname = {
-    'SCOP': "天",
+    'ONED': "天",
     'WEEK': "周",
     'TEND': "旬",
     'MONT': "月"
@@ -40,7 +39,7 @@ export class WTMDTimeComponent {
 
   overDate = () => { // 当时间要超过今天时禁用
     switch (this.timetype) {
-      case 'SCOP': return new Date(this.edate.getFullYear(), this.edate.getMonth(), this.edate.getDate() + 1) >= new Date()
+      case 'ONED': return new Date(this.edate.getFullYear(), this.edate.getMonth(), this.edate.getDate() + 1) >= new Date()
       case 'WEEK': return new Date(this.edate.getFullYear(), this.edate.getMonth(), this.edate.getDate() + 6) >= new Date()
       case 'TEND': return new Date(this.edate.getFullYear(), this.edate.getMonth(), this.edate.getDate() + 10) >= new Date()
       case 'MONT': return new Date(this.edate.getFullYear(), this.edate.getMonth() + 1, this.edate.getDate()) >= new Date()
@@ -51,7 +50,10 @@ export class WTMDTimeComponent {
 
     switch (this.timetype) {
 
-      case 'SCOP': if (this.sdate > this.edate) this.edate = this.sdate; break;
+      case 'ONED':
+
+        // if (this.sdate > this.edate) this.edate = this.sdate; break
+        this.edate = this.sdate; break
 
       case 'WEEK':
 
@@ -132,7 +134,10 @@ export class WTMDTimeComponent {
 
   last = () => {
     switch (this.timetype) {
-      case 'SCOP': this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth(), this.sdate.getDate() - 1); break;
+      case 'ONED':
+        this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth(), this.sdate.getDate() - 1)
+        this.edate = this.sdate
+        break;
       case 'WEEK': this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth(), this.sdate.getDate() - 6); break;
       case 'TEND':
         if (this.sdate.getDate() > 20) this.sdate = new Date(new Date(this.sdate.getFullYear(), this.sdate.getMonth(), 11))
@@ -146,7 +151,10 @@ export class WTMDTimeComponent {
 
   next = () => {
     switch (this.timetype) {
-      case 'SCOP': this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth(), this.sdate.getDate() + 1); break;
+      case 'ONED':
+        this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth(), this.sdate.getDate() + 1)
+        this.edate = this.sdate
+        break
       case 'WEEK': this.sdate = new Date(this.sdate.getFullYear(), this.sdate.getMonth(), this.sdate.getDate() + 6); break;
       case 'TEND':
         if (this.sdate.getDate() > 20) this.sdate = new Date(new Date(this.sdate.getFullYear(), this.sdate.getMonth() + 1, 1))

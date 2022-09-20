@@ -1,1 +1,1 @@
-export type WTMD = 'WEEK' | 'TEND' | 'MONT' | 'SCOP'
+export type WTMD = 'ONED' | 'WEEK' | 'TEND' | 'MONT' | 'SCOP'
