@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from "@angular/core";
 
 import { WTMD } from "./wtmd-time.model";
 
@@ -21,8 +21,8 @@ export class WTMDTimeComponent implements OnChanges {
 
   @Output() timetypeChange = new EventEmitter<WTMD>()
 
-  ngOnChanges() {
-    if (this.timetype) {
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.timetype) {
       this.changeSdate() // 监听 type 变化实时改变时间
       this.timetypeChange.emit(this.timetype)
     }
