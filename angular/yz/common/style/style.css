@@ -327,3 +327,21 @@ label {
     transform: translateX(0px);
   }
 }
+
+/* 向右显示 */
+
+.rightdisplay {
+  animation: rightdisplay .3s forwards;
+}
+
+@keyframes rightdisplay {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
