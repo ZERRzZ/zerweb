@@ -40,15 +40,15 @@ a:hover {
   color: var(--theme-dark);
 }
 
-input[type='button'] {
+[type='button'] {
   color: inherit;
   background: inherit;
   border: 1px solid var(--gray-middle);
   cursor: pointer;
 }
 
-input[type='text'],
-input[type='password'] {
+[type='text'],
+[type='password'] {
   color: inherit;
   background: inherit;
   border: 1px solid var(--gray-middle);
