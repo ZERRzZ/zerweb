@@ -1,0 +1,81 @@
+.form-design {
+  display: flex;
+  gap: .5em;
+}
+
+.form-field {
+  flex: 0 0 170px;
+  padding: .5em;
+  background: #fff;
+  display: flex;
+  flex-flow: column;
+  gap: .5em;
+}
+
+.field-item {
+  padding: .5em;
+  background: var(--theme-light);
+  border: 1px dashed #ddd;
+  cursor: pointer;
+}
+
+.middle {
+  flex: auto;
+  display: flex;
+  flex-flow: column;
+  gap: .5em;
+}
+
+.m_head {
+  padding: .5em;
+  background: #fff;
+}
+
+.m_content {
+  height: 100%;
+  display: flex;
+  gap: .5em;
+}
+
+.m_left {
+  flex: 0 0 170px;
+  padding: .5em;
+  background: #fff;
+  display: flex;
+  flex-flow: column;
+  gap: .5em;
+}
+
+.ml_main {
+  flex: auto;
+  border: 1px dashed #ddd;
+}
+
+.m_right {
+  flex: auto;
+  padding: .5em;
+  background: #fff;
+  display: flex;
+  flex-flow: column;
+  gap: .5em;
+}
+
+.form-option {
+  flex: 0 0 380px;
+  padding: .5em;
+  background: #fff;
+  display: flex;
+  flex-flow: column;
+  gap: .5em;
+}
+
+.form-design-title {
+  padding: .5em .5em;
+  background: rgba(51, 51, 51, 0.02);
+  border: 1px solid #d9d9d9;
+}
+
+.active {
+  color: var(--theme-dark);
+  border-color: var(--theme-dark);
+}

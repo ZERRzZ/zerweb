@@ -1,0 +1,15 @@
+.data-config {
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
+
+  .data-config-card {
+    border: 1px solid #d9d9d9;
+    box-shadow: 5px 5px 5px #f8f8f8;
+    border-radius: 4px;
+  }
+
+  .ant-table-cell {
+    word-break: keep-all;
+  }
+}

@@ -1,0 +1,17 @@
+.dictManage {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+}
+
+.searchBox {
+  padding: 1em;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dictTable {
+  background: #fff;
+  padding: 1em;
+}

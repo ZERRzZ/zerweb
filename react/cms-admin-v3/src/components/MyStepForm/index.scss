@@ -1,0 +1,28 @@
+.my-step-form {
+  padding: 1em;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+
+  .my-step-form-box {
+    width: 100%;
+    transition: all .3s;
+    display: flex;
+    gap: 1em;
+
+    .my-step-form-forms {
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+  }
+
+  .my-step-form-btns {
+    display: flex;
+    gap: 1em;
+  }
+
+}

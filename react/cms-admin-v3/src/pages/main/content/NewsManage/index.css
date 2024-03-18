@@ -1,0 +1,25 @@
+.news-preview {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+  align-items: center;
+}
+
+.news-preview h1 {
+  line-height: 1em;
+}
+
+.news-sub-title {
+  font-size: .8em;
+  color: #7F7F7F;
+  display: flex;
+  gap: 5em;
+}
+
+.news-content {
+  align-self: flex-start;
+}
+
+.news-content img {
+  max-width: 100%;
+}

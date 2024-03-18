@@ -1,0 +1,52 @@
+.my-log {
+  width: 100%;
+  padding: 16px;
+
+  .ant-timeline.ant-timeline-label .ant-timeline-item-label {
+    width: calc(16% - 12px);
+  }
+
+  .ant-timeline.ant-timeline-alternate .ant-timeline-item-left .ant-timeline-item-content,
+  .ant-timeline.ant-timeline-right .ant-timeline-item-left .ant-timeline-item-content,
+  .ant-timeline.ant-timeline-label .ant-timeline-item-left .ant-timeline-item-content {
+    left: calc(16% - 4px);
+    width: calc(84% - 14px);
+    text-align: left;
+  }
+
+  .ant-timeline.ant-timeline-alternate .ant-timeline-item-tail,
+  .ant-timeline.ant-timeline-right .ant-timeline-item-tail,
+  .ant-timeline.ant-timeline-label .ant-timeline-item-tail,
+  .ant-timeline.ant-timeline-alternate .ant-timeline-item-head,
+  .ant-timeline.ant-timeline-right .ant-timeline-item-head,
+  .ant-timeline.ant-timeline-label .ant-timeline-item-head,
+  .ant-timeline.ant-timeline-alternate .ant-timeline-item-head-custom,
+  .ant-timeline.ant-timeline-right .ant-timeline-item-head-custom,
+  .ant-timeline.ant-timeline-label .ant-timeline-item-head-custom {
+    left: 16%;
+  }
+
+  .log-timeline .ant-timeline-item-content span {
+    margin-right: 10px;
+  }
+
+  .log-timeline {
+    // .log-time {}
+
+    // .log-user {}
+
+    // .log-action {}
+
+    .log-type {
+      color: #838A9D;
+    }
+
+    // .log-name {}
+
+    // .log-from {}
+
+    .log-content {
+      padding-left: 5px;
+    }
+  }
+}

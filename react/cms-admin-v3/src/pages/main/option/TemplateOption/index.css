@@ -1,0 +1,22 @@
+.template-option {
+  display: flex;
+  gap: 1em;
+}
+
+.template-right {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+}
+
+.template-filter { 
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.template-table {
+  background: #fff;
+}

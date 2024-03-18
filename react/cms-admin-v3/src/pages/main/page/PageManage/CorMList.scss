@@ -1,0 +1,23 @@
+.com-list {
+  padding: 1em;
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+
+  .ant-cascader {
+    width: auto;
+  }
+
+  .list-box {
+    display: flex;
+    flex-flow: column;
+    gap: .5em;
+
+    .item {
+      padding: .5em;
+      border: 1px dashed #d9d9d9;
+      background: var(--theme-light);
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.formList {
+  display: flex;
+  gap: 1em;
+  align-items: flex-start;
+}
+
+.ant-form-item {
+  flex: auto;
+}
+
+.formList .ant-row {
+  flex-direction: column;
+}
+
+.formList .ant-row .ant-form-item-label {
+  text-align: start;
+}
+
+.ant-form-horizontal .ant-form-item-control {
+  flex: 1 1 auto;
+}
+
+.firstBtn {
+  align-self: center;
+}
+
+.handleBtn {
+  color: #999;
+  font-size: 1.8em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.handleBtn:hover {
+  color: #777;
+}
+
+.my-form-readonly {
+  .ant-form-item-label>label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+    content: "";
+  }
+}

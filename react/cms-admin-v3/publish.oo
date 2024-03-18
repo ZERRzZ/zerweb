@@ -1,0 +1,18 @@
+#!/bin/bash
+import util/log
+namespace $PROJECT_NAME
+
+Log::AddOutput $PROJECT_NAME BUILDLOG
+Log generated build version is ${BUILD_VERSION}
+Log project name is ${PROJECT_NAME}
+Log project dir is ${PROJECT_DIR}
+
+#---------------------------------
+declare __image_id
+
+__image_id=$(docker images | grep ${PROJECT_NAME} | grep ${BUILD_VERSION}| head -n 1 | awk '{print $3}')
+if [[ -n ${__image_id} ]]; then
+    publish_image_by_id $__image_id
+else
+    throw "Can not find image id for project ${PROJECT_NAME} ${BUILD_VERSION}"
+fi

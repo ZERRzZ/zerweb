@@ -1,0 +1,110 @@
+.page-design-box {
+  display: flex;
+  flex-flow: column;
+
+  .page-design-title {
+    padding: 1em;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      font-weight: 800;
+    }
+
+    .btns {
+      display: flex;
+      gap: 1em;
+    }
+  }
+
+  .page-design {
+    flex: 1;
+    max-height: 100vh;
+    overflow: hidden;
+    padding: 0 1em 1em 1em;
+    background: #fff;
+    display: flex;
+    gap: 1em;
+    position: sticky;
+    top: 0;
+
+    .left {
+      width: 200px;
+      overflow: overlay;
+      border: 1px solid #d9d9d9;
+    }
+
+    .middle {
+      flex: 1;
+      overflow: auto;
+
+      .box {
+        width: 60%;
+        height: 60%;
+        border: 1px dashed #d9d9d9;
+        transition: all .3s;
+        overflow: overlay;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: start;
+        position: relative;
+
+        .component {
+          width: 100%;
+          height: 100%;
+          background: var(--theme-light);
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .box-btns {
+          animation: downdisplay .3s forwards;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+
+      .active {
+        border-color: var(--theme-dark);
+      }
+    }
+
+    .right {
+      width: 230px;
+      display: flex;
+      padding: 0 1em 1em 1em;
+      border: 1px solid #d9d9d9;
+      flex-flow: column;
+      gap: 1em;
+
+      .config {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-flow: column;
+        gap: 1em;
+      }
+    }
+  }
+}
+
+@keyframes downdisplay {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.page-design-box .ant-tabs .ant-tabs-tab+.ant-tabs-tab {
+  margin: 0 0 0 1em
+}

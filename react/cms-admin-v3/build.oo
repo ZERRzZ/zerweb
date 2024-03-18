@@ -1,0 +1,31 @@
+#!/bin/bash
+import util/log
+namespace $PROJECT_NAME
+
+Log::AddOutput $PROJECT_NAME BUILDLOG
+Log generated build version is ${BUILD_VERSION}
+Log project name is ${PROJECT_NAME}
+Log project dir is ${PROJECT_DIR}
+
+
+yarn config set registry https://registry.npm.taobao.org
+yarn cache clean
+yarn
+#yarn api
+
+if [ "release" = "${PUBLISH_ENV}" ]
+then
+    yarn env prod
+fi
+
+if [ "develop" = "${PUBLISH_ENV}" ]
+then
+    yarn env test
+fi
+
+
+yarn build
+
+# build image
+declare -g img_id
+build_image . $BUILD_VERSION img_id $PROJECT_NAME

@@ -1,0 +1,45 @@
+.rowCategory {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+}
+
+.levels {
+  display: flex;
+  gap: 1em;
+}
+
+.levelTitle {
+  min-width: 8em;
+  height: 2.5em;
+  background: var(--main-bg);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.levelList {
+  display: flex;
+  flex-flow: row wrap;
+  gap: .5em 1em;
+  align-items: center;
+}
+
+.levelList a {
+  color: inherit;
+}
+
+.levelList a:hover,
+.levelList .active {
+  color: var(--theme-dark);
+}
+
+.ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected {
+  color: var(--theme-dark);
+  background: inherit;
+}
+
+.ant-tree .ant-tree-node-content-wrapper:hover {
+  background: var(--theme-light);
+}

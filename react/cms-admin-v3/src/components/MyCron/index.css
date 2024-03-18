@@ -1,0 +1,41 @@
+.qnn-react-cron {
+  box-shadow: none;
+}
+
+.qnn-react-cron .footer {
+  border-top: none;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+  align-items: flex-end;
+}
+
+.extraBox {
+  display: flex;
+  gap: 1em;
+}
+
+.flexbox {
+  width: 70%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1%;
+}
+
+.tenYearBox {
+  width: 30%;
+  max-height: 110px;
+  padding: 0 .5em;
+  text-align: left;
+  border: 1px solid lightgray;
+  overflow: auto;
+  display: flex;
+  flex-flow: column;
+}
+
+.cronbtns {
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
+}

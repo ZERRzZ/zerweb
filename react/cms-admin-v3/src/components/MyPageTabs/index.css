@@ -1,0 +1,21 @@
+.ant-tabs-nav-list {
+  margin-top: 5px;
+}
+
+.ant-tabs-card>.ant-tabs-nav .ant-tabs-tab {
+  background: unset;
+  border: unset;
+}
+
+.ant-tabs-card>.ant-tabs-nav .ant-tabs-tab-active {
+  background: rgba(51, 51, 51, 0.02);
+  border-bottom: 1px solid;
+}
+.ant-tabs-card.ant-tabs-top >.ant-tabs-nav .ant-tabs-tab-active {
+  background: unset;
+  border-bottom-color: unset;
+}
+.ant-tabs >.ant-tabs-nav {
+  background-color: #fff;
+  margin: 0;
+}

@@ -1,0 +1,9 @@
+#wk-knowledge-content-wukong {
+  font-size: 30px;
+  margin-block-start: 0em;
+  font-weight: bold;
+}
+
+.mce-item-table, .mce-item-table caption, .mce-item-table td, .mce-item-table th {
+  border: none !important;
+}

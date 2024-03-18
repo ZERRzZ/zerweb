@@ -1,0 +1,12 @@
+.w-e-modal {
+  width: 300px;
+  height: 280px;
+  position: fixed;
+  left: calc(50% - 140px) !important;
+  top: calc(50% - 150px) !important;
+}
+
+.w-e-modal .button-container button {
+  color: #fff;
+  background: #1890ff;
+}

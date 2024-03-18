@@ -1,0 +1,11 @@
+.option {
+  display: flex;
+  flex-flow: column;
+  gap: .5em;
+}
+
+.tag {
+  display: flex;
+  gap: .5em;
+  align-items: center;
+}

@@ -1,0 +1,36 @@
+.role-auth-modal {
+    .table-bordered {
+        border: 1px solid #cbd0db;
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+    .table-bordered tbody>tr>td, .table-bordered thead>tr>th {
+        vertical-align: middle;
+    }
+    .table-bordered>thead>tr>th {
+        font-weight: 700;
+        color: #3c4353;
+        vertical-align: bottom;
+        background-color: transparent;
+        border-bottom: 1px solid #cbd0db;
+    }
+    
+    .table-bordered td, .table-bordered th {
+        padding: 12px 10px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border: 1px solid #cbd0db;
+    }
+
+    .ant-checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        /* background-color: #42533c; */
+    }
+    
+    .ant-checkbox-group>.ant-checkbox-wrapper {
+        margin-left: 12px;
+        padding: 8px 0;
+    }
+}
