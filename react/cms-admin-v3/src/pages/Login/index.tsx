@@ -124,7 +124,7 @@ export default function Login() {
             }
         }).then(
             (res) => {
-                if(res && res.data && res.data.data){
+                if (res && res.data && res.data.data) {
                     localStorage.removeItem('code_error_login');
                     const userInfo = res.data.data;
                     localStorage.setItem("token", userInfo.token.access_token);
@@ -136,12 +136,12 @@ export default function Login() {
                     localStorage.setItem('token_time', Date.now().toString());
                     localStorage.setItem('token_type', "local");
                     const now_host = window.location.host.split(':')[0];
-                    if(now_host === '127.0.0.1') {
+                    if (now_host === '127.0.0.1') {
                         window.location.replace('/#/')
                     } else {
                         window.location.replace('/admin/#/')
                     }
-                }else{
+                } else {
                     message.error(res.data.msg || "用户名或密码不正确");
                 }
             }
@@ -158,16 +158,17 @@ export default function Login() {
     //         console.log("不自动登录")
     //     }
     // }
+
     const onFormSubmit = (values) => {
-        const formValues = values;
-        if (formValues) {
-            onFinish(formValues);
-        }
+        window.location.replace('/admin/#/')
+        // const formValues = values;
+        // if (formValues) {
+        //     onFinish(formValues);
+        // }
     }
-    // const height = window.innerHeight;
 
     const ywLogin = () => {
-        setConfig({loginType: 'yw'});
+        setConfig({ loginType: 'yw' });
         Auth.login()
     }
 
